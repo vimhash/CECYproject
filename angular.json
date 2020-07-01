@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "CECYproject"
+    }
+  },
+  "defaultProject": "CECYproject",
+  "cli": {
+    "analytics": "74dcda67-41fb-44f4-bfa8-4a660e5e7342"
+  }
 }
