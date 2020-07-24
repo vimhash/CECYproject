@@ -28,7 +28,6 @@ import { PasswordModule } from "primeng/password";
 import { FormsModule } from "@angular/forms";
 import { CecyRoutes } from "./cecy.routing";
 import { TooltipModule } from "primeng/tooltip";
-//import {AppAsistenciaLaboralComponent} from './docente-asistencia-laboral/app.asistencia-laboral.component';
 import { TableModule } from "primeng/table";
 import { DataViewModule } from "primeng/dataview";
 import { PanelModule } from "primeng/panel";
@@ -41,9 +40,10 @@ import { CarouselModule } from "primeng/carousel";
 import { FullCalendarModule } from "primeng/fullcalendar";
 import { TabViewModule } from "primeng";
 import { InputNumberModule } from "primeng/inputnumber";
-import { CursosPagoComponent } from './matriculacion/cursos-pago/cursos-pago.component';
-import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/cursos-gratuitos.component";
 
+import { CursosPagoComponent } from "./matriculacion/cursos-pago/cursos-pago.component";
+import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/cursos-gratuitos.component";
+import { MisCursosComponent } from "./matriculacion/mis-cursos/mis-cursos.component";
 
 @NgModule({
   imports: [
@@ -85,11 +85,11 @@ import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/curso
     FullCalendarModule,
     TabViewModule,
     InputNumberModule,
-
   ],
   declarations: [
     CursosPagoComponent,
     CursosGratuitosComponent,
+    MisCursosComponent,
   ],
 })
 export class CedyModule {}
