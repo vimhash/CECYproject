@@ -41,8 +41,9 @@ import { CarouselModule } from "primeng/carousel";
 import { FullCalendarModule } from "primeng/fullcalendar";
 import { TabViewModule } from "primeng";
 import { InputNumberModule } from "primeng/inputnumber";
-
+import { CursosPagoComponent } from './matriculacion/cursos-pago/cursos-pago.component';
 import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/cursos-gratuitos.component";
+
 
 @NgModule({
   imports: [
@@ -84,9 +85,10 @@ import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/curso
     FullCalendarModule,
     TabViewModule,
     InputNumberModule,
+
   ],
   declarations: [
-    //  AppAsistenciaLaboralComponent,
+    CursosPagoComponent,
     CursosGratuitosComponent,
   ],
 })

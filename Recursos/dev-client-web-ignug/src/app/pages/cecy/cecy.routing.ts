@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/cursos-gratuitos.component";
-
+import { CursosPagoComponent } from './matriculacion/cursos-pago/cursos-pago.component';
 export const CecyRoutes: Routes = [
   {
     path: "",
@@ -23,4 +23,9 @@ export const CecyRoutes: Routes = [
     path: "cursos-gratuitos",
     component: CursosGratuitosComponent,
   },
+   {
+            path: "cursos-pago",
+            component: CursosPagoComponent,
+    },
+
 ];
