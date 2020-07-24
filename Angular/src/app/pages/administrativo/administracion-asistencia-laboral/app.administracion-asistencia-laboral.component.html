@@ -1,0 +1,69 @@
+<div class="p-grid">
+    <div class="p-lg-12 p-md-12 p-sm-12">
+        <div class="card card-w-title">
+            <p-table #dt [columns]="cols" styleClass="ui-table-cars" [value]="asistencias" [paginator]="true"
+                     [responsive]="true"
+                     [rows]="10"
+                     dataKey="vin" selectionMode="single" [(selection)]="selectedCar">
+                <ng-template pTemplate="caption">
+                    Jornda Laboral:
+                    <p-calendar selectionMode="range" [(ngModel)]="fechas" (click)="filtrarFechas()"
+                                icon="pi pi-calendar"
+                                showIcon="true" styleClass="ui-calendar-w-btn"
+                                placeholder="Rango de fechas">
+                    </p-calendar>
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.field" [ngSwitch]="col.field">
+                            {{col.header}}
+                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                        <th style="width: 8em; text-align: center;">
+                            <button pButton type="button" icon="pi pi-cog"></button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th *ngFor="let col of columns" [ngSwitch]="col.field" style="padding: .5em;">
+                            <!--                            <input *ngSwitchCase="'date'" pInputText type="date" placeholder="Starts with"-->
+                            <!--                                   class="ui-column-filter" style="width: 100%; margin-top: 0;"-->
+                            <!--                                   (input)="dt.filter($event.target.value, col.field, 'startsWith')">-->
+
+                            <input *ngSwitchCase="'identification'" pInputText type="text"
+                                   placeholder="Buscar por número de identificación"
+                                   class="ui-column-filter" style="width: 100%; margin-top: 0;"
+                                   (input)="dt.filter($event.target.value, col.field, 'contains')">
+                            <input *ngSwitchCase="'first_lastname'" pInputText type="text"
+                                   placeholder="Buscar por el primer apellido"
+                                   class="ui-column-filter" style="width: 100%; margin-top: 0;"
+                                   (input)="dt.filter($event.target.value, col.field, 'contains')">
+                            <input *ngSwitchCase="'start_time'" pInputText type="text" placeholder="Contains"
+                                   class="ui-column-filter" style="width: 100%; margin-top: 0;"
+                                   (input)="dt.filter($event.target.value, col.field, 'contains')">
+                            <input *ngSwitchCase="'end_time'" pInputText type="text" placeholder="Contains"
+                                   class="ui-column-filter" style="width: 100%; margin-top: 0;"
+                                   (input)="dt.filter($event.target.value, col.field, 'contains')">
+
+                        </th>
+                        <th style="width: 8em;">
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr [pSelectableRow]="rowData" [pEditableRow]="rowData">
+                        <td>{{rowData.date}}</td>
+                        <td>{{rowData.identification}}</td>
+                        <td>{{rowData.first_lastname}} {{rowData.second_lastname}} {{rowData.first_name}} {{rowData.second_name}}</td>
+                        <td>{{rowData.start_time}}</td>
+                        <td>{{rowData.end_time}}</td>
+                        <td>
+                            <button pButton type="button" class="ui-button-success" icon="pi pi-search"
+                                    style="margin-right: .5em"></button>
+                            <button pButton type="button" class="ui-button-warning" icon="pi pi-pencil"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
