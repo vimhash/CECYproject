@@ -20,7 +20,7 @@ export class AppMenuComponent implements OnInit {
       {
         label: "CEC-Y",
         icon: "pi pi-fw pi-home",
-        routerLink: ["/cecy/dashboard/formacion-academica"],
+        routerLink: ["/cecy/dashboard/bienvenida"],
       },
       //  {label: 'Asistencia', icon: 'pi pi-fw pi-calendar', routerLink: ['/administrativo/asistencia-laboral']},
 
