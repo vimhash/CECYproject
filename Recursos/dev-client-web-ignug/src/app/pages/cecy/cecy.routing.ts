@@ -1,21 +1,31 @@
-import {Routes} from '@angular/router';
+import { Routes } from "@angular/router";
+import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/cursos-gratuitos.component";
 import { CursosPagoComponent } from './matriculacion/cursos-pago/cursos-pago.component';
 export const CecyRoutes: Routes = [
-    {
-        path: '',
-        children: [
-          {
-              path: 'dashboard',
-              loadChildren: () => import('./matriculacion/dashboards/dashboard.module').then(m => m.DashboardModule)
-          },
-          {
+  {
+    path: "",
+    children: [
+      {
+        path: "dashboard",
+        loadChildren: () =>
+          import("./matriculacion/dashboards/dashboard.module").then(
+            (m) => m.DashboardModule
+          ),
+      },
+      {
+        path: "cupo",
+        loadChildren: () =>
+          import("./matriculacion/cupo/cupo.module").then((m) => m.CupoModule),
+      },
+    ],
+  },
+  {
+    path: "cursos-gratuitos",
+    component: CursosGratuitosComponent,
+  },
+   {
             path: "cursos-pago",
             component: CursosPagoComponent,
-          },
-          {
-              path: 'cupo',
-              loadChildren: () => import('./matriculacion/cupo/cupo.module').then(m => m.CupoModule)
-          },
-        ]
-    }
+    },
+
 ];
