@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/roger', function () {
     return view('welcome');
 });
+
 Route::get('password_generate',function (){
     return \Illuminate\Support\Facades\Hash::make('123');
 });
-

@@ -41,13 +41,17 @@ export const routes: Routes = [
                 path: 'cupo',
                 loadChildren: () => import('./pages/matriculacion/cupo/cupo.module').then(m => m.CupoModule)
             },
-            {
+            /*{
                 path: 'dashboard',
                 loadChildren: () => import('./pages/matriculacion/dashboards/dashboard.module').then(m => m.DashboardModule)
-            },
+            },*/
             {
                 path: 'administrativo',
                 loadChildren: () => import('./pages/administrativo/administrativo.module').then(m => m.AdministrativoModule)
+            },
+            {
+                path: 'cecy',
+                loadChildren: () => import('./pages/cecy/cecy.module').then(m => m.CedyModule)
             },
         ]
     },

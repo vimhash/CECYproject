@@ -13,11 +13,11 @@ export class ServiceService {
         localStorage.setItem('token', 'a"sd');
     }
 
-    getEventsJornadas(url) {
-        return this._http.get<any>(environment.API_URL + url)
-            .toPromise()
-            .then(res => res.data as any[])
-            .then(data => data);
+    async getEventsJornadas(url: string) {
+        const res = await this._http.get<any>(environment.API_URL + url)
+        .toPromise();
+      const data = (res.data as any[]);
+      return data;
     }
 
     get(url: string) {
