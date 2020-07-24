@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 import { DashboardCoordinadorComponent } from "./dashboard-coordinador/dashboard-coordinador.component";
 import { MatriculasComponent } from "./matriculas/matriculas.component";
-import { FormacionAcademicaComponent } from "./formacion-academica/formacion-academica.component";
+import { BienvenidaComponent } from "./bienvenida/bienvenida.component";
 import { EstadoAcademicoComponent } from "./estado-academico/estado-academico.component";
 
 export const HomeRoutes: Routes = [
@@ -11,7 +11,7 @@ export const HomeRoutes: Routes = [
       // Componentes complementarios al sistema
       {
         path: "bienvenida",
-        component: FormacionAcademicaComponent,
+        component: BienvenidaComponent,
       },
       {
         path: "matriculas",

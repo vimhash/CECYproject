@@ -41,6 +41,9 @@ import { CarouselModule } from "primeng/carousel";
 import { FullCalendarModule } from "primeng/fullcalendar";
 import { TabViewModule } from "primeng";
 import { InputNumberModule } from "primeng/inputnumber";
+
+import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/cursos-gratuitos.component";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -84,6 +87,7 @@ import { InputNumberModule } from "primeng/inputnumber";
   ],
   declarations: [
     //  AppAsistenciaLaboralComponent,
+    CursosGratuitosComponent,
   ],
 })
 export class CedyModule {}
