@@ -4,24 +4,27 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
-class Task extends Model implements Auditable
+class Workday extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
-    protected $connection = 'pgsql-ignug';
+    protected $connection = 'pgsql-cecy';
 
     protected $fillable = [
+        'start_time',
+        'end_time',
         'description',
-        'percentage_advance',
-        'observations'
+        'duration',
+        'observations',
     ];
 
-    public function taskable()
+    protected $casts = [
+        'start_time' => 'time:H:i:s',
+        'end_time' => 'time:H:i:s',
+    ];
+
+    public function workdayable()
     {
         return $this->morphTo();
-    }
-    public function attendance()
-    {
-        return $this->belongsTo(Attendance::class);
     }
 
     public function type()

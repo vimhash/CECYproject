@@ -9,7 +9,7 @@ class Career extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
 
-    protected $connection = 'pgsql-ignug';
+    protected $connection = 'pgsql-cecy';
     protected $fillable = [
         'code',
         'name',
