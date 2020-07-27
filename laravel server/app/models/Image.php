@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
-
-class File extends Model implements Auditable
+class Image extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
-
-    protected $connection = 'pgsql-ignug';
+    protected $connection = 'pgsql-cecy';
     protected $fillable = [
         'code',
         'name',
@@ -18,7 +16,7 @@ class File extends Model implements Auditable
         'icon',
     ];
 
-    public function fileable()
+    public function imageable()
     {
         return $this->morphTo();
     }

@@ -7,7 +7,7 @@ use OwenIt\Auditing\Contracts\Auditable;
 class Attendance extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
-    protected $connection = 'pgsql-ignug';
+    protected $connection = 'pgsql-cecy';
     protected $fillable = [
         'date'
     ];
