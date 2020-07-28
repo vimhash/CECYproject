@@ -27,7 +27,7 @@ import { SplitButtonModule } from "primeng/splitbutton";
 import { PasswordModule } from "primeng/password";
 import { DashboardCoordinadorComponent } from "./dashboard-coordinador/dashboard-coordinador.component";
 import { MatriculasComponent } from "./matriculas/matriculas.component";
-import { BienvenidaComponent } from "./bienvenida/bienvenida.component";
+import { ParticipantesComponent } from "./participantes/participantes.component";
 import { EstadoAcademicoComponent } from "./estado-academico/estado-academico.component";
 
 @NgModule({
@@ -61,7 +61,7 @@ import { EstadoAcademicoComponent } from "./estado-academico/estado-academico.co
   declarations: [
     DashboardCoordinadorComponent,
     MatriculasComponent,
-    BienvenidaComponent,
+    ParticipantesComponent,
     EstadoAcademicoComponent,
   ],
 })

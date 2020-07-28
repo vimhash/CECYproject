@@ -4,13 +4,13 @@ import {BreadcrumbService} from '../../../../../shared/breadcrumb/breadcrumb.ser
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
-  selector: "app-dashboard-coordinador",
-  templateUrl: "./bienvenida.component.html",
+  selector: "app-participantes",
+  templateUrl: "./participantes.component.html",
 })
-export class BienvenidaComponent implements OnInit {
+export class ParticipantesComponent implements OnInit {
     constructor(private breadcrumbService: BreadcrumbService, private spinner: NgxSpinnerService) {
         this.breadcrumbService.setItems([
-            {label: 'CEC-Y', routerLink: ['/cecy/dashboard/bienvenida']},
+            {label: 'CEC-Y', routerLink: ['/cecy/dashboard/participantes']},
         ]);
     }
 

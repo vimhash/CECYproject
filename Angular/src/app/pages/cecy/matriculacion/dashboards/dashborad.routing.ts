@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 import { DashboardCoordinadorComponent } from "./dashboard-coordinador/dashboard-coordinador.component";
 import { MatriculasComponent } from "./matriculas/matriculas.component";
-import { BienvenidaComponent } from "./bienvenida/bienvenida.component";
+import { ParticipantesComponent } from "./participantes/participantes.component";
 import { EstadoAcademicoComponent } from "./estado-academico/estado-academico.component";
 
 export const HomeRoutes: Routes = [
@@ -10,8 +10,8 @@ export const HomeRoutes: Routes = [
     children: [
       // Componentes complementarios al sistema
       {
-        path: "bienvenida",
-        component: BienvenidaComponent,
+        path: "participantes",
+        component: ParticipantesComponent,
       },
       {
         path: "matriculas",
