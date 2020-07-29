@@ -3,6 +3,7 @@ import { DashboardCoordinadorComponent } from "./dashboard-coordinador/dashboard
 import { MatriculasComponent } from "./matriculas/matriculas.component";
 import { ParticipantesComponent } from "./participantes/participantes.component";
 import { EstadoAcademicoComponent } from "./estado-academico/estado-academico.component";
+import { DocentesComponent } from "./docentes/docentes.component";
 
 export const HomeRoutes: Routes = [
   {
@@ -14,22 +15,27 @@ export const HomeRoutes: Routes = [
         component: ParticipantesComponent,
       },
       {
-        path: "matriculas",
-        component: MatriculasComponent,
+        path: "docentes",
+        component: DocentesComponent,
       },
-      {
-        path: "estado-academico",
-        component: EstadoAcademicoComponent,
-      },
+      // {
+      //   path: "matriculas",
+      //   component: MatriculasComponent,
+      // },
+      // {
+      //   path: "estado-academico",
+      //   component: EstadoAcademicoComponent,
+      // },
+
       // Roles del sistema
       {
         path: "coordinador",
         component: DashboardCoordinadorComponent,
       },
-      {
-        path: "estudiante",
-        component: DashboardCoordinadorComponent,
-      },
+      // {
+      //   path: "estudiante",
+      //   component: DashboardCoordinadorComponent,
+      // },
       {
         path: "secretaria",
         component: DashboardCoordinadorComponent,

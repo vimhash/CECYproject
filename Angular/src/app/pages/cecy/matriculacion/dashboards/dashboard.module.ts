@@ -28,6 +28,7 @@ import { PasswordModule } from "primeng/password";
 import { DashboardCoordinadorComponent } from "./dashboard-coordinador/dashboard-coordinador.component";
 import { MatriculasComponent } from "./matriculas/matriculas.component";
 import { ParticipantesComponent } from "./participantes/participantes.component";
+import { DocentesComponent } from "./docentes/docentes.component";
 import { EstadoAcademicoComponent } from "./estado-academico/estado-academico.component";
 
 @NgModule({
@@ -62,6 +63,7 @@ import { EstadoAcademicoComponent } from "./estado-academico/estado-academico.co
     DashboardCoordinadorComponent,
     MatriculasComponent,
     ParticipantesComponent,
+    DocentesComponent,
     EstadoAcademicoComponent,
   ],
 })

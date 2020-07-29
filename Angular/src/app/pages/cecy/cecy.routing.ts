@@ -15,11 +15,6 @@ export const CecyRoutes: Routes = [
             (m) => m.DashboardModule
           ),
       },
-      {
-        path: "cupo",
-        loadChildren: () =>
-          import("./matriculacion/cupo/cupo.module").then((m) => m.CupoModule),
-      },
     ],
   },
   {
