@@ -7,7 +7,8 @@ import { BreadcrumbService } from "../../../../../shared/breadcrumb/breadcrumb.s
   templateUrl: "./docentes.component.html",
 })
 export class DocentesComponent implements OnInit {
-      cities: SelectItem[];
+  academic_period: SelectItem[];
+
   constructor(
     private breadcrumbService: BreadcrumbService  ) {
     this.breadcrumbService.setItems([
@@ -16,8 +17,8 @@ export class DocentesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cities = [];
-    this.cities.push({ label: 'JUNIO 2020 - OCTUBRE 2020', value: { id: 1, name: 'JUNIO 2020 - OCTUBRE 2020', code: 'JO' } });
-    this.cities.push({ label: 'SEPTIEMBRE 2020 - ABRIL 2020', value: { id: 2, name: 'SEPTIEMBRE 2020 - ABRIL 2020', code: 'SA' } });
+    this.academic_period = [];
+    this.academic_period.push({ label: 'JUNIO 2020 - OCTUBRE 2020', value: { id: 1, name: 'JUNIO 2020 - OCTUBRE 2020', code: 'JO' } });
+    this.academic_period.push({ label: 'SEPTIEMBRE 2020 - ABRIL 2020', value: { id: 2, name: 'SEPTIEMBRE 2020 - ABRIL 2020', code: 'SA' } });
   }
 }

@@ -20,4 +20,26 @@ We consider that we have the knowledge that is needed to be able to develop this
    The registration module of the CEC-Y, which is being re-engineered, is a proprietary system that is in the process of migration. It will have the capacity to directly register the information of the applicants in the institutional database (IGNUG). In this way, all the data will be centralized, improving the registration of the applicants since they are all integrated in one single platform.
 
 2. Objectives.
+
    - MAIN OBJECTIVE
+     Migrate the enrolment module of the Yavirac Continuing Education Centre (CEC-Y) by restructuring the architecture of the IGNUG system for the centralisation of information.
+
+   - DETAILED OBJECTIVES
+
+   1. Investigate the registration process through meetings and documentation provided by the CEC -and that helps us understand the logic of the process.
+   2. Identify problems when migrating the module to the new IGNUG platform to consolidate all the information from the Yavirac Institute of Technology (ITSY) into a single system.
+   3. Objectively analyze the resources used by the current module, in terms of personnel and time by observing the existing system.
+
+3. Expected benefits.
+
+   - Improve enrollment times for applicants.
+   - To reduce the workload of the people responsible for the process.
+   - Manage ITSY information centrally in a single platform.
+   - Save both IT and personnel resources.
+
+4. Scope of the solution.
+
+   - Register new users.
+   - Validate form information.
+   - Register new applicants.
+   - Store data.

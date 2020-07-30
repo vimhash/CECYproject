@@ -25,11 +25,8 @@ import { ToggleButtonModule } from "primeng/togglebutton";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { SplitButtonModule } from "primeng/splitbutton";
 import { PasswordModule } from "primeng/password";
-import { DashboardCoordinadorComponent } from "./dashboard-coordinador/dashboard-coordinador.component";
-import { MatriculasComponent } from "./matriculas/matriculas.component";
 import { ParticipantesComponent } from "./participantes/participantes.component";
 import { DocentesComponent } from "./docentes/docentes.component";
-import { EstadoAcademicoComponent } from "./estado-academico/estado-academico.component";
 
 @NgModule({
   imports: [
@@ -59,12 +56,6 @@ import { EstadoAcademicoComponent } from "./estado-academico/estado-academico.co
     SplitButtonModule,
     PasswordModule,
   ],
-  declarations: [
-    DashboardCoordinadorComponent,
-    MatriculasComponent,
-    ParticipantesComponent,
-    DocentesComponent,
-    EstadoAcademicoComponent,
-  ],
+  declarations: [ParticipantesComponent, DocentesComponent],
 })
 export class DashboardModule {}

@@ -4,28 +4,27 @@
       <h1>Centro de Educación Continua "Yavirac"</h1>
     </div>
 
-
-     <div class="p-col-12 p-md-6">
-      <label for="input">PERIODO LECTIVO ACTUAL :
-      <p-dropdown [options]="cities" [(ngModel)]="selectedCity1"></p-dropdown>
+    <div class="p-col-12 p-md-6">
+      <label for="input"
+        >PERIODO LECTIVO ACTUAL :
+        <p-dropdown [options]="academic_period"></p-dropdown>
       </label>
-      </div>
-
+    </div>
 
     <div class="feature-cards">
-      <div class="feature-card">
+      <!-- <div class="feature-card">
         <div class="feature-card-img">
           <i class="pi pi-id-card" style="font-size: 5em;"></i>
         </div>
-        <div class="feature-card-title">Mis Asignaturas</div>
+        <div class="feature-card-title">Mis Cursos Docencia</div>
         <div class="feature-card-content">
-        BASE DE DATOS
+          BASE DE DATOS
         </div>
         <div class="feature-card-content">
-        TENDENCIAS ACTUALES DE PROGRAMACION
+          TENDENCIAS ACTUALES DE PROGRAMACION
         </div>
         <div class="feature-card-content">
-        MATEMATICAS
+          MATEMATICAS
         </div>
         <div class="feature-card-content">
           <button
@@ -34,6 +33,40 @@
             pButton
             icon="pi pi-sign-in"
             routerLink="/cecy/cursos-docente"
+          ></button>
+        </div>
+      </div> -->
+
+      <div class="feature-card">
+        <div class="feature-card-img">
+          <i class="pi pi-chart-bar" style="font-size: 5em;"></i>
+        </div>
+        <div class="feature-card-title">Mis Cursos Docencia</div>
+        <div class="feature-card-content">N° cursos 4</div>
+        <div class="feature-card-content">
+          <button
+            type="button"
+            label="Entrar"
+            pButton
+            icon="pi pi-sign-in"
+            routerLink="/cecy/cursos-docente"
+          ></button>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-img">
+          <i class="pi pi-chart-bar" style="font-size: 5em;"></i>
+        </div>
+        <div class="feature-card-title">Mis Cursos Inscrito</div>
+        <div class="feature-card-content">N° cursos 7</div>
+        <div class="feature-card-content">
+          <button
+            type="button"
+            label="Entrar"
+            pButton
+            icon="pi pi-sign-in"
+            routerLink="/cecy/mis-cursos"
           ></button>
         </div>
       </div>
