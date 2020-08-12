@@ -14,18 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::group(['prefix' => 'prueba'], function () {
-    Route::get('/', function () {
-        return "hello world";
-     });
-    Route::group(['middleware' => 'auth:api'], function () {
-
-    });
+Route::get('test', function () {
+    return "hola mundo";
 });
-
-
-
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
@@ -74,6 +65,7 @@ Route::group(['prefix' => 'tasks'], function () {
         Route::get('all', 'v0\TaskController@all');
         Route::get('catalogues', 'v0\TaskController@allCatalogues');
         Route::get('current_day', 'v0\TaskController@getCurrenDate');
+        Route::get('history', 'v0\TaskController@getHistory');
         Route::post('', 'v0\TaskController@store');
         Route::put('', 'v0\TaskController@update');
         Route::delete('{id}', 'v0\TaskController@destroy');
@@ -82,10 +74,13 @@ Route::group(['prefix' => 'tasks'], function () {
 
 Route::group(['prefix' => 'attendances'], function () {
     Route::group(['middleware' => 'auth:api'], function () {
-        Route::get('all', 'v0\AttendanceController@all');
+        Route::get('summary', 'v0\AttendanceController@summary');
+        Route::get('detail', 'v0\AttendanceController@detail');
         Route::get('{id}', 'v0\AttendanceController@show');
         Route::post('', 'v0\AttendanceController@store');
         Route::put('', 'v0\AttendanceController@update');
         Route::delete('{id}', 'v0\AttendanceController@destroy');
     });
 });
+
+Route::apiResource('institutions', 'v0\InstitutionController');
