@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('test', function () {
-    return "hola mundo";
-});
-
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
@@ -44,9 +40,9 @@ Route::group(['prefix' => 'auth'], function () {
     });
 });
 
+Route::get('', 'v0\CatalogueController@filter');
 Route::group(['prefix' => 'catalogues'], function () {
     Route::group(['middleware' => 'auth:api'], function () {
-        Route::get('', 'v0\CatalogueController@filter');
     });
 });
 
