@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
         $schedules = Schedule::all();
@@ -27,7 +22,7 @@ class ScheduleController extends Controller
 
     public function filter(Request $request)
     {
-        $schedules = Schedule::where('type', $request->type)->orderBy('name')->get();
+        $schedules = Schedule::where('name', $request->name)->orderBy('name')->get();
         return response()->json([
                 'data' => [
                     'type' => 'schedules',
@@ -36,17 +31,16 @@ class ScheduleController extends Controller
             , 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $data = $request->json()->all();
+        //$data = ["name" => $request->get("name")];
         
-        Schedule::create($data);
+        //echo $data;
+
+        Schedule::create([
+            "name" => $data["name"],
+        ]);
         return response()->json([
             'data' => [
                 'attributes' => $schedules,
@@ -55,27 +49,11 @@ class ScheduleController extends Controller
         ], 201);
     }
 
-
-
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Schedule $Schedule
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Schedule $Schedule)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Schedule $Schedule
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Schedule $Schedule)
     {
         //
