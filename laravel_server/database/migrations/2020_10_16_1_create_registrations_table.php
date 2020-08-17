@@ -18,10 +18,10 @@ class CreateRegistrationsTable extends Migration
             $table->string('date_registration', 50);
             $table->boolean('approved');
             $table->integer('number_registration');
-            $table->foreignId('state_id')->constrained();
-            $table->foreignId('type_id')->constrained('catalogues');
+            $table->foreignId('state_id')->constrained("ignug.states");
+            $table->foreignId('type_id')->constrained('ignug.catalogues');
             $table->foreignId('period_school_id')->constrained('periodschools');
-              });
+        });
     }
 
     /**

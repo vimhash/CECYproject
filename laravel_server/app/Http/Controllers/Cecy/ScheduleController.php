@@ -34,24 +34,31 @@ class ScheduleController extends Controller
     public function store(Request $request)
     {
         $data = $request->json()->all();
-        //$data = ["name" => $request->get("name")];
-        
-        //echo $data;
 
         Schedule::create([
             "name" => $data["name"],
         ]);
         return response()->json([
             'data' => [
-                'attributes' => $schedules,
+                'attributes' => $data,
                 'type' => 'schedules'
             ]
         ], 201);
     }
 
-    public function update(Request $request, Schedule $Schedule)
+    public function update(Request $request, $id, Schedule $Schedule)
     {
-        //
+        $data = $request->json()->all();
+
+        $schedule = Schedule::where('id', $id)->update([
+            'name'=>$data['name']
+        ]);
+        return response()->json([
+            'data' => [
+                'type' => 'schedules',
+                'attributes' => $data
+            ]
+        ], 200);
     }
 
     public function destroy(Schedule $Schedule)

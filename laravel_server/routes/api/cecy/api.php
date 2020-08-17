@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'schedules'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
-       Route::get('', 'Cecy\ScheduleController@index');
-       Route::get('filter', 'Cecy\ScheduleController@filter');
-       Route::post("", "Cecy\ScheduleController@store");
+      Route::apiResource('', 'Cecy\ScheduleController');
+      Route::get('filter', 'Cecy\ScheduleController@filter');
+      Route::put("{id}", "Cecy\ScheduleController@update");
    //});
 });
 

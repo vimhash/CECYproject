@@ -24,7 +24,7 @@ class CreatePeriodschoolsTable extends Migration
             $table->date('date_start_extraordinary');
             $table->date('date_end_extraordinary');
             $table->date('date_cancel_extraordinary');
-            $table->foreignId('state_id')->constrained();
+            $table->foreignId('state_id')->constrained("ignug.states");
           });
     }
 
