@@ -13,7 +13,7 @@ class CreateCareersTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('careers', function (Blueprint $table) {
+        Schema::connection('pgsql-ignug')->create('careers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('institution_id')->constrained();
             $table->string('code', 50)->nullable();;
@@ -36,6 +36,6 @@ class CreateCareersTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('careers');
+        Schema::connection('pgsql-ignug')->dropIfExists('careers');
     }
 }

@@ -24,8 +24,8 @@ class CreateInstitutionRequest extends FormRequest
     public function rules()
     {
         return [
-            'code' => ['required', 'min:4', 'max:200', 'unique:pgsql-cecy.institutions,code'],
-            'name' => ['required', 'min:4', 'max:200', 'unique:pgsql-cecy.institutions,name']
+            'code' => ['required', 'min:4', 'max:200', 'unique:pgsql-ignug.institutions,code'],
+            'name' => ['required', 'min:4', 'max:200', 'unique:pgsql-ignug.institutions,name']
         ];
     }
 }

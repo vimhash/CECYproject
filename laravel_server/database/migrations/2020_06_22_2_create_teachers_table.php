@@ -13,7 +13,7 @@ class CreateTeachersTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('teachers', function (Blueprint $table) {
+        Schema::connection('pgsql-ignug')->create('teachers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('authentication.users');
             $table->foreignId('state_id')->constrained();
@@ -28,6 +28,6 @@ class CreateTeachersTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('teachers');
+        Schema::connection('pgsql-ignug')->dropIfExists('teachers');
     }
 }

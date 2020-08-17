@@ -17,7 +17,7 @@ class CreateRolesTable extends Migration
             $table->id();
             $table->string('code', 20);
             $table->string('name', 100);
-            $table->foreignId('state_id')->constrained('cecy.states');
+            $table->foreignId('state_id')->constrained('ignug.states');
             $table->timestamps();
         });
     }

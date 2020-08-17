@@ -13,7 +13,7 @@ class CreateAttendancesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('attendances', function (Blueprint $table) {
+        Schema::connection('pgsql-ignug')->create('attendances', function (Blueprint $table) {
             $table->id();
             $table->morphs('attendanceable');
             $table->date('date');
@@ -30,6 +30,6 @@ class CreateAttendancesTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('attendances');
+        Schema::connection('pgsql-ignug')->dropIfExists('attendances');
     }
 }

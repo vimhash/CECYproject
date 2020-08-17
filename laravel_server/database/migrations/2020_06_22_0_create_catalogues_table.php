@@ -13,7 +13,7 @@ class CreateCataloguesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('catalogues', function (Blueprint $table) {
+        Schema::connection('pgsql-ignug')->create('catalogues', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('parent_code_id')->nullable();
             $table->foreign('parent_code_id')->references('id')->on('catalogues');
@@ -33,6 +33,6 @@ class CreateCataloguesTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('catalogues');
+        Schema::connection('pgsql-ignug')->dropIfExists('catalogues');
     }
 }

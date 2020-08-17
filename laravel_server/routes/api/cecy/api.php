@@ -14,5 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('catalogues', 'Cecy\CatalogueController');
-Route::get('catalogues-filter', 'Cecy\CatalogueController@filter');
+Route::group(['prefix' => 'schedules'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+       Route::get('', 'Cecy\ScheduleController@index');
+   //});
+});
+
+Route::group(['prefix' => 'catalogues'], function () {
+   // Route::group(['middleware' => 'auth:api'], function () {
+        Route::get('', 'Cecy\CatalogueController@index');
+        Route::get('filter', 'Cecy\CatalogueController@filter');
+        Route::post("", "Cecy\CatalogueController@store");
+   // });
+});

@@ -13,7 +13,7 @@ class CreateInstitutionsTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('institutions', function (Blueprint $table) {
+        Schema::connection('pgsql-ignug')->create('institutions', function (Blueprint $table) {
             $table->id();
             $table->string('code', 200)->nullable();
             $table->string('name', 200);
@@ -30,6 +30,6 @@ class CreateInstitutionsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('institutions');
+        Schema::connection('pgsql-ignug')->dropIfExists('institutions');
     }
 }

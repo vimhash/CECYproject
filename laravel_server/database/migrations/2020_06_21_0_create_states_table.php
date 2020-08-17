@@ -13,7 +13,7 @@ class CreateStatesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('states', function (Blueprint $table) {
+        Schema::connection('pgsql-ignug')->create('states', function (Blueprint $table) {
             $table->id();
             $table->string('code', 50);
             $table->string('name', 250);
@@ -29,6 +29,6 @@ class CreateStatesTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('states');
+        Schema::connection('pgsql-ignug')->dropIfExists('states');
     }
 }

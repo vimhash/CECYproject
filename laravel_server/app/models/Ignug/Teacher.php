@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Ignug;
 
 use App\User;
+use App\Models\Attendance\Attendance;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
@@ -10,10 +11,8 @@ class Teacher extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
 
-    protected $connection = 'pgsql-cecy';
-    protected $fillable = [
-
-    ];
+    protected $connection = 'pgsql-ignug';
+    protected $fillable = [];
 
     public function attendances()
     {
