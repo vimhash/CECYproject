@@ -19,6 +19,7 @@ Route::group(['prefix' => 'schedules'], function () {
        Route::get('', 'Cecy\ScheduleController@index');
        Route::get('filter', 'Cecy\ScheduleController@filter');
        Route::post("", "Cecy\ScheduleController@store");
+       Route::delete('{id}', "Cecy\ScheduleController@destroy");
    //});
 });
 

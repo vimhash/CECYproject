@@ -35,7 +35,7 @@ class ScheduleController extends Controller
     {
         $data = $request->json()->all();
         //$data = ["name" => $request->get("name")];
-        
+
         //echo $data;
 
         Schedule::create([
@@ -54,8 +54,14 @@ class ScheduleController extends Controller
         //
     }
 
-    public function destroy(Schedule $Schedule)
+    public function destroy($id)
     {
-        //
+        $schedules = Schedule::destroy($id);
+        return response()->json([
+            'data' => [
+                'attributes' => $id,
+                'type' => 'schedules'
+            ]
+        ], 201);
     }
 }
