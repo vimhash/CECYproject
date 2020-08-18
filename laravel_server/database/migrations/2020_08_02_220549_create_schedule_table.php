@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSchedulesTable extends Migration
+class CreateScheduleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateSchedulesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('schedules', function (Blueprint $table) {
-            $table->id();
-            $table->string("name", 150);
-            $table->timestamps();
+        Schema::connection('pgsql-cecy')->create('schedule', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name', 150);
         });
     }
 
@@ -27,6 +26,6 @@ class CreateSchedulesTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('schedules');
+        Schema::connection('pgsql-cecy')->dropIfExists('schedule');
     }
 }

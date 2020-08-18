@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'schedules'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
-       Route::delete('{id}', "Cecy\ScheduleController@destroy");
       Route::apiResource('', 'Cecy\ScheduleController');
       Route::get('filter', 'Cecy\ScheduleController@filter');
       Route::put("{id}", "Cecy\ScheduleController@update");
+      Route::delete('{id}', "Cecy\ScheduleController@destroy");
    //});
 });
 
