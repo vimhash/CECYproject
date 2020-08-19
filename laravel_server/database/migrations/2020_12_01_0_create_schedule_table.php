@@ -13,9 +13,12 @@ class CreateScheduleTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('schedule', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('schedules', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 150);
+            $table->foreignId('start_time')->constrained('ignug.catalogues');
+            $table->foreignId('end_time')->constrained('ignug.catalogues');
+            $table->foreignId('day')->constrained('ignug.catalogues');
         });
     }
 
@@ -26,6 +29,6 @@ class CreateScheduleTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('schedule');
+        Schema::connection('pgsql-cecy')->dropIfExists('schedules');
     }
 }
