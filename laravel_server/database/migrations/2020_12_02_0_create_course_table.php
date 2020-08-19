@@ -27,7 +27,7 @@ class CreateCourseTable extends Migration
             $table->boolean('for_free'); //gratuito
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('course_observation',225); //observacion_curso
-            $table->string('aim',225); //objetivo
+            $table->string('objective',225); //objetivo
             $table->foreignId('participant_type_id')->constrained('ignug.catalogues'); //id_tipo_participante
             $table->foreignId('area_id')->constrained('ignug.catalogues'); //id_area
             $table->foreignId('levels_id')->constrained('ignug.catalogues'); //id_niveles

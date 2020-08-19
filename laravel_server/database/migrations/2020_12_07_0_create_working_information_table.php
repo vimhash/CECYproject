@@ -13,19 +13,20 @@ class CreateWorkingInformationTable extends Migration
      */
     public function up()
     {
+        //informacion_laboral
         Schema::connection('pgsql-cecy')->create('working_information', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('company_name',150);
-            $table->string('company_address',150);
-            $table->string('company_email',150);
-            $table->string('company_phone',150);
-            $table->string('company_activity',150);
-            $table->string('company_summmary',255); 
-            $table->boolean('company_sponsor');
-            $table->string('sponsor_name',255); 
-            //$table->foreign('person_instructor_id')->references('')->on('');
-            $table->string('Knowledge_course',150);
-            $table->string('recomendation_course',150);
+            $table->id();
+            $table->string('company_name',150); //empresa_nombre
+            $table->string('company_address',150); //empresa_direccion
+            $table->string('company_email',150); //empresa_correo
+            $table->string('company_phone',150); //empresa_telefono
+            $table->string('company_activity',150); //empresa_actividad
+            $table->string('company_summmary',255); //empresa_resumen
+            $table->boolean('company_sponsor'); //empresa_auspiciado
+            $table->string('sponsor_name',255); //nombre_auspiciante
+            $table->foreignId('person_instructor_id')->constrained('authentication.users'); //id_persona_instructor
+            $table->string('knowledge_course',150); //conocimiento_curso
+            $table->string('recomendation_course',150); //recomendacion_curso
         });
     }
 
