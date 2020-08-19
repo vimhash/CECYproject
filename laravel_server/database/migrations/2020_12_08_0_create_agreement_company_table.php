@@ -14,7 +14,7 @@ class CreateAgreementCompanyTable extends Migration
     public function up()
     {
         //empresa_convenio
-        Schema::connection('pgsql-cecy')->create('agreement_company', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('agreement_companies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('agreement_id')->constrained('agreements'); //id_agreement
             $table->string('objective',255); //objetivo
@@ -32,6 +32,6 @@ class CreateAgreementCompanyTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('agreement_company');
+        Schema::connection('pgsql-cecy')->dropIfExists('agreement_companies');
     }
 }

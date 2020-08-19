@@ -14,7 +14,7 @@ class CreatePersonPrerequisitesCourseTable extends Migration
     public function up()
     {
         //persona_curso_prerequisitos
-        Schema::connection('pgsql-cecy')->create('teacheperson_prerequisites_coursers', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('person_prerequisites_courses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('person_participant_id')->constrained('authentication.users'); //id_persona_participante
             $table->foreignId('prerequisite_course_id')->constrained('courses'); //id_curso_prerequisito
@@ -32,6 +32,6 @@ class CreatePersonPrerequisitesCourseTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('person_prerequisites_course');
+        Schema::connection('pgsql-cecy')->dropIfExists('person_prerequisites_courses');
     }
 }
