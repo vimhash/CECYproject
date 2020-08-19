@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\Cecy;
 
 use App\Http\Controllers\Controller;
-use App\Models\Cecy\Agreements;
+use App\Models\Cecy\Agreement;
 use Illuminate\Http\Request;
 
 class AgreementsController extends Controller
 {
     public function index(Request $request)
     {
-        $agreements = Agreements::all();
+        $agreement = Agreement::all();
 
         return response()->json([
                 'data' => [
-                    'type' => 'agreements',
-                    'attributes' => $agreements
+                    'type' => 'agreement',
+                    'attributes' => $agreement
                 ]]
             , 200);
     }
