@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['prefix' => 'academic_record'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\AcademicRecordController');
+      Route::get('filter', 'Cecy\AcademicRecordController@filter');
+      Route::put("{id}", "Cecy\AcademicRecordController@update");
+      Route::delete('{id}', "Cecy\AcademicRecordController@destroy");
+   //});
+});
+
 //->ROUTE ERROR
 Route::group(['prefix' => 'agreement_company'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
