@@ -13,10 +13,11 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
+        //estudiantes
         Schema::connection('pgsql-cecy')->create('students', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            //$table->foreign('user_id')->references('')->on('');
-            $table->integer('person-type');
+            $table->id();
+            $table->foreignId('user_id')->constrained('authentication.users'); //id_usuario
+            $table->foreignId('person_type_id')->constrained('ignug.catalogues'); //id_tipo_persona
         });
     }
 
