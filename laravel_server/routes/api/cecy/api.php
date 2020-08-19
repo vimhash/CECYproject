@@ -153,7 +153,7 @@ Route::group(['prefix' => 'subtopics_course'], function () {
    //});
 });
 
-//->ROUTE ERROR
+
 Route::group(['prefix' => 'target_group'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\TargetGroupController');

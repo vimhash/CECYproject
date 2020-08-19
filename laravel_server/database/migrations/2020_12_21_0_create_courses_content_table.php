@@ -14,7 +14,7 @@ class CreateCoursesContentTable extends Migration
     public function up()
     {
         //contenido_cursos
-        Schema::connection('pgsql-cecy')->create('courses_content', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('courses_contents', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50); //nombre
             $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
@@ -28,6 +28,6 @@ class CreateCoursesContentTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('courses_content');
+        Schema::connection('pgsql-cecy')->dropIfExists('courses_contents');
     }
 }

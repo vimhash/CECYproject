@@ -14,7 +14,7 @@ class CreateTargetGroupTable extends Migration
     public function up()
     {
         //publico_objetivo
-        Schema::connection('pgsql-cecy')->create('target_group', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('target_groups', function (Blueprint $table) {
             $table->id();
             $table->foreignId('population_id')->constrained('ignug.catalogues'); //id_poblacion
             $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
@@ -28,6 +28,6 @@ class CreateTargetGroupTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('target_group');
+        Schema::connection('pgsql-cecy')->dropIfExists('target_groups');
     }
 }
