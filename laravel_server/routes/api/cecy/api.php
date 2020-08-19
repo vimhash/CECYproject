@@ -14,16 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'academic_record'], function () {
-   //Route::group(['middleware' => 'auth:api'], function () {
-      Route::apiResource('', 'Cecy\AcademicRecordController');
-      Route::get('filter', 'Cecy\AcademicRecordController@filter');
-      Route::put("{id}", "Cecy\AcademicRecordController@update");
-      Route::delete('{id}', "Cecy\AcademicRecordController@destroy");
-   //});
-});
-
-//->ROUTE ERROR
 Route::group(['prefix' => 'agreement_company'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\AgreementCompanyController');
@@ -60,7 +50,6 @@ Route::group(['prefix' => 'course_requirement'], function () {
    //});
 });
 
-//->ROUTE ERROR
 Route::group(['prefix' => 'course_content'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\CoursesContentController');
@@ -88,7 +77,6 @@ Route::group(['prefix' => 'detail_registration'], function () {
    //});
 });
 
-//->ROUTE ERROR
 Route::group(['prefix' => 'person_prerequisites_course'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\PersonPrerequisitesCourseController');
@@ -152,7 +140,6 @@ Route::group(['prefix' => 'school_period'], function () {
    //});
 });
 
-//->ROUTE ERROR
 Route::group(['prefix' => 'subtopics_course'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\SubtopicsCourseController');
