@@ -3,30 +3,30 @@
 namespace App\Http\Controllers\Cecy;
 
 use App\Http\Controllers\Controller;
-use App\Models\Cecy\ProposalCourses;
+use App\Models\Cecy\SchoolPeriod;
 use Illuminate\Http\Request;
 
-class ProposalCoursesController extends Controller
+class SchoolPeriodController extends Controller
 {
     public function index(Request $request)
     {
-        $proposal_courses = ProposalCourses::all();
+        $school_period = SchoolPeriod::all();
 
         return response()->json([
                 'data' => [
-                    'type' => 'proposal_courses',
-                    'attributes' => $proposal_courses
+                    'type' => 'school_period',
+                    'attributes' => $school_period
                 ]]
             , 200);
     }
 
     public function filter(Request $request)
     {
-        $proposal_courses = ProposalCourses::where('name', $request->name)->orderBy('name')->get();
+        $school_period = SchoolPeriod::where('name', $request->name)->orderBy('name')->get();
         return response()->json([
                 'data' => [
-                    'type' => 'proposal_courses',
-                    'attributes' => $proposal_courses
+                    'type' => 'school_period',
+                    'attributes' => $school_period
                 ]]
             , 200);
     }
@@ -35,27 +35,27 @@ class ProposalCoursesController extends Controller
     {
         $data = $request->json()->all();
 
-        ProposalCourses::create([
+        SchoolPeriod::create([
             "name" => $data["name"],
         ]);
         return response()->json([
             'data' => [
                 'attributes' => $data,
-                'type' => 'proposal_courses'
+                'type' => 'school_period'
             ]
         ], 201);
     }
 
-    public function update(Request $request, $id, ProposalCourses $ProposalCourses)
+    public function update(Request $request, $id, SchoolPeriod $SchoolPeriod)
     {
         $data = $request->json()->all();
 
-        $ProposalCourses = ProposalCourses::where('id', $id)->update([
+        $SchoolPeriod = SchoolPeriod::where('id', $id)->update([
             'name'=>$data['name']
         ]);
         return response()->json([
             'data' => [
-                'type' => 'proposal_courses',
+                'type' => 'school_period',
                 'attributes' => $data
             ]
         ], 200);
@@ -63,11 +63,11 @@ class ProposalCoursesController extends Controller
 
     public function destroy($id)
     {
-        $proposal_courses = ProposalCourses::destroy($id);
+        $school_period = SchoolPeriod::destroy($id);
         return response()->json([
             'data' => [
                 'attributes' => $id,
-                'type' => 'proposal_courses'
+                'type' => 'school_period'
             ]
         ], 201);
     }

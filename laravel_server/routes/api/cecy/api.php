@@ -79,6 +79,16 @@ Route::group(['prefix' => 'detail_registration'], function () {
    //});
 });
 
+//->ROUTE ERROR
+Route::group(['prefix' => 'person_prerequisites_course'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\PersonPrerequisitesCourseController');
+      Route::get('filter', 'Cecy\PersonPrerequisitesCourseController@filter');
+      Route::put("{id}", "Cecy\PersonPrerequisitesCourseController@update");
+      Route::delete('{id}', "Cecy\PersonPrerequisitesCourseController@destroy");
+   //});
+});
+
 Route::group(['prefix' => 'profile_instructor_course'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\ProfileInstructorCourseController');
@@ -97,11 +107,67 @@ Route::group(['prefix' => 'proposal_courses'], function () {
    //});
 });
 
+Route::group(['prefix' => 'proposed_requirement'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\ProposedRequirementController');
+      Route::get('filter', 'Cecy\ProposedRequirementController@filter');
+      Route::put("{id}", "Cecy\ProposedRequirementController@update");
+      Route::delete('{id}', "Cecy\ProposedRequirementController@destroy");
+   //});
+});
+
+Route::group(['prefix' => 'registration'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\RegistrationController');
+      Route::get('filter', 'Cecy\RegistrationController@filter');
+      Route::put("{id}", "Cecy\RegistrationController@update");
+      Route::delete('{id}', "Cecy\RegistrationController@destroy");
+   //});
+});
+
 Route::group(['prefix' => 'schedule'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\ScheduleController');
       Route::get('filter', 'Cecy\ScheduleController@filter');
       Route::put("{id}", "Cecy\ScheduleController@update");
       Route::delete('{id}', "Cecy\ScheduleController@destroy");
+   //});
+});
+
+Route::group(['prefix' => 'school_period'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\SchoolPeriodController');
+      Route::get('filter', 'Cecy\SchoolPeriodController@filter');
+      Route::put("{id}", "Cecy\SchoolPeriodController@update");
+      Route::delete('{id}', "Cecy\SchoolPeriodController@destroy");
+   //});
+});
+
+//->ROUTE ERROR
+Route::group(['prefix' => 'subtopics_course'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\SubtopicsCourseController');
+      Route::get('filter', 'Cecy\SubtopicsCourseController@filter');
+      Route::put("{id}", "Cecy\SubtopicsCourseController@update");
+      Route::delete('{id}', "Cecy\SubtopicsCourseController@destroy");
+   //});
+});
+
+//->ROUTE ERROR
+Route::group(['prefix' => 'target_group'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\TargetGroupController');
+      Route::get('filter', 'Cecy\TargetGroupController@filter');
+      Route::put("{id}", "Cecy\TargetGroupController@update");
+      Route::delete('{id}', "Cecy\TargetGroupController@destroy");
+   //});
+});
+
+Route::group(['prefix' => 'working_information'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\WorkingInformationController');
+      Route::get('filter', 'Cecy\WorkingInformationController@filter');
+      Route::put("{id}", "Cecy\WorkingInformationController@update");
+      Route::delete('{id}', "Cecy\WorkingInformationController@destroy");
    //});
 });

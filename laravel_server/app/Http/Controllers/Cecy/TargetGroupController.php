@@ -3,30 +3,30 @@
 namespace App\Http\Controllers\Cecy;
 
 use App\Http\Controllers\Controller;
-use App\Models\Cecy\ProposalCourses;
+use App\Models\Cecy\TargetGroup;
 use Illuminate\Http\Request;
 
-class ProposalCoursesController extends Controller
+class TargetGroupController extends Controller
 {
     public function index(Request $request)
     {
-        $proposal_courses = ProposalCourses::all();
+        $target_group = TargetGroup::all();
 
         return response()->json([
                 'data' => [
-                    'type' => 'proposal_courses',
-                    'attributes' => $proposal_courses
+                    'type' => 'target_group',
+                    'attributes' => $target_group
                 ]]
             , 200);
     }
 
     public function filter(Request $request)
     {
-        $proposal_courses = ProposalCourses::where('name', $request->name)->orderBy('name')->get();
+        $target_group = TargetGroup::where('name', $request->name)->orderBy('name')->get();
         return response()->json([
                 'data' => [
-                    'type' => 'proposal_courses',
-                    'attributes' => $proposal_courses
+                    'type' => 'target_group',
+                    'attributes' => $target_group
                 ]]
             , 200);
     }
@@ -35,27 +35,27 @@ class ProposalCoursesController extends Controller
     {
         $data = $request->json()->all();
 
-        ProposalCourses::create([
+        TargetGroup::create([
             "name" => $data["name"],
         ]);
         return response()->json([
             'data' => [
                 'attributes' => $data,
-                'type' => 'proposal_courses'
+                'type' => 'target_group'
             ]
         ], 201);
     }
 
-    public function update(Request $request, $id, ProposalCourses $ProposalCourses)
+    public function update(Request $request, $id, TargetGroup $TargetGroup)
     {
         $data = $request->json()->all();
 
-        $ProposalCourses = ProposalCourses::where('id', $id)->update([
+        $TargetGroup = TargetGroup::where('id', $id)->update([
             'name'=>$data['name']
         ]);
         return response()->json([
             'data' => [
-                'type' => 'proposal_courses',
+                'type' => 'target_group',
                 'attributes' => $data
             ]
         ], 200);
@@ -63,11 +63,11 @@ class ProposalCoursesController extends Controller
 
     public function destroy($id)
     {
-        $proposal_courses = ProposalCourses::destroy($id);
+        $target_group = TargetGroup::destroy($id);
         return response()->json([
             'data' => [
                 'attributes' => $id,
-                'type' => 'proposal_courses'
+                'type' => 'target_group'
             ]
         ], 201);
     }
