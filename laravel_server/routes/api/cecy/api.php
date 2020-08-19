@@ -14,19 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'schedules'], function () {
+Route::group(['prefix' => 'agreement_company'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\AgreementCompanyController');
+      Route::get('filter', 'Cecy\AgreementCompanyController@filter');
+      Route::put("{id}", "Cecy\AgreementCompanyController@update");
+      Route::delete('{id}', "Cecy\AgreementCompanyController@destroy");
+   //});
+});
+
+Route::group(['prefix' => 'agreements'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\AgreementsController');
+      Route::get('filter', 'Cecy\AgreementsController@filter');
+      Route::put("{id}", "Cecy\AgreementsController@update");
+      Route::delete('{id}', "Cecy\AgreementsController@destroy");
+   //});
+});
+
+Route::group(['prefix' => 'schedule'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\ScheduleController');
       Route::get('filter', 'Cecy\ScheduleController@filter');
       Route::put("{id}", "Cecy\ScheduleController@update");
       Route::delete('{id}', "Cecy\ScheduleController@destroy");
    //});
-});
-
-Route::group(['prefix' => 'catalogues'], function () {
-   // Route::group(['middleware' => 'auth:api'], function () {
-        Route::get('', 'Cecy\CatalogueController@index');
-        Route::get('filter', 'Cecy\CatalogueController@filter');
-        Route::post("", "Cecy\CatalogueController@store");
-   // });
 });
