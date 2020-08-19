@@ -13,9 +13,10 @@ class CreateAgreementTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('agreement', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name',150);
+        //convenios
+        Schema::connection('pgsql-cecy')->create('agreements', function (Blueprint $table) {
+            $table->id();
+            $table->string('name',150); //nombre
         });
     }
 
@@ -26,6 +27,6 @@ class CreateAgreementTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('agreement');
+        Schema::connection('pgsql-cecy')->dropIfExists('agreements');
     }
 }

@@ -13,12 +13,15 @@ class CreateDepartmentDataTable extends Migration
      */
     public function up()
     {
+        //datos_departamento
         Schema::connection('pgsql-cecy')->create('department_data', function (Blueprint $table) {
-            $table->bigIncrements('id'); //id departamento data
-            $table->string('name',150);
-            $table->string('address',150);
-            //$table->foreign('council_id')->references('')->on('');
-            //$table->foreign('person_in_charge_id')->references('')->on('');
+            $table->id();
+            $table->string('name',150); //nombre
+            $table->string('address',150); //direccion
+            $table->foreignId('person_in_charge_id')->constrained('authentication.users'); //id_persona_encargada
+            $table->foreignId('schedule_id')->constrained('schedules'); //id_horario
+
+            //$table->foreign('canton_id')->references('')->on(''); //id_canton
         });
     }
 
