@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetailCourseTable extends Migration
+class CreateDetailRegistrationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDetailCourseTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('detail_course', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('detail_registrations', function (Blueprint $table) {
             $table->bigIncrements('id');
             //$table->foreign('course_code_id')->references('course_code')->on('course');
             $table->date('start_date');
@@ -35,6 +35,6 @@ class CreateDetailCourseTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('detail_course');
+        Schema::connection('pgsql-cecy')->dropIfExists('detail_registrations');
     }
 }

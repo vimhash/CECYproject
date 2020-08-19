@@ -13,12 +13,13 @@ class CreateScheduleTable extends Migration
      */
     public function up()
     {
+        //horarios
         Schema::connection('pgsql-cecy')->create('schedules', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name', 150);
-            $table->foreignId('start_time')->constrained('ignug.catalogues');
-            $table->foreignId('end_time')->constrained('ignug.catalogues');
-            $table->foreignId('day')->constrained('ignug.catalogues');
+            $table->id();
+            $table->string('name', 150); //nombre
+            $table->foreignId('start_time')->constrained('ignug.catalogues'); //hora_inicio
+            $table->foreignId('end_time')->constrained('ignug.catalogues'); //hora_fin
+            $table->foreignId('day')->constrained('ignug.catalogues'); //dia
         });
     }
 

@@ -13,11 +13,12 @@ class CreateProposalCourseTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('proposal_course', function (Blueprint $table) {
+        //propuesta_cursos
+        Schema::connection('pgsql-cecy')->create('proposal_courses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            //$table->foreign(person_instructor_id')->references('')->on('');
-            //$table->foreign('course_code_id')->references('course_code')->on('course');
-            //$table->foreign('class_type_id')->references('')->on('');
+            $table->foreignId('person_instructor_id')->constrained('authentication.users'); //persona_instructor
+            $table->foreignId('course_code_id')->constrained('courses'); //codigo_curso
+            $table->foreignId('course_type_id')->constrained('ignug.catalogues'); //id_tipo_curso
         });
     }
 
@@ -28,6 +29,6 @@ class CreateProposalCourseTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('proposal_course');
+        Schema::connection('pgsql-cecy')->dropIfExists('proposal_courses');
     }
 }

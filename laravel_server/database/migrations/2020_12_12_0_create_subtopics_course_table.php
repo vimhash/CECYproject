@@ -13,11 +13,11 @@ class CreateSubtopicsCourseTable extends Migration
      */
     public function up()
     {
+        //subtemas_curso
         Schema::connection('pgsql-cecy')->create('subtopics_course', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 50);
-            $table->string('code_subtopics_course', 20);
-           // $table->foreign('course_id')->references('id')->on('course');
+            $table->string('name', 50); //nombre
+            $table->foreignId('course_code_id')->constrained('courses'); //codigo_curso
         });
     }
 

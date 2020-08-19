@@ -13,13 +13,13 @@ class CreateProfileInstructorCourseTable extends Migration
      */
     public function up()
     {
-        Schema::connection('pgsql-cecy')->create('profile_instructor_course', function (Blueprint $table) {
+        //perfil_instructor_cursos
+        Schema::connection('pgsql-cecy')->create('profile_instructor_courses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            //$table->foreign('course_code_id')->references('course_code')->on('course');
-            $table->string('required_knowledge', 150);
-            $table->string('required_experience', 150);
-            $table->string('required_skills', 150);
-
+            $table->foreignId('course_code_id')->constrained('courses'); //codigo_curso
+            $table->string('required_knowledge', 150); //conocimientos_requeridos
+            $table->string('required_experience', 150); //experiencias_requeridas
+            $table->string('required_skills', 150); //habilidades_requeridas
         });
     }
 
@@ -30,6 +30,6 @@ class CreateProfileInstructorCourseTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('profile_instructor_course');
+        Schema::connection('pgsql-cecy')->dropIfExists('profile_instructor_courses');
     }
 }

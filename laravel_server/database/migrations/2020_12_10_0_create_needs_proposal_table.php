@@ -13,10 +13,11 @@ class CreateNeedsProposalTable extends Migration
      */
     public function up()
     {
+        //necesidades_propuesta
         Schema::connection('pgsql-cecy')->create('needs_proposal', function (Blueprint $table) {
             $table->bigIncrements('id');
-            //$table->foreign(need_id')->references('')->on('');
-            //$table->foreign('course_code_id')->references('course_code')->on('course');
+            $table->foreignId('need_id')->constrained('ignug.catalogues'); //id_necesidad
+            $table->foreignId('course_code_id')->constrained('courses'); //codigo_curso
         });
     }
 
