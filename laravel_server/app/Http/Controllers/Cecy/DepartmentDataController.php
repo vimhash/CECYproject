@@ -3,30 +3,30 @@
 namespace App\Http\Controllers\Cecy;
 
 use App\Http\Controllers\Controller;
-use App\Models\Cecy\CourseInstructor;
+use App\Models\Cecy\DepartmentData;
 use Illuminate\Http\Request;
 
-class CourseInstructorController extends Controller
+class DepartmentDataController extends Controller
 {
     public function index(Request $request)
     {
-        $course_instructor = CourseInstructor::all();
+        $department_data = DepartmentData::all();
 
         return response()->json([
                 'data' => [
-                    'type' => 'course_instructor',
-                    'attributes' => $course_instructor
+                    'type' => 'department_data',
+                    'attributes' => $department_data
                 ]]
             , 200);
     }
 
     public function filter(Request $request)
     {
-        $course_instructor = CourseInstructor::where('name', $request->name)->orderBy('name')->get();
+        $department_data = DepartmentData::where('name', $request->name)->orderBy('name')->get();
         return response()->json([
                 'data' => [
-                    'type' => 'course_instructor',
-                    'attributes' => $course_instructor
+                    'type' => 'department_data',
+                    'attributes' => $department_data
                 ]]
             , 200);
     }
@@ -35,27 +35,27 @@ class CourseInstructorController extends Controller
     {
         $data = $request->json()->all();
 
-        CourseInstructor::create([
+        DepartmentData::create([
             "name" => $data["name"],
         ]);
         return response()->json([
             'data' => [
                 'attributes' => $data,
-                'type' => 'course_instructor'
+                'type' => 'department_data'
             ]
         ], 201);
     }
 
-    public function update(Request $request, $id, CourseInstructor $CourseInstructor)
+    public function update(Request $request, $id, DepartmentData $DepartmentData)
     {
         $data = $request->json()->all();
 
-        $CourseInstructor = CourseInstructor::where('id', $id)->update([
+        $DepartmentData = DepartmentData::where('id', $id)->update([
             'name'=>$data['name']
         ]);
         return response()->json([
             'data' => [
-                'type' => 'course_instructor',
+                'type' => 'department_data',
                 'attributes' => $data
             ]
         ], 200);
@@ -63,11 +63,11 @@ class CourseInstructorController extends Controller
 
     public function destroy($id)
     {
-        $course_instructor = CourseInstructor::destroy($id);
+        $department_data = DepartmentData::destroy($id);
         return response()->json([
             'data' => [
                 'attributes' => $id,
-                'type' => 'course_instructor'
+                'type' => 'department_data'
             ]
         ], 201);
     }

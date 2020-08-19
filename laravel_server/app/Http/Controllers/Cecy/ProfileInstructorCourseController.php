@@ -3,30 +3,30 @@
 namespace App\Http\Controllers\Cecy;
 
 use App\Http\Controllers\Controller;
-use App\Models\Cecy\CourseInstructor;
+use App\Models\Cecy\ProfileInstructorCourse;
 use Illuminate\Http\Request;
 
-class CourseInstructorController extends Controller
+class ProfileInstructorCourseController extends Controller
 {
     public function index(Request $request)
     {
-        $course_instructor = CourseInstructor::all();
+        $profile_instructor_course = ProfileInstructorCourse::all();
 
         return response()->json([
                 'data' => [
-                    'type' => 'course_instructor',
-                    'attributes' => $course_instructor
+                    'type' => 'profile_instructor_course',
+                    'attributes' => $profile_instructor_course
                 ]]
             , 200);
     }
 
     public function filter(Request $request)
     {
-        $course_instructor = CourseInstructor::where('name', $request->name)->orderBy('name')->get();
+        $profile_instructor_course = ProfileInstructorCourse::where('name', $request->name)->orderBy('name')->get();
         return response()->json([
                 'data' => [
-                    'type' => 'course_instructor',
-                    'attributes' => $course_instructor
+                    'type' => 'profile_instructor_course',
+                    'attributes' => $profile_instructor_course
                 ]]
             , 200);
     }
@@ -35,27 +35,27 @@ class CourseInstructorController extends Controller
     {
         $data = $request->json()->all();
 
-        CourseInstructor::create([
+        ProfileInstructorCourse::create([
             "name" => $data["name"],
         ]);
         return response()->json([
             'data' => [
                 'attributes' => $data,
-                'type' => 'course_instructor'
+                'type' => 'profile_instructor_course'
             ]
         ], 201);
     }
 
-    public function update(Request $request, $id, CourseInstructor $CourseInstructor)
+    public function update(Request $request, $id, ProfileInstructorCourse $ProfileInstructorCourse)
     {
         $data = $request->json()->all();
 
-        $CourseInstructor = CourseInstructor::where('id', $id)->update([
+        $ProfileInstructorCourse = ProfileInstructorCourse::where('id', $id)->update([
             'name'=>$data['name']
         ]);
         return response()->json([
             'data' => [
-                'type' => 'course_instructor',
+                'type' => 'profile_instructor_course',
                 'attributes' => $data
             ]
         ], 200);
@@ -63,11 +63,11 @@ class CourseInstructorController extends Controller
 
     public function destroy($id)
     {
-        $course_instructor = CourseInstructor::destroy($id);
+        $profile_instructor_course = ProfileInstructorCourse::destroy($id);
         return response()->json([
             'data' => [
                 'attributes' => $id,
-                'type' => 'course_instructor'
+                'type' => 'profile_instructor_course'
             ]
         ], 201);
     }
