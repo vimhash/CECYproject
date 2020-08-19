@@ -14,11 +14,11 @@ class CreateDetailRegistrationsTable extends Migration
     public function up()
     {
         Schema::connection('pgsql-cecy')->create('detail_registrations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            //$table->foreign('course_code_id')->references('course_code')->on('course');
-            $table->date('start_date');
-            $table->date('actual_finish_date');
-            //$table->foreign('person_instructor_id')->references('')->on('');
+            $table->id();
+            $table->foreignId('course_code_id')->constrained('courses'); //codigo_curso
+            $table->date('start_date'); //fecha_inicio
+            $table->date('real_finish_date'); //fecha_fin_real
+            $table->foreignId('person_instructor_id')->constrained('authentication.users'); //id_persona_instructor
             $table->string('course_stage',20);
             //$table->foreign('schedule_id')->references('')->on('schedule');
             $table->string('place_classes_are_held',50);
