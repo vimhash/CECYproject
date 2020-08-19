@@ -22,7 +22,7 @@ class AgreementsController extends Controller
 
     public function filter(Request $request)
     {
-        $agreements = Agreements::where('name', $request->name)->orderBy('name')->get();
+        $agreements = Agreement::where('name', $request->name)->orderBy('name')->get();
         return response()->json([
                 'data' => [
                     'type' => 'agreements',
@@ -35,7 +35,7 @@ class AgreementsController extends Controller
     {
         $data = $request->json()->all();
 
-        Agreements::create([
+        Agreement::create([
             "name" => $data["name"],
         ]);
         return response()->json([
@@ -46,11 +46,11 @@ class AgreementsController extends Controller
         ], 201);
     }
 
-    public function update(Request $request, $id, Agreements $Agreements)
+    public function update(Request $request, $id, Agreement $Agreement)
     {
         $data = $request->json()->all();
 
-        $Agreements = Agreements::where('id', $id)->update([
+        $Agreement = Agreement::where('id', $id)->update([
             'name'=>$data['name']
         ]);
         return response()->json([
@@ -63,7 +63,7 @@ class AgreementsController extends Controller
 
     public function destroy($id)
     {
-        $agreements = Agreements::destroy($id);
+        $agreements = Agreement::destroy($id);
         return response()->json([
             'data' => [
                 'attributes' => $id,

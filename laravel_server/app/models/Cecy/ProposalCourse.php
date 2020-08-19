@@ -8,7 +8,7 @@ use OwenIt\Auditing\Contracts\Auditable;
 class ProposalCourses extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
-
+ 
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
     ];

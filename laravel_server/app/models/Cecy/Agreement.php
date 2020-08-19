@@ -12,6 +12,5 @@ class Agreement extends Model implements Auditable
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
         'name',
-
     ];
 }

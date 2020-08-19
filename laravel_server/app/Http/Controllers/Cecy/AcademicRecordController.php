@@ -33,9 +33,11 @@ class AcademicRecordController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->json()->all();
 
-        AcademicRecord::create($data);
+        AcademicRecord::create([
+            "name" => $data["name"],
+        ]);
         return response()->json([
             'data' => [
                 'attributes' => $data,
