@@ -113,6 +113,7 @@ Route::group(['prefix' => 'proposal_courses'], function () {
    //});
 });
 
+
 Route::group(['prefix' => 'proposed_requirement'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\ProposedRequirementController');
