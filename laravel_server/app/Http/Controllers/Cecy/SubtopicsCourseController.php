@@ -33,11 +33,9 @@ class SubtopicsCourseController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        SubtopicsCourse::create([
-            "name" => $data["name"],
-        ]);
+        SubtopicsCourse::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class SubtopicsCourseController extends Controller
 
     public function update(Request $request, $id, SubtopicsCourse $SubtopicsCourse)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $SubtopicsCourse = SubtopicsCourse::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $SubtopicsCourse = SubtopicsCourse::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'subtopics_course',

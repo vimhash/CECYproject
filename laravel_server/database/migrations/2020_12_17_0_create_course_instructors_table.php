@@ -20,6 +20,7 @@ class CreateCourseInstructorsTable extends Migration
             $table->foreignId('person_instructor_id')->constrained('authentication.users'); //id_persona_instructor
             $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
             $table->foreignId('detail_registration_id')->constrained('detail_registrations'); //id_detalle_matricula            
+            $table->timestamps();
         });
     }
 

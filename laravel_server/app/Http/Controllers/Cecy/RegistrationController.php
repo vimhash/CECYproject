@@ -33,11 +33,9 @@ class RegistrationController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        Registration::create([
-            "name" => $data["name"],
-        ]);
+        Registration::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class RegistrationController extends Controller
 
     public function update(Request $request, $id, Registration $Registration)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $Registration = Registration::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $Registration = Registration::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'registration',

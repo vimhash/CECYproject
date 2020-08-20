@@ -33,11 +33,9 @@ class ProfileInstructorCourseController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        ProfileInstructorCourse::create([
-            "name" => $data["name"],
-        ]);
+        ProfileInstructorCourse::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class ProfileInstructorCourseController extends Controller
 
     public function update(Request $request, $id, ProfileInstructorCourse $ProfileInstructorCourse)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $ProfileInstructorCourse = ProfileInstructorCourse::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $ProfileInstructorCourse = ProfileInstructorCourse::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'profile_instructor_course',

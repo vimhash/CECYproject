@@ -33,11 +33,9 @@ class AgreementCompanyController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        AgreementCompany::create([
-            "name" => $data["name"],
-        ]);
+        AgreementCompany::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class AgreementCompanyController extends Controller
 
     public function update(Request $request, $id, AgreementCompany $AgreementCompany)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $AgreementCompany = AgreementCompany::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $AgreementCompany = AgreementCompany::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'agreement_company',

@@ -22,6 +22,7 @@ class CreateAgreementCompanyTable extends Migration
             $table->date('expiry_date'); //fecha_caducidad
             $table->string('representative_person',150); //persona_representante
             $table->string('social_reason',200); //razon_social
+            $table->timestamps();
         });
     }
 

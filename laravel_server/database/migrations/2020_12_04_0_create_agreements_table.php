@@ -17,6 +17,7 @@ class CreateAgreementsTable extends Migration
         Schema::connection('pgsql-cecy')->create('agreements', function (Blueprint $table) {
             $table->id();
             $table->string('name',150); //nombre
+            $table->timestamps();
         });
     }
 

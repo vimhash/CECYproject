@@ -18,6 +18,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('authentication.users'); //id_usuario
             $table->foreignId('person_type_id')->constrained('ignug.catalogues'); //id_tipo_persona
+            $table->timestamps();
         });
     }
 

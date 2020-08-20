@@ -33,11 +33,9 @@ class SchoolPeriodController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        SchoolPeriod::create([
-            "name" => $data["name"],
-        ]);
+        SchoolPeriod::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class SchoolPeriodController extends Controller
 
     public function update(Request $request, $id, SchoolPeriod $SchoolPeriod)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $SchoolPeriod = SchoolPeriod::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $SchoolPeriod = SchoolPeriod::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'school_period',

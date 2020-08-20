@@ -33,11 +33,9 @@ class ProposalCoursesController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        ProposalCourses::create([
-            "name" => $data["name"],
-        ]);
+        ProposalCourses::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class ProposalCoursesController extends Controller
 
     public function update(Request $request, $id, ProposalCourses $ProposalCourses)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $ProposalCourses = ProposalCourses::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $ProposalCourses = ProposalCourses::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'proposal_courses',

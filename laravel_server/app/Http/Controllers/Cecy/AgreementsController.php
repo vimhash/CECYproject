@@ -10,12 +10,12 @@ class AgreementsController extends Controller
 {
     public function index(Request $request)
     {
-        $agreement = Agreement::all();
+        $agreements = Agreement::all();
 
         return response()->json([
                 'data' => [
-                    'type' => 'agreement',
-                    'attributes' => $agreement
+                    'type' => 'agreements',
+                    'attributes' => $agreements
                 ]]
             , 200);
     }
@@ -33,11 +33,9 @@ class AgreementsController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        Agreement::create([
-            "name" => $data["name"],
-        ]);
+        Agreement::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class AgreementsController extends Controller
 
     public function update(Request $request, $id, Agreement $Agreement)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $Agreement = Agreement::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $Agreement = Agreement::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'agreements',

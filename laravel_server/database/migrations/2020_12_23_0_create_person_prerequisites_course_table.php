@@ -22,6 +22,7 @@ class CreatePersonPrerequisitesCourseTable extends Migration
             $table->string('certified_number', 155); //numero_certificado
             $table->date('withdrawal_date'); //fecha_retiro
             $table->boolean('withdrawn_certificate'); //certificado_retirado
+            $table->timestamps();
         });
     }
 

@@ -33,11 +33,9 @@ class TargetGroupController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        TargetGroup::create([
-            "name" => $data["name"],
-        ]);
+        TargetGroup::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class TargetGroupController extends Controller
 
     public function update(Request $request, $id, TargetGroup $TargetGroup)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $TargetGroup = TargetGroup::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $TargetGroup = TargetGroup::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'target_group',

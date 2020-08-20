@@ -33,11 +33,9 @@ class ScheduleController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        Schedule::create([
-            "name" => $data["name"],
-        ]);
+        Schedule::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class ScheduleController extends Controller
 
     public function update(Request $request, $id, Schedule $Schedule)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $schedule = Schedule::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $Schedule = Schedule::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'schedules',

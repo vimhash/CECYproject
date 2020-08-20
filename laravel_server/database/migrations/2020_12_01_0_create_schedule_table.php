@@ -20,6 +20,7 @@ class CreateScheduleTable extends Migration
             $table->foreignId('start_time')->constrained('ignug.catalogues'); //hora_inicio
             $table->foreignId('end_time')->constrained('ignug.catalogues'); //hora_fin
             $table->foreignId('day')->constrained('ignug.catalogues'); //dia
+            $table->timestamps();
         });
     }
 

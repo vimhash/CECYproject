@@ -29,6 +29,8 @@ class CreateDetailRegistrationsTable extends Migration
             $table->decimal('grade1', 3, 2); //nota1
             $table->decimal('grade2', 3, 2); //nota2
             $table->decimal('final_grade', 3, 2); //nota_final
+            $table->timestamps();
+            
             //$table->foreign('enrollment_id')->references('')->on('enrollment');
         });
     }

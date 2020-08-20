@@ -33,11 +33,9 @@ class WorkingInformationController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        WorkingInformation::create([
-            "name" => $data["name"],
-        ]);
+        WorkingInformation::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class WorkingInformationController extends Controller
 
     public function update(Request $request, $id, WorkingInformation $WorkingInformation)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $WorkingInformation = WorkingInformation::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $WorkingInformation = WorkingInformation::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'working_information',

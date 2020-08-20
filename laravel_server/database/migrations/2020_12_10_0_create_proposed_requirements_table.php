@@ -18,6 +18,7 @@ class CreateProposedRequirementsTable extends Migration
             $table->id();
             $table->foreignId('need_id')->constrained('ignug.catalogues'); //id_necesidad
             $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
+            $table->timestamps();
         });
     }
 

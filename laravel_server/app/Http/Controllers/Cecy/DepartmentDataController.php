@@ -33,11 +33,9 @@ class DepartmentDataController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        DepartmentData::create([
-            "name" => $data["name"],
-        ]);
+        DepartmentData::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class DepartmentDataController extends Controller
 
     public function update(Request $request, $id, DepartmentData $DepartmentData)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $DepartmentData = DepartmentData::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $DepartmentData = DepartmentData::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'department_data',

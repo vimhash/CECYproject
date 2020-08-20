@@ -33,11 +33,9 @@ class CoursesContentController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        CoursesContent::create([
-            "name" => $data["name"],
-        ]);
+        CoursesContent::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class CoursesContentController extends Controller
 
     public function update(Request $request, $id, CoursesContent $CoursesContent)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $CoursesContent = CoursesContent::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $CoursesContent = CoursesContent::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'course_content',

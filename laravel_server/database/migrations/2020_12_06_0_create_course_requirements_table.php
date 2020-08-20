@@ -19,6 +19,7 @@ class CreateCourseRequirementsTable extends Migration
             $table->foreignId('requirement_id')->constrained('courses'); //id_requisito
             $table->foreignId('course_id')->constrained('courses'); //id_curso
             $table->foreignId('course_requirement_type_id')->constrained('ignug.catalogues'); //id_tipo_requerimiento_curso
+            $table->timestamps();
             
             // $table->boolean('enrollement_payment');
             // $table->string('certificate_number',155);

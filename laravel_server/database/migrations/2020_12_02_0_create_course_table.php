@@ -47,6 +47,7 @@ class CreateCourseTable extends Migration
             $table->foreignId('specialty_id')->constrained('ignug.catalogues'); //id_especialidad
             $table->foreignId('academic_period_id')->constrained('ignug.catalogues'); //id_periodo_academico
             $table->string('setec_name',200); //nombre_setec
+            $table->timestamps();
             
             //$table->foreignId('mood_id')->constrained('ignug.catalogues');
             //$table->foreign('schedule_proposal_id')->references('id')->on('');

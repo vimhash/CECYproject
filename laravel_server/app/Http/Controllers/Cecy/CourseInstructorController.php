@@ -33,11 +33,9 @@ class CourseInstructorController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        CourseInstructor::create([
-            "name" => $data["name"],
-        ]);
+        CourseInstructor::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class CourseInstructorController extends Controller
 
     public function update(Request $request, $id, CourseInstructor $CourseInstructor)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $CourseInstructor = CourseInstructor::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $CourseInstructor = CourseInstructor::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'course_instructor',

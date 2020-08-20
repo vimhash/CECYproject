@@ -18,6 +18,7 @@ class CreateTargetGroupTable extends Migration
             $table->id();
             $table->foreignId('population_id')->constrained('ignug.catalogues'); //id_poblacion
             $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
+            $table->timestamps();
         });
     }
 

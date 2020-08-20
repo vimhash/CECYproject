@@ -26,7 +26,8 @@ class CreateSchoolPeriodsTable extends Migration
             $table->date('date_start_extraordinary'); //fecha_inicio_extraordinaria
             $table->date('date_end_extraordinary'); //fecha_fin_extraordinaria
             $table->date('date_cancel_extraordinary'); //fecha_anulacion_extraordinaria
-          });
+            $table->timestamps();
+        });
     }
 
     /**

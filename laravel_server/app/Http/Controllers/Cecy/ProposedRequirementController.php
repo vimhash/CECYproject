@@ -33,11 +33,9 @@ class ProposedRequirementController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        ProposedRequirement::create([
-            "name" => $data["name"],
-        ]);
+        ProposedRequirement::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class ProposedRequirementController extends Controller
 
     public function update(Request $request, $id, ProposedRequirement $ProposedRequirement)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $ProposedRequirement = ProposedRequirement::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $ProposedRequirement = ProposedRequirement::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'proposed_requirement',

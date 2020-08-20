@@ -17,6 +17,7 @@ class CreateLocationsTable extends Migration
         Schema::connection('pgsql-cecy')->create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('name',150); //nombre
+            $table->timestamps();
         });
     }
 

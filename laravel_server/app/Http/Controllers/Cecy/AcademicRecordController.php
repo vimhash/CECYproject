@@ -33,11 +33,9 @@ class AcademicRecordController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        AcademicRecord::create([
-            "name" => $data["name"],
-        ]);
+        AcademicRecord::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class AcademicRecordController extends Controller
 
     public function update(Request $request, $id, AcademicRecord $AcademicRecord)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $AcademicRecord = AcademicRecord::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $AcademicRecord = AcademicRecord::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'academic_record',

@@ -33,11 +33,9 @@ class DetailRegistrationController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        DetailRegistration::create([
-            "name" => $data["name"],
-        ]);
+        DetailRegistration::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class DetailRegistrationController extends Controller
 
     public function update(Request $request, $id, DetailRegistration $DetailRegistration)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $DetailRegistration = DetailRegistration::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $DetailRegistration = DetailRegistration::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'detail_registration',

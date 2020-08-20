@@ -20,6 +20,7 @@ class CreateProfileInstructorCourseTable extends Migration
             $table->string('required_knowledge', 150); //conocimientos_requeridos
             $table->string('required_experience', 150); //experiencias_requeridas
             $table->string('required_skills', 150); //habilidades_requeridas
+            $table->timestamps();
         });
     }
 

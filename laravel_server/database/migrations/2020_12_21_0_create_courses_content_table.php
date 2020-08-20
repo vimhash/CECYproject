@@ -18,6 +18,7 @@ class CreateCoursesContentTable extends Migration
             $table->id();
             $table->string('name', 50); //nombre
             $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
+            $table->timestamps();
         });
     }
 

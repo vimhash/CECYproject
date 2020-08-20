@@ -33,11 +33,9 @@ class PersonPrerequisitesCourseController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        PersonPrerequisitesCourse::create([
-            "name" => $data["name"],
-        ]);
+        PersonPrerequisitesCourse::create($data);
         return response()->json([
             'data' => [
                 'attributes' => $data,
@@ -48,11 +46,9 @@ class PersonPrerequisitesCourseController extends Controller
 
     public function update(Request $request, $id, PersonPrerequisitesCourse $PersonPrerequisitesCourse)
     {
-        $data = $request->json()->all();
+        $data = $request->all();
 
-        $PersonPrerequisitesCourse = PersonPrerequisitesCourse::where('id', $id)->update([
-            'name'=>$data['name']
-        ]);
+        $PersonPrerequisitesCourse = PersonPrerequisitesCourse::where('id', $id)->update($data);
         return response()->json([
             'data' => [
                 'type' => 'person_prerequisites_course',
