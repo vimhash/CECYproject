@@ -8,16 +8,16 @@ import { environment } from "../../../environments/environment";
 export class CecyServiceService {
   headers: HttpHeaders;
 
-  constructor(private _http: HttpClient) {}
-  accessToken = "pruebas";
+  constructor(private _http: HttpClient) {
+    localStorage.setItem("accessToken", "pruebas")
+  }
 
   get(url: string) {
     this.headers = new HttpHeaders()
       .set("X-Requested-With", "XMLHttpRequest")
       .append("Content-Type", "application/json")
       .append("Accept", "application/json")
-      .append("Authorization", "Bearer " + this.accessToken);
-    // .append('Authorization', 'Bearer ' + localStorage.getItem('accessToken').replace('"', ''));
+    .append('Authorization', 'Bearer ' + localStorage.getItem('accessToken').replace('"', ''));
     url = environment.API_URL_CECY + url;
     return this._http.get(url, { headers: this.headers });
   }
@@ -27,11 +27,10 @@ export class CecyServiceService {
       .set("X-Requested-With", "XMLHttpRequest")
       .append("Content-Type", "application/json")
       .append("Accept", "application/json")
-      .append("Authorization", "Bearer " + this.accessToken);
-    //   .append(
-    //     "Authorization",
-    //     "Bearer " + localStorage.getItem("accessToken").replace('"', "")
-    //   );
+      .append(
+        "Authorization",
+        "Bearer " + localStorage.getItem("accessToken").replace('"', "")
+      );
     url = environment.API_URL_CECY + url;
     return this._http.post(url, data, { headers: this.headers });
   }
@@ -41,11 +40,10 @@ export class CecyServiceService {
       .set("X-Requested-With", "XMLHttpRequest")
       .append("Content-Type", "application/json")
       .append("Accept", "application/json")
-      .append("Authorization", "Bearer " + this.accessToken);
-    //   .append(
-    //     "Authorization",
-    //     "Bearer " + localStorage.getItem("accessToken").replace('"', "")
-    //   );
+      .append(
+        "Authorization",
+        "Bearer " + localStorage.getItem("accessToken").replace('"', "")
+      );
     url = environment.API_URL_CECY + url;
     return this._http.put(url, data, { headers: this.headers });
   }
@@ -55,11 +53,10 @@ export class CecyServiceService {
       .set("X-Requested-With", "XMLHttpRequest")
       .append("Content-Type", "application/json")
       .append("Accept", "application/json")
-      .append("Authorization", "Bearer " + this.accessToken);
-    //   .append(
-    //     "Authorization",
-    //     "Bearer " + localStorage.getItem("accessToken").replace('"', "")
-    //   );
+      .append(
+        "Authorization",
+        "Bearer " + localStorage.getItem("accessToken").replace('"', "")
+      );
     url = environment.API_URL_CECY + url;
     return this._http.delete(url, { headers: this.headers });
   }
