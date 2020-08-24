@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer2 } from "@angular/core";
 import { AppMainComponent } from "../../layouts/full/app.main.component";
-import { SettingsService } from "../../services/matriculacion/settings.service";
+import { SettingsService } from "../../services/ignug/settings.service";
 import { User } from "../../models/authentication/user";
 import { Role } from "../../models/authentication/role";
 
@@ -22,32 +22,27 @@ export class AppMenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    // if (this.role.code === "1") {
+    // if (this.role.code === '1') {
     this.model = [
       // {label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/']},
       // {label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/dashboard/coordinador']},
-      // {
-      //   label: "Asistencia",
-      //   icon: "pi pi-fw pi-calendar",
-      //   routerLink: ["/administrativo/asistencia-laboral"],
-      // },
       {
         label: "CEC-Y",
         icon: "pi pi-fw pi-calendar",
-        // routerLink: ["/cecy/dashboard/participantes"],
         items: [
           {
             label: "Participantes",
-            icon: "pi pi-fw pi-th-large",
+            icon: "pi pi-fw pi-clone",
             routerLink: ["/cecy/dashboard/participantes"],
           },
           {
-            label: "Forms",
-            icon: "pi pi-fw pi-file",
+            label: "Docentes",
+            icon: "pi pi-fw pi-sign-in",
             routerLink: ["/cecy/dashboard/docentes"],
           },
         ],
       },
+
       {
         label: "Components",
         icon: "pi pi-fw pi-star",
@@ -213,12 +208,12 @@ export class AppMenuComponent implements OnInit {
         {
           label: "Asistencia",
           icon: "pi pi-fw pi-calendar",
-          routerLink: ["/administrativo/asistencia-laboral"],
+          routerLink: ["/attendance/asistencia-laboral"],
         },
         {
           label: "Administración Asistencia",
           icon: "pi pi-fw pi-clock",
-          routerLink: ["/administrativo/administracion-asistencia-laboral"],
+          routerLink: ["/attendance/administracion-asistencia-laboral"],
         },
       ];
     }
@@ -227,12 +222,12 @@ export class AppMenuComponent implements OnInit {
         {
           label: "Asistencia",
           icon: "pi pi-fw pi-calendar",
-          routerLink: ["/administrativo/asistencia-laboral"],
+          routerLink: ["/attendance/asistencia-laboral"],
         },
         {
           label: "Administración Asistencia",
           icon: "pi pi-fw pi-clock",
-          routerLink: ["/administrativo/administracion-asistencia-laboral"],
+          routerLink: ["/attendance/administracion-asistencia-laboral"],
         },
       ];
     }
@@ -241,12 +236,12 @@ export class AppMenuComponent implements OnInit {
         {
           label: "Asistencia",
           icon: "pi pi-fw pi-calendar",
-          routerLink: ["/administrativo/asistencia-laboral"],
+          routerLink: ["/attendance/asistencia-laboral"],
         },
         {
           label: "Administración Asistencia",
           icon: "pi pi-fw pi-clock",
-          routerLink: ["/administrativo/administracion-asistencia-laboral"],
+          routerLink: ["/attendance/administracion-asistencia-laboral"],
         },
       ];
     }
@@ -255,12 +250,12 @@ export class AppMenuComponent implements OnInit {
         {
           label: "Asistencia",
           icon: "pi pi-fw pi-calendar",
-          routerLink: ["/administrativo/asistencia-laboral"],
+          routerLink: ["/attendance/asistencia-laboral"],
         },
         {
           label: "Administración Asistencia",
           icon: "pi pi-fw pi-clock",
-          routerLink: ["/administrativo/administracion-asistencia-laboral"],
+          routerLink: ["/attendance/administracion-asistencia-laboral"],
         },
       ];
     }
@@ -269,7 +264,7 @@ export class AppMenuComponent implements OnInit {
         {
           label: "Asistencia",
           icon: "pi pi-fw pi-calendar",
-          routerLink: ["/administrativo/asistencia-laboral"],
+          routerLink: ["/attendance/asistencia-laboral"],
         },
       ];
     }
@@ -278,7 +273,7 @@ export class AppMenuComponent implements OnInit {
         {
           label: "Asistencia",
           icon: "pi pi-fw pi-calendar",
-          routerLink: ["/administrativo/asistencia-laboral"],
+          routerLink: ["/attendance/asistencia-laboral"],
         },
       ];
     }
