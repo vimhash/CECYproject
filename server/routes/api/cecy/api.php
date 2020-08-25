@@ -41,6 +41,13 @@ Route::group(['prefix' => 'agreements'], function () {
    //});
 });
 
+//PREGUNTAR SI ESTA BIEN :V JAJA
+Route::group(['prefix' => 'catalogues'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+       Route::get('', 'Ignug\CatalogueController@filter');
+   //});
+});
+
 Route::group(['prefix' => 'courses'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\CourseController');
