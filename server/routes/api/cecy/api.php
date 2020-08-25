@@ -41,6 +41,15 @@ Route::group(['prefix' => 'agreements'], function () {
    //});
 });
 
+Route::group(['prefix' => 'courses'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\CourseController');
+      Route::get('filter', 'Cecy\CourseController@filter');
+      Route::put("{id}", "Cecy\CourseController@update");
+      Route::delete('{id}', "Cecy\CourseController@destroy");
+   //});
+});
+
 Route::group(['prefix' => 'course_instructor'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\CourseInstructorController');
