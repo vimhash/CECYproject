@@ -738,7 +738,768 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1,
         ]);
 
+        //catalogo specialty
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 1,
+            'code' => 'A.1',
+            'name' => 'Administración General (Pública, Empresas, Microempresas, Cooperativas, Aduanera, Agrícola, Agropecuaria, Agroindustrial, Bancaria, Financiera, Forestal, Hospitalaria, Hotelera, Inmobiliaria, Pesquera, Minera, Etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 1,
+            'code' => 'A.2',
+            'name' => 'Gestión del Talento Humano (Manejo de Personal, Desempeño, Motivación, Liderazgo, Coaching, Trabajo en Equipo, Selección por Competencias, Plan Interno de Carrera, Comunicación Organizacional, Profesiogramas)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 1,
+            'code' => 'A.3',
+            'name' => 'Administración Contable y de Costos (Matemática Financiera, Estadística, Tributaria, Normas de Contabilidad, Auditorías Financieras, Contables, de Costos y Relacionadas, Normas Internacionales de Información Financiera Niif)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 1,
+            'code' => 'A.4',
+            'name' => 'Evaluación de Proyectos (Económica, Financiera)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 1,
+            'code' => 'A.5',
+            'name' => 'Atención y Servicios de Oficina: Secretariado (Operación de Máquinas de Oficina, Taquigrafía, Lectura Rápida, Oratoria, Redacción Y Ortografía), Recepción, Servicio al Cliente, Archivo, Conserjería, Limpieza. Relaciones Humanas',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 1,
+            'code' => 'A.6',
+            'name' => 'Legislación (Aduanera, Negociación, Mediación, Arbitraje, Patentes, Propiedad Intelectual, Tributaria, Laboral, Previsión Social, Agrícola, Financiera, Etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 1,
+            'code' => 'A.7',
+            'name' => 'Gestión de la Calidad (Normas, Auditorías de Sistemas de Calidad y Mejoramiento Continuo)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        //B
 
+
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 3,
+            'code' => 'C.1',
+            'name' => 'Sanidad Pecuaria (Veterinaria)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 3,
+            'code' => 'C.6',
+            'name' => 'Esquila (Ovejas, Conejos, Llamas, Cabras)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 3,
+            'code' => 'C.9',
+            'name' => 'Ganadería Mayor (Bovinos-leche/carne-,Ovino, Caprino, Camélido, Equinos)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 3,
+            'code' => 'C.10',
+            'name' => 'Ganadería Menor (Cuy, Conejo, Aves, Abejas, Anfibios, Moluscos, Porcinos, Anélidos)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 3,
+            'code' => 'C.11',
+            'name' => 'Helicicultura (Caracoles)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 3,
+            'code' => 'C.12',
+            'name' => 'Inseminación Artificial y Técnicas de Manejo Genético',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 3,
+            'code' => 'C.15',
+            'name' => 'Producción de Pastos',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 3,
+            'code' => 'C.16',
+            'name' => 'Alimentación de Rumiantes',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 3,
+            'code' => 'C.17',
+            'name' => 'Alimentación de Monogástricos',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.1',
+            'name' => 'Elaboración, Tecnología y Producción de Alimentos (Higiene, Manipulación, Seguridad Alimentaria, Empaques, Etiquetado y Trazabilidad); y, Hazard.',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.2',
+            'name' => 'Banquetería',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.3',
+            'name' => 'Cocina Nacional e Internacional (Chef, Cocinero)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.4',
+            'name' => 'Panadería y Pastelería',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.5',
+            'name' => 'Repostería y Confitería',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.6',
+            'name' => 'Catering y Servicio de Bar y Comedores (Barman, Mesero)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.7',
+            'name' => 'Servicio de Recepción, Limpieza, Pisos y Afines (Recepcionista, Ama de Llaves, Botones, Camarera de Pisos, Encargado de Mantenimiento)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.8',
+            'name' => 'Turismo (Ecoturismo, Agroturismo, Etnoturismo, Turismo de Aventura, Turismo Comunitario, Guía Nacional, Guía Especializado, Información, Organización y Coordinación de Eventos)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.9',
+            'name' => 'Servicio de Agencias de Viaje (Operación, Transporte, Seguridad, Ventas, Operadores, Reservas)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 4,
+            'code' => 'D.10',
+            'name' => 'Diversificación de destinos y Desarrollo de Inclusión Comunitaria',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        //E
+
+
+
+
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.1',
+            'name' => 'Marketing y Ventas (Negociación, Comercialización, Marketing y Ventas de Productos y Servicios)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.2',
+            'name' => 'Comercio Exterior y Cambios',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.3',
+            'name' => 'Comercio y Distribución Interna',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.4',
+            'name' => 'Economía Aplicada',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.5',
+            'name' => 'Crédito y Cobranzas',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.6',
+            'name' => 'Detección de Circulante y Documentos Falsos',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.7',
+            'name' => 'Negocios y Comercio Electrónico',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.8',
+            'name' => 'Mercado Financiero (Bolsa de Valores, Capitales, Monetarios, Futuros, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.9',
+            'name' => 'Presupuestos y Flujo de Caja',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.10',
+            'name' => 'Riesgo Financiero (Análisis, Solvencia, Liquidez, Endeudamiento, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.11',
+            'name' => 'Seguros (Análisis, Costos, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 6,
+            'code' => 'F.12',
+            'name' => 'Trámites de exportación e Importación',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.1',
+            'name' => 'Albañilería',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.2',
+            'name' => 'Cañonería (Conducción de Agua, Gas, Petróleo)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.3',
+            'name' => 'Carpintería de Obra Gruesa (Paneles, Puertas, Vigas, Ventanas)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.4',
+            'name' => 'Gasfitería',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.5',
+            'name' => 'Carpintería y Estructura Metálica',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.6',
+            'name' => 'Hojalatería (Bajadas de Agua, Canales)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.7',
+            'name' => 'Instalaciones Sanitarias (Alcantarillado, Gasfitería)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.8',
+            'name' => 'Mantenimiento de Edificios y Acabados',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.9',
+            'name' => 'Obras (Caminos, Puentes, Túneles)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.10',
+            'name' => 'Enfierradura',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.11',
+            'name' => 'Recubrimiento de Interiores y Exteriores (Pintura, Alfombra, Azulejos)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.13',
+            'name' => 'Tecnología de la Construcción (Planos, Materiales, Estructuras, Equipos, Etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.14',
+            'name' => 'Arquitectura y Urbanismo (Proyectos, Restauración de Edificios y Vivienda)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.15',
+            'name' => 'Dibujo Técnico',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.16',
+            'name' => 'Construcciones Rurales',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 7,
+            'code' => 'H.17',
+            'name' => 'Plomería',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        //I
+
+
+
+        //J
+
+
+
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.1',
+            'name' => 'Electricidad Domiciliaria (Reparación, Manejo y Mantenimiento)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.2',
+            'name' => 'Electricidad  Automotriz',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.3',
+            'name' => 'Electrodomésticos (Reparación, Manejo y Mantenimiento)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.4',
+            'name' => 'Electromecánica (Instalación y Mantenimiento de Motores Eléctricos)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.5',
+            'name' => 'Electrónica Industrial',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.6',
+            'name' => 'Electrotecnia y Luminotecnia (Uso Industrial y Artístico del Sistema de Alumbrado, Voltaje, Resistencia)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.7',
+            'name' => 'Instalación Telefónica (Reparación, Manejo y mantenimiento)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.8',
+            'name' => 'Redes Eléctricas (Baja, Media y Alta Tensión, Instalaciones)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.9',
+            'name' => 'Electricidad Industrial (Reparación, Manejo y Mantenimiento)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 10,
+            'code' => 'K.10',
+            'name' => 'Electrónica Automotriz (Inyección)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        //L
+
+
+
+
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.2',
+            'name' => 'Medios de Comunicación Social (Televisión, Radio, Prensa Escrita)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.3',
+            'name' => 'Medios Audiovisuales (Videos, Películas, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.4',
+            'name' => 'Métodos y Técnicas de Promoción y Difusión',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.5',
+            'name' => 'Traducción e Interpretación',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.6',
+            'name' => 'Lenguaje (Señas, Tacto, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.8',
+            'name' => 'Grabados y Litografía',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.9',
+            'name' => 'Gráfica (Impresión, Encuadernación, Diseño y Diagramación Gráfica, Fotomecánica Full Color, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.10',
+            'name' => 'Periodismo e Investigación (Radio, TV. y Prensa)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.11',
+            'name' => 'Edición',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 12,
+            'code' => 'M.12',
+            'name' => 'Fotografía (Digital y No Digital)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        //N
+
+
+
+        //O
+
+
+
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.1',
+            'name' => 'Petróleo (Exploración, Extracción, Procesamiento, Tratamiento y Distribución)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.3',
+            'name' => 'Anticorrosivos (Cromado, Niquelado, Plastificado)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.4',
+            'name' => 'Automatización Industrial y Robótica',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.5',
+            'name' => 'Madera (Diseño, Técnicas, Procesamiento y Acabado, Muebles de Hogar, Cocina, Oficina, Industria de la Construcción, Puertas, Ventanas, Pallets)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.6',
+            'name' => 'Cemento (Materiales de Construcción )',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.7',
+            'name' => 'Cerámica y Vidrio (Diseño, Técnicas, Tallado, Procesamiento y Acabado, Diversificación en la Concentración del Sector Cerámico)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.8',
+            'name' => 'Cuero y Calzado (Diseño, Técnicas y Acabado)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.9',
+            'name' => 'Envases y Embalajes',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.10',
+            'name' => 'Refrigeración (Cadena de Frio)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.11',
+            'name' => 'Textil (Diseño, Patronaje y Confección de Prendas, Transformación de Plantillas, Costura, Sastrería)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.12',
+            'name' => 'Tapicería',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.14',
+            'name' => 'Seguridad, Prevención de Riesgos e Higiene Industrial',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.15',
+            'name' => 'Industria Química (Galvanoplastia, Tinturas, Abonos, Plaguicidas, Barnices,  Lacas, Jabones, Cosméticos, Farmoquímica, Petroquímica, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.16',
+            'name' => 'Lavandería, Tintorería y Planchado Industrial',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.17',
+            'name' => 'Lubricantes',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.19',
+            'name' => 'Calderos (Operación, Mantenimiento y Reparación)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.20',
+            'name' => 'Operación, Reparación y Mantenimiento de Máquinas y Equipos (Agrícola, Agropecuario, Forestal, de Construcción, Textil, Minera, Pesquera, Médicos, de Comunicación, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.21',
+            'name' => 'Papeles y Cartones',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.23',
+            'name' => 'Plásticos y Cauchos',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.24',
+            'name' => 'Prácticas de Manufactura (Estrategia de Producción y Gestión de Materia Prima, Programas de Diversificación Sectorial, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 15,
+            'code' => 'P.25',
+            'name' => 'Energía Renovable: Bioethanol (Materia Prima: Caña de Azúcar, Rechazo de Banano, Sorgo Dulce, Algas, Desechos, Bioethanol Artesanal, etc.), Biodiesel (Materia Prima: Aceite de Palma Africana, Piñón, Colza, Soya, Biodiesel Artesanal), Biogás (Materia Prima: Residuos Orgánicos), Extracción de Alcohol Artesanal.',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        //Q
+
+
+
+
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 17,
+            'code' => 'R.12',
+            'name' => 'Peluquería y Belleza, Barbería y Estilismo',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 17,
+            'code' => 'R.13',
+            'name' => 'Cosmetología',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 17,
+            'code' => 'R.14',
+            'name' => 'Artesanía (Cuero, Madera, Vidrio, Piedras, Metales, Telas, Cerámica, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 18,
+            'code' => 'S.1',
+            'name' => 'Gestión Cultural',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 18,
+            'code' => 'S.4',
+            'name' => 'Género',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 18,
+            'code' => 'S.6',
+            'name' => 'Salud y Medicina (Medicina General Tradicional y Alternativa, Nutrición, Tratamientos y Atención Infantil, Familiar, Ocupacional, Primeros Auxilios, Emergencias y Catástrofes, etc.)',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 18,
+            'code' => 'S.10',
+            'name' => 'Servicios Domésticos',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 18,
+            'code' => 'S.12',
+            'name' => 'Servicios de Seguridad Física, Guardianía',
+            'type' => 'Especialiadad',
+            'state_id' => 1,
+        ]);
+        //T
+
+
+    
+
+        // roles
         factory(Role::class)->create([
             'code' => '1',
             'name' => 'DOCENTE',
@@ -758,7 +1519,7 @@ class DatabaseSeeder extends Seeder
             'system_id' => 1,
             'state_id' => 1,
         ]);
-        
+
         //USERS CECY START
         factory(User::class)->create([
             'identification' => '1716346802',
