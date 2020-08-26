@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Ignug\State;
 use App\Models\Attendance\Catalogue as AttendanceCatalogue;
 use App\Models\Ignug\Catalogue as IgnugCatalogue;
+use App\Models\Cecy\Catalogue as CecyCatalogue;
 use App\Role;
 use App\User;
 use \App\Models\Ignug\Teacher;
@@ -501,15 +502,65 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //catalogoCECY
-        factory(App\Models\Cecy\Catalogue::class)->create([
+        //Tipo_participante
+        factory(CecyCatalogue::class)->create([
             'name' => 'Interno',
             'type' => 'participant_type',
             'state_id' => 1,
         ]);
-        factory(App\Models\Cecy\Catalogue::class)->create([
+        factory(CecyCatalogue::class)->create([
             'name' => 'Externo',
             'type' => 'participant_type',
             'state_id' => 1,
+        ]);
+        //catalogue Modalidad
+        factory(IgnugCatalogue::class)->create([
+          'name' => 'PRESENCIAL',
+          'type' => 'Modality',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'name' => 'DUAL',
+          'type' => 'Modality',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'name' => 'VIRTUAL',
+          'type' => 'Modality',
+          'state_id' => 1,
+        ]);
+        //catalogue Areas
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'A',
+          'name' => 'ADMINISTRACIÓN Y LEGISLACIÓN',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'B',
+          'name' => 'AGRONOMÍA',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'C',
+          'name' => 'ZOOTECNIA',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'D',
+          'name' => 'ALIMENTACIÓN, GASTRONOMÍA Y TURISMO',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+
+
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'E',
+          'name' => 'TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN',
+          'type' => 'Areas',
+          'state_id' => 1,
         ]);
 
         factory(Role::class)->create([
@@ -587,7 +638,7 @@ class DatabaseSeeder extends Seeder
         });
         // factory(App\Models\JobBoard::class, 10)->create();
 
-        /*factory(App\Models\Ignug\Catalogue::class)->create([
+        factory(App\Models\Ignug\Catalogue::class)->create([
             'course_code' => 'YEC-ST',//startted
             'course_name' => 'STARTER',
             'cost' => '',
@@ -600,8 +651,9 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1,
             'course_observation' => '',
             'objective' => '',
-            'participant_type_id' =>
-        ]);*/
+            'participant_type_id' => 63,
+            'area_id' =>
+        ]);
 
         /*
             drop schema if exists attendance cascade;
