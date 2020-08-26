@@ -22,15 +22,15 @@ class CreateCourseTable extends Migration
             $table->text('photo'); //foto
             $table->string('resumen',225); //resumen
             $table->integer('lasting_hours'); //duracion_horas
-            $table->foreignId('modality_id')->constrained('ignug.catalogues'); //id_modalidad
+            $table->foreignId('modality_id')->constrained('cecy.catalogues'); //id_modalidad
             $table->integer('course_capacity_size'); //capacidad_del_curso
             $table->boolean('for_free'); //gratuito
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('course_observation',225); //observacion_curso
             $table->string('objective',225); //objetivo
-            $table->foreignId('participant_type_id')->constrained('ignug.catalogues'); //id_tipo_participante
-            $table->foreignId('area_id')->constrained('ignug.catalogues'); //id_area
-            $table->foreignId('levels_id')->constrained('ignug.catalogues'); //id_niveles
+            $table->foreignId('participant_type_id')->constrained('cecy.catalogues'); //id_tipo_participante
+            $table->foreignId('area_id')->constrained('cecy.catalogues'); //id_area
+            $table->foreignId('levels_id')->constrained('cecy.catalogues'); //id_niveles
             $table->string('required_installing_sources',150); //recursos_requeridos_instalacion
             $table->integer('practice_hours'); //horas_practicas
             $table->integer('theory_hours'); //horas_teoricas
@@ -43,13 +43,13 @@ class CreateCourseTable extends Migration
             $table->string('local_proposal_to_be_held',150); //local_propuesta_a_dictar
             $table->foreignId('proposed_schedule_id')->constrained('schedules'); //id_horario_propuesta
             $table->string('course_project',150); //proyecto_curso
-            $table->foreignId('course_type_id')->constrained('ignug.catalogues'); //id_tipo_curso
-            $table->foreignId('specialty_id')->constrained('ignug.catalogues'); //id_especialidad
-            $table->foreignId('academic_period_id')->constrained('ignug.catalogues'); //id_periodo_academico
+            $table->foreignId('course_type_id')->constrained('cecy.catalogues'); //id_tipo_curso
+            $table->foreignId('specialty_id')->constrained('cecy.catalogues'); //id_especialidad
+            $table->foreignId('academic_period_id')->constrained('cecy.catalogues'); //id_periodo_academico
             $table->string('setec_name',200); //nombre_setec
             $table->timestamps();
             
-            //$table->foreignId('mood_id')->constrained('ignug.catalogues');
+            //$table->foreignId('mood_id')->constrained('cecy.catalogues');
             //$table->foreign('schedule_proposal_id')->references('id')->on('');
         });
     }

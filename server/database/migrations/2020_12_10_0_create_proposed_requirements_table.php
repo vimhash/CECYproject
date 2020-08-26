@@ -16,7 +16,7 @@ class CreateProposedRequirementsTable extends Migration
         //necesidades_propuesta
         Schema::connection('pgsql-cecy')->create('proposed_requirements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('need_id')->constrained('ignug.catalogues'); //id_necesidad
+            $table->foreignId('need_id')->constrained('cecy.catalogues'); //id_necesidad
             $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
             $table->timestamps();
         });

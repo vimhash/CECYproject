@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
         Schema::connection('pgsql-cecy')->create('students', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('authentication.users'); //id_usuario
-            $table->foreignId('person_type_id')->constrained('ignug.catalogues'); //id_tipo_persona
+            $table->foreignId('person_type_id')->constrained('cecy.catalogues'); //id_tipo_persona
             $table->timestamps();
         });
     }

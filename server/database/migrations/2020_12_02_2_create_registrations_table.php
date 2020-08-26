@@ -21,7 +21,7 @@ class CreateRegistrationsTable extends Migration
             $table->boolean('approved'); //aprobado
             $table->foreignId('state_id')->constrained("ignug.states"); //id_estado
             $table->foreignId('school_period_id')->constrained('school_periods'); //id_periodo_lectivo
-            $table->foreignId('registration_type_id')->constrained('ignug.catalogues'); //id_tipo_matricula
+            $table->foreignId('registration_type_id')->constrained('cecy.catalogues'); //id_tipo_matricula
             $table->integer('number_registration'); //numero_de_matricula
             $table->timestamps();
         });
