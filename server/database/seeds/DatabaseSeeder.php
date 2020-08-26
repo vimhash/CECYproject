@@ -637,16 +637,19 @@ class DatabaseSeeder extends Seeder
 
         //catalogue Modalidad
         factory(CecyCatalogue::class)->create([
+          'code' => 'pruebas',
           'name' => 'PRESENCIAL',
           'type' => 'Modality',
           'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
+          'code' => 'pruebas',
           'name' => 'DUAL',
           'type' => 'Modality',
           'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
+          'code' => 'pruebas',
           'name' => 'VIRTUAL',
           'type' => 'Modality',
           'state_id' => 1,
@@ -668,13 +671,13 @@ class DatabaseSeeder extends Seeder
 
         //catalogue schedule
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+          'code' => 'pruebas',
             'name' => '13:00 - 15:00',
             'type' => 'Horas_horario',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+          'code' => 'pruebas',
             'name' => '15:00 - 17:00',
             'type' => 'Horas_horario',
             'state_id' => 1,
@@ -696,43 +699,43 @@ class DatabaseSeeder extends Seeder
 
         //catalogue academic_period
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+          'code' => 'pruebas',
             'name' => 'PRIMERO',
             'type' => 'Periodo_academico',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+          'code' => 'pruebas',
             'name' => 'SEGUNDO',
             'type' => 'Periodo_academico',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+          'code' => 'pruebas',
             'name' => 'TERCERO',
             'type' => 'Periodo_academico',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+          'code' => 'pruebas',
             'name' => 'CUARTO',
             'type' => 'Periodo_academico',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+          'code' => 'pruebas',
             'name' => 'QUINTO',
             'type' => 'Periodo_academico',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+          'code' => 'pruebas',
             'name' => 'SEXTO',
             'type' => 'Periodo_academico',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+          'code' => 'pruebas',
             'name' => 'SEPTIMO',
             'type' => 'Periodo_academico',
             'state_id' => 1,
@@ -2126,7 +2129,7 @@ factory(CecyCatalogue::class)->create([
             'type' => 'Especialiadad',
             'state_id' => 1,
           ]);
-   
+
 
         // roles
         factory(Role::class)->create([
