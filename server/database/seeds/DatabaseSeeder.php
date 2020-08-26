@@ -485,7 +485,17 @@ class DatabaseSeeder extends Seeder
             'type' => 'canton',
             'state_id' => 1,
         ]);
-
+        //catalogoCECY
+        factory(App\Models\Cecy\Catalogue::class)->create([
+            'name' => 'Interno',
+            'type' => 'participant_type',
+            'state_id' => 1,
+        ]);
+        factory(App\Models\Cecy\Catalogue::class)->create([
+            'name' => 'Externo',
+            'type' => 'participant_type',
+            'state_id' => 1,
+        ]);
         factory(App\Role::class)->create([
             'code' => '1',
             'name' => 'DOCENTE',
@@ -549,6 +559,21 @@ class DatabaseSeeder extends Seeder
             'blood_type_id'=>52,
         ]);
 
+        /*factory(App\Models\Ignug\Catalogue::class)->create([
+            'course_code' => 'YEC-ST',//startted
+            'course_name' => 'STARTER',
+            'cost' => '',
+            'photo'  => 'imagen.jpg',
+            'resumen' => '',
+            'lasting_hours' => 80,
+            'modality_id' =>54,
+            'course_capacity_size' => 30,
+            'for_free' => true,
+            'state_id' => 1,
+            'course_observation' => '',
+            'objective' => '',
+            'participant_type_id' =>
+        ]);*/
        // factory(App\User::class, 100)->create();
         //factory(App\Models\JobBoard::class, 10)->create();
     }
