@@ -26,8 +26,7 @@ export class CursosDocentesComponent implements OnInit {
   }
 
   obtenerCursosDocente() {
-    //TRAER CURSOS DE DOCENTE
-    this.cecyService.get("agreements").subscribe((response) => {
+    this.cecyService.get("courses").subscribe((response) => {
       console.log(response);
     });
   }
@@ -35,7 +34,7 @@ export class CursosDocentesComponent implements OnInit {
   //test
   guardar() {
     this.cecyService
-      .post("agreements", {
+      .post("courses", {
         name: "test2",
       })
       .subscribe((response) => {
@@ -48,7 +47,7 @@ export class CursosDocentesComponent implements OnInit {
       text = prompt("TEXTO");
 
     this.cecyService
-      .update("agreements/" + id, {
+      .update("courses/" + id, {
         name: text,
       })
       .subscribe((response) => {
@@ -59,7 +58,7 @@ export class CursosDocentesComponent implements OnInit {
   eliminar() {
     let id = prompt("Ingrese ID");
 
-    this.cecyService.delete("agreements/" + id).subscribe((response) => {
+    this.cecyService.delete("courses/" + id).subscribe((response) => {
       console.log(response);
     });
   }
