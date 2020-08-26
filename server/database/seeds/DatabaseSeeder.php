@@ -497,6 +497,34 @@ class DatabaseSeeder extends Seeder
             'name' => 'ADMINISTRATIVO',
             'state_id' => 1,
         ]);
+        factory(App\Role::class)->create([
+            'code' => '3',
+            'name' => 'PARTICIPANTE',
+            'state_id' => 1,
+        ]);
+        factory(App\User::class)->create([
+            'identification' => '1716346802',
+            'postal_code' => '170308',
+            'first_name' => 'HECTOR',
+            'second_name' => 'HECTOR',
+            'first_lastname' => 'AREVALO',
+            'second_lastname' => 'AREVALO',
+            'personal_email' => 'arevalo@mail.com',
+            'birthdate' => '13-02-1996',
+            'user_name' => 'hector_arevalo',
+            'email' => 'harevalo@yavirac.edu.ec',
+          //  'email_verified_at' => '',
+            'password' => '123456',
+            'state_id' => 1,
+          //  'roles' => 3,
+          //  'attendances' => '',
+            'ethnic_origin_id'=>36,
+            'location_id'=>62,
+            'identification_type_id'=>44,
+            'sex_id'=>40,
+            'gender_id'=>42,
+            'blood_type_id'=>52,
+        ]);
 
 
        // factory(App\User::class, 100)->create();
