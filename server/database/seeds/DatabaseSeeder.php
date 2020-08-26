@@ -554,14 +554,102 @@ class DatabaseSeeder extends Seeder
           'type' => 'Areas',
           'state_id' => 1,
         ]);
-
-
         factory(IgnugCatalogue::class)->create([
           'code' => 'E',
           'name' => 'TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN',
           'type' => 'Areas',
           'state_id' => 1,
         ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'F',
+          'name' => 'FINANZAS, COMERCIO Y VENTAS',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'H',
+          'name' => 'CONSTRUCCIÓN E INFRAESTRUCTURA',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'I',
+          'name' => 'FORESTAL, ECOLOGÍA Y AMBIENTE',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'J',
+          'name' => 'EDUCACIÓN Y CAPACITACIÓN',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'K',
+          'name' => 'ELECTRICIDAD Y ELECTRÓNICA',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'L',
+          'name' => 'ESPECIES ACUÁTICAS Y PESCA',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'M',
+          'name' => 'COMUNICACIÓN Y ARTES GRÁFICAS',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'N',
+          'name' => 'MECÁNICA AUTOMOTRIZ',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'O',
+          'name' => 'MECÁNICA INDUSTRIAL Y MINERÍA',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'P',
+          'name' => 'PROCESOS INDUSTRIALES',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'Q',
+          'name' => 'TRANSPORTE Y LOGÍSTICA',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'R',
+          'name' => 'ARTES Y ARTESANÍA',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'S',
+          'name' => 'SERVICIOS SOCIOCULTURALES Y A LA COMUNIDAD',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        factory(IgnugCatalogue::class)->create([
+          'code' => 'T',
+          'name' => 'INDUSTRIA AGROPECUARIA ',
+          'type' => 'Areas',
+          'state_id' => 1,
+        ]);
+        /*factory(IgnugCatalogue::class)->create([
+          'code' => 'T',
+          'name' => 'INDUSTRIA AGROPECUARIA ',
+          'type' => 'Especialidad',
+          'state_id' => 1,
+        ]);*/
 
         factory(Role::class)->create([
             'code' => '1',
@@ -638,7 +726,7 @@ class DatabaseSeeder extends Seeder
         });
         // factory(App\Models\JobBoard::class, 10)->create();
 
-        factory(App\Models\Ignug\Catalogue::class)->create([
+      /*  factory(App\Models\Ignug\Catalogue::class)->create([
             'course_code' => 'YEC-ST',//startted
             'course_name' => 'STARTER',
             'cost' => '',
@@ -649,11 +737,11 @@ class DatabaseSeeder extends Seeder
             'course_capacity_size' => 30,
             'for_free' => true,
             'state_id' => 1,
-            'course_observation' => '',
+           'course_observation' => '',
             'objective' => '',
             'participant_type_id' => 63,
-            'area_id' =>
-        ]);
+           'area_id' =>''
+        ]);*/
 
         /*
             drop schema if exists attendance cascade;
