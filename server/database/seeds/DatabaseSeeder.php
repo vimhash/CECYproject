@@ -2133,7 +2133,6 @@ factory(CecyCatalogue::class)->create([
             'state_id' => 1,
           ]);
 
-
           // Ethnic origin
           factory(CecyCatalogue::class)->create([
               'code' => '1',
@@ -2203,6 +2202,7 @@ factory(CecyCatalogue::class)->create([
               'type' => 'sex',
               'state_id' => 1,
           ]);
+
           // Gender
           factory(CecyCatalogue::class)->create([
               'code' => '1',
@@ -2281,27 +2281,6 @@ factory(CecyCatalogue::class)->create([
               'state_id' => 1,
           ]);
 
-
-        // roles
-        factory(Role::class)->create([
-            'code' => '1',
-            'name' => 'DOCENTE',
-            'system_id' => 1,
-            'state_id' => 1,
-        ]);
-        factory(Role::class)->create([
-            'code' => '2',
-            'name' => 'ADMINISTRATIVO',
-            'system_id' => 1,
-            'state_id' => 1,
-        ]);
-        factory(Role::class)->create([
-            'code' => '3',
-            'name' => 'PARTICIPANTE',
-            'system_id' => 1,
-            'state_id' => 1,
-        ]);
-
         // location
         factory(CecyCatalogue::class)->create([
             'code' => 'ec',
@@ -2321,6 +2300,26 @@ factory(CecyCatalogue::class)->create([
             'code' => '1',
             'name' => 'QUITO',
             'type' => 'canton',
+            'state_id' => 1,
+        ]);
+
+        // roles
+        factory(Role::class)->create([
+            'code' => '1',
+            'name' => 'DOCENTE',
+            'system_id' => 1,
+            'state_id' => 1,
+        ]);
+        factory(Role::class)->create([
+            'code' => '2',
+            'name' => 'ADMINISTRATIVO',
+            'system_id' => 1,
+            'state_id' => 1,
+        ]);
+        factory(Role::class)->create([
+            'code' => '3',
+            'name' => 'PARTICIPANTE',
+            'system_id' => 1,
             'state_id' => 1,
         ]);
 
