@@ -20,6 +20,6 @@ class DepartmentData extends Model implements Auditable
     }
     public function schedule()
     {
-        return $this->belongsTo(Schedule::class);
+        return $this->belongsTo(Catalogue::class,'schedule_id');
     }
 }
