@@ -15,7 +15,7 @@ class CreateCecyCataloguesTable extends Migration
     {
         Schema::connection('pgsql-cecy')->create('catalogues', function (Blueprint $table) {
             $table->id();
-            $table->string('parent_code_id')->nullable();
+            $table->bigInteger('parent_code_id')->nullable();
             $table->foreign('parent_code_id')->references('id')->on('catalogues');
             $table->string('code', 100);
             $table->string('name', 500);
