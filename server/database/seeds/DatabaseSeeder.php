@@ -2134,6 +2134,154 @@ factory(CecyCatalogue::class)->create([
           ]);
 
 
+          // Ethnic origin
+          factory(CecyCatalogue::class)->create([
+              'code' => '1',
+              'name' => 'INDIGENA',
+              'type' => 'ethnic_origin',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '2',
+              'name' => 'AFROECUATORIANO',
+              'type' => 'ethnic_origin',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '3',
+              'name' => 'NEGRO',
+              'type' => 'ethnic_origin',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '4',
+              'name' => 'MULATO',
+              'type' => 'ethnic_origin',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '5',
+              'name' => 'MONTUBIO',
+              'type' => 'ethnic_origin',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '6',
+              'name' => 'MESTIZO',
+              'type' => 'ethnic_origin',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '7',
+              'name' => 'BLANCO',
+              'type' => 'ethnic_origin',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '8',
+              'name' => 'OTRO',
+              'type' => 'ethnic_origin',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '9',
+              'name' => 'NO REGISTRA',
+              'type' => 'ethnic_origin',
+              'state_id' => 1,
+          ]);
+
+          // Sex
+          factory(CecyCatalogue::class)->create([
+              'code' => '1',
+              'name' => 'HOMBRE',
+              'type' => 'sex',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '2',
+              'name' => 'MUJER',
+              'type' => 'sex',
+              'state_id' => 1,
+          ]);
+          // Gender
+          factory(CecyCatalogue::class)->create([
+              'code' => '1',
+              'name' => 'MASCULINO',
+              'type' => 'gender',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '2',
+              'name' => 'FEMENINO',
+              'type' => 'gender',
+              'state_id' => 1,
+          ]);
+
+          // Indetification Type
+          factory(CecyCatalogue::class)->create([
+              'code' => '1',
+              'name' => 'CEDULA',
+              'type' => 'indetification_type',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '2',
+              'name' => 'PASAPORTE',
+              'type' => 'indetification_type',
+              'state_id' => 1,
+          ]);
+
+          // Blood Type
+          factory(CecyCatalogue::class)->create([
+              'code' => '1',
+              'name' => 'A+',
+              'type' => 'blood_type',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '2',
+              'name' => 'A-',
+              'type' => 'blood_type',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '3',
+              'name' => 'B+',
+              'type' => 'blood_type',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '4',
+              'name' => 'B-',
+              'type' => 'blood_type',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '5',
+              'name' => 'AB+',
+              'type' => 'blood_type',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '6',
+              'name' => 'AB-',
+              'type' => 'blood_type',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '7',
+              'name' => 'O+',
+              'type' => 'blood_type',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => '8',
+              'name' => 'O-',
+              'type' => 'blood_type',
+              'state_id' => 1,
+          ]);
+
+
         // roles
         factory(Role::class)->create([
             'code' => '1',
