@@ -656,6 +656,93 @@ class DatabaseSeeder extends Seeder
           'state_id' => 1,
         ]);*/
 
+        //catalogue levels
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'Primero',
+            'type' => 'Nivel_curso',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'Segundo',
+            'type' => 'Nivel_curso',
+            'state_id' => 1,
+        ]);
+
+        //catalogue schedule
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => '13:00 - 15:00',
+            'type' => 'Horas_horario',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => '15:00 - 17:00',
+            'type' => 'Horas_horario',
+            'state_id' => 1,
+        ]);
+
+        //catalogue course_type
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'Administrativo',
+            'type' => 'Tipo_curso',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'Técnico',
+            'type' => 'Tipo_curso',
+            'state_id' => 1,
+        ]);
+
+        //catalogue academic_period
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'PRIMERO',
+            'type' => 'Periodo_academico',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'SEGUNDO',
+            'type' => 'Periodo_academico',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'TERCERO',
+            'type' => 'Periodo_academico',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'CUARTO',
+            'type' => 'Periodo_academico',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'QUINTO',
+            'type' => 'Periodo_academico',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'SEXTO',
+            'type' => 'Periodo_academico',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'code' => '',
+            'name' => 'SEPTIMO',
+            'type' => 'Periodo_academico',
+            'state_id' => 1,
+        ]);
+
+
         factory(Role::class)->create([
             'code' => '1',
             'name' => 'DOCENTE',
@@ -668,14 +755,13 @@ class DatabaseSeeder extends Seeder
             'system_id' => 1,
             'state_id' => 1,
         ]);
-        //ROLE CECY START
+        //ROLE CECY
         factory(Role::class)->create([
             'code' => '3',
             'name' => 'PARTICIPANTE',
             'system_id' => 1,
             'state_id' => 1,
         ]);
-        //ROLE CECY END
         //USERS CECY START
         factory(User::class)->create([
             'identification' => '1716346802',
