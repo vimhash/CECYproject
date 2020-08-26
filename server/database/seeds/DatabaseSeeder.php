@@ -508,128 +508,131 @@ class DatabaseSeeder extends Seeder
             'name' => 'ADMINISTRACIÓN Y LEGISLACIÓN',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'B',
             'name' => 'AGRONOMÍA',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'C',
             'name' => 'ZOOTECNIA',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'D',
             'name' => 'ALIMENTACIÓN, GASTRONOMÍA Y TURISMO',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'E',
             'name' => 'TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'F',
             'name' => 'FINANZAS, COMERCIO Y VENTAS',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'H',
             'name' => 'CONSTRUCCIÓN E INFRAESTRUCTURA',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'I',
             'name' => 'FORESTAL, ECOLOGÍA Y AMBIENTE',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'J',
             'name' => 'EDUCACIÓN Y CAPACITACIÓN',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'K',
             'name' => 'ELECTRICIDAD Y ELECTRÓNICA',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'L',
             'name' => 'ESPECIES ACUÁTICAS Y PESCA',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'M',
             'name' => 'COMUNICACIÓN Y ARTES GRÁFICAS',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'N',
             'name' => 'MECÁNICA AUTOMOTRIZ',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'O',
             'name' => 'MECÁNICA INDUSTRIAL Y MINERÍA',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'P',
             'name' => 'PROCESOS INDUSTRIALES',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'Q',
             'name' => 'TRANSPORTE Y LOGÍSTICA',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'R',
             'name' => 'ARTES Y ARTESANÍA',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'S',
             'name' => 'SERVICIOS SOCIOCULTURALES Y A LA COMUNIDAD',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
-            factory(CecyCatalogue::class)->create([
+        ]);
+        factory(CecyCatalogue::class)->create([
             'code' => 'T',
             'name' => 'INDUSTRIA AGROPECUARIA ',
             'type' => 'Areas',
             'state_id' => 1,
-            ]);
+        ]);
 
         //Tipo_participante
         factory(CecyCatalogue::class)->create([
+            'code' => 'pruebas',
             'name' => 'Adultos',
             'type' => 'participant_type',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
+            'code' => 'pruebas',
             'name' => 'Estudiantes',
             'type' => 'participant_type',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
+            'code' => 'pruebas',
             'name' => 'Profesores',
             'type' => 'Participant_type',
             'state_id' => 1,
@@ -654,13 +657,13 @@ class DatabaseSeeder extends Seeder
 
         //catalogue levels
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+            'code' => 'pruebas',
             'name' => 'Primero',
             'type' => 'Nivel_curso',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+            'code' => 'pruebas',
             'name' => 'Segundo',
             'type' => 'Nivel_curso',
             'state_id' => 1,
@@ -682,13 +685,13 @@ class DatabaseSeeder extends Seeder
 
         //catalogue course_type
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+            'code' => 'pruebas',
             'name' => 'Administrativo',
             'type' => 'Tipo_curso',
             'state_id' => 1,
         ]);
         factory(CecyCatalogue::class)->create([
-            'code' => '',
+            'code' => 'pruebas',
             'name' => 'Técnico',
             'type' => 'Tipo_curso',
             'state_id' => 1,
