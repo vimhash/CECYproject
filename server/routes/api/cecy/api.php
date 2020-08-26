@@ -43,7 +43,7 @@ Route::group(['prefix' => 'agreements'], function () {
 
 Route::group(['prefix' => 'catalogues'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
-       Route::get('', 'Ignug\CatalogueController@filter');
+       Route::get('', 'Cecy\CatalogueController@filter');
    //});
 });
 
