@@ -2341,12 +2341,12 @@ factory(CecyCatalogue::class)->create([
             'state_id' => 1,
           //  'roles' => 3,
           //  'attendances' => '',
-            'ethnic_origin_id'=>36,
-            'location_id'=>62,
-            'identification_type_id'=>44,
-            'sex_id'=>40,
-            'gender_id'=>42,
-            'blood_type_id'=>52,
+          //  'ethnic_origin_id'=>36,
+          //  'location_id'=>62,
+          //  'identification_type_id'=>44,
+          //  'sex_id'=>40,
+          //  'gender_id'=>42,
+          //  'blood_type_id'=>52,
         ]);
         factory(User::class)->create([
             'identification' => '1755098736',
@@ -2364,12 +2364,12 @@ factory(CecyCatalogue::class)->create([
             'state_id' => 1,
           //  'roles' => 3,
           //  'attendances' => '',
-            'ethnic_origin_id'=>36,
-            'location_id'=>62,
-            'identification_type_id'=>44,
-            'sex_id'=>41,
-            'gender_id'=>43,
-            'blood_type_id'=>52,
+            //'ethnic_origin_id'=>36,
+          //  'location_id'=>62,
+          //  'identification_type_id'=>44,
+//'sex_id'=>41,
+          //  'gender_id'=>43,
+//'blood_type_id'=>52,
         ]);
         //USERS CECY END
 
