@@ -62,7 +62,7 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-        'pgsql-cecy' => [
+        'pgsql-attendance' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -73,7 +73,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'schema' => env('DB_SCHEMA_CECY', 'public'),
+            'schema' => env('DB_SCHEMA_ATTENDANCE', 'public'),
             'sslmode' => 'prefer',
         ],
         'pgsql-job-board' => [
@@ -133,7 +133,21 @@ return [
             'schema' => env('DB_SCHEMA', 'public'),
             'sslmode' => 'prefer',
         ],
-
+        'pgsql-cecy' => [
+            'driver' => 'pgsql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => env('DB_SCHEMA_CECY', 'public'),
+            'sslmode' => 'prefer',
+        ],
+        
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),

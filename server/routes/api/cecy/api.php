@@ -41,7 +41,6 @@ Route::group(['prefix' => 'agreements'], function () {
    //});
 });
 
-//PREGUNTAR SI ESTA BIEN :V JAJA
 Route::group(['prefix' => 'catalogues'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
        Route::get('', 'Ignug\CatalogueController@filter');
