@@ -21,7 +21,7 @@ class CreateDetailRegistrationsTable extends Migration
             $table->date('real_finish_date'); //fecha_fin_real
             $table->foreignId('person_instructor_id')->constrained('authentication.users'); //id_persona_instructor
             $table->foreignId('state_course_id')->constrained('ignug.states'); //id_estado_curso
-            $table->foreignId('schedule_id')->constrained('schedules'); //id_horario
+            $table->foreignId('schedule_id')->constrained('cecy.catalogues'); //id_horario
             $table->string('place_classes_are_held',50); //lugar_donde_se_dicta
             $table->date('forecast_finish_date'); //fecha_fin_prevista
             $table->string('course_observation',255); //observacion_curso

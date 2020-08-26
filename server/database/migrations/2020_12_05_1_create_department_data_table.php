@@ -19,7 +19,7 @@ class CreateDepartmentDataTable extends Migration
             $table->string('name',150); //nombre
             $table->string('address',150); //direccion
             $table->foreignId('person_in_charge_id')->constrained('authentication.users'); //id_persona_encargada
-            $table->foreignId('schedule_id')->constrained('schedules'); //id_horario
+            $table->foreignId('schedule_id')->constrained('cecy.catalogues'); //id_horario
             $table->foreignId('canton_id')->constrained('locations'); //id_canton
             $table->timestamps();
         });

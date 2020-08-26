@@ -41,7 +41,7 @@ class CreateCourseTable extends Migration
             $table->date('proposed_date'); //fecha_propuesta
             $table->date('approval_date'); //fecha_aprobacion
             $table->string('local_proposal_to_be_held',150); //local_propuesta_a_dictar
-            $table->foreignId('proposed_schedule_id')->constrained('schedules'); //id_horario_propuesta
+            $table->foreignId('schedules_id')->constrained('cecy.catalogues'); //id_horario_propuesta
             $table->string('course_project',150); //proyecto_curso
             $table->foreignId('course_type_id')->constrained('cecy.catalogues'); //id_tipo_curso
             $table->foreignId('specialty_id')->constrained('cecy.catalogues'); //id_especialidad

@@ -5,6 +5,7 @@ use App\Models\Ignug\State;
 use App\Models\Attendance\Catalogue as AttendanceCatalogue;
 use App\Models\Ignug\Catalogue as IgnugCatalogue;
 use App\Models\Cecy\Catalogue as CecyCatalogue;
+use App\Models\Cecy\Course;
 use App\Role;
 use App\User;
 use \App\Models\Ignug\Teacher;
@@ -2329,22 +2330,39 @@ factory(CecyCatalogue::class)->create([
         });
         // factory(App\Models\JobBoard::class, 10)->create();
 
-      /*  factory(App\Models\Ignug\Catalogue::class)->create([
-            'course_code' => 'YEC-ST',//startted
+        factory(Course::class)->create([
+            'course_code' => 'YEC-ST',
             'course_name' => 'STARTER',
-            'cost' => '',
+            'cost' => 0,
             'photo'  => 'imagen.jpg',
             'resumen' => '',
             'lasting_hours' => 80,
-            'modality_id' =>54,
+            'modality_id' => 23, //presencial
             'course_capacity_size' => 30,
             'for_free' => true,
-            'state_id' => 1,
-           'course_observation' => '',
+            'state_id' => 1, //activo
+            'course_observation' => '',
             'objective' => '',
-            'participant_type_id' => 63,
-           'area_id' =>''
-        ]);*/
+            'participant_type_id' => 21, //estudiantes
+            'area_id' => 1,
+            "levels_id" => 26, //niveles curso
+            "required_installing_sources" => "",
+            "practice_hours" => 40,
+            "theory_hours" => 40,
+            "practice_required_resources" => "",
+            "aimtheory_required_resources" => "",
+            "learning_teaching_strategy" => "",
+            "person_proposal_id" => 1,
+            "proposed_date" => "2020-08-26",
+            "approval_date" => "2020-08-26",
+            "local_proposal_to_be_held" => "",
+            "schedules_id" => 28,
+            "course_project" => "",
+            "course_type_id" => 31,
+            "specialty_id" => 39,
+            "academic_period_id" => 32,
+            "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS STARTER",
+        ]);
 
         /*
             drop schema if exists attendance cascade;
