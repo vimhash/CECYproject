@@ -502,6 +502,122 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //catalogoCECY
+        //catalogue Areas
+        factory(CecyCatalogue::class)->create([
+            'code' => 'A',
+            'name' => 'ADMINISTRACIÓN Y LEGISLACIÓN',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'B',
+            'name' => 'AGRONOMÍA',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'C',
+            'name' => 'ZOOTECNIA',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'D',
+            'name' => 'ALIMENTACIÓN, GASTRONOMÍA Y TURISMO',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'E',
+            'name' => 'TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'F',
+            'name' => 'FINANZAS, COMERCIO Y VENTAS',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'H',
+            'name' => 'CONSTRUCCIÓN E INFRAESTRUCTURA',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'I',
+            'name' => 'FORESTAL, ECOLOGÍA Y AMBIENTE',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'J',
+            'name' => 'EDUCACIÓN Y CAPACITACIÓN',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'K',
+            'name' => 'ELECTRICIDAD Y ELECTRÓNICA',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'L',
+            'name' => 'ESPECIES ACUÁTICAS Y PESCA',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'M',
+            'name' => 'COMUNICACIÓN Y ARTES GRÁFICAS',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'N',
+            'name' => 'MECÁNICA AUTOMOTRIZ',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'O',
+            'name' => 'MECÁNICA INDUSTRIAL Y MINERÍA',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'P',
+            'name' => 'PROCESOS INDUSTRIALES',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'Q',
+            'name' => 'TRANSPORTE Y LOGÍSTICA',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'R',
+            'name' => 'ARTES Y ARTESANÍA',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'S',
+            'name' => 'SERVICIOS SOCIOCULTURALES Y A LA COMUNIDAD',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+            'code' => 'T',
+            'name' => 'INDUSTRIA AGROPECUARIA ',
+            'type' => 'Areas',
+            'state_id' => 1,
+            ]);
+
         //Tipo_participante
         factory(CecyCatalogue::class)->create([
             'name' => 'Adultos',
@@ -518,6 +634,7 @@ class DatabaseSeeder extends Seeder
             'type' => 'Participant_type',
             'state_id' => 1,
         ]);
+
         //catalogue Modalidad
         factory(CecyCatalogue::class)->create([
           'name' => 'PRESENCIAL',
@@ -534,127 +651,6 @@ class DatabaseSeeder extends Seeder
           'type' => 'Modality',
           'state_id' => 1,
         ]);
-        //catalogue Areas
-        factory(CecyCatalogue::class)->create([
-          'code' => 'A',
-          'name' => 'ADMINISTRACIÓN Y LEGISLACIÓN',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'B',
-          'name' => 'AGRONOMÍA',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'C',
-          'name' => 'ZOOTECNIA',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'D',
-          'name' => 'ALIMENTACIÓN, GASTRONOMÍA Y TURISMO',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'E',
-          'name' => 'TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'F',
-          'name' => 'FINANZAS, COMERCIO Y VENTAS',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'H',
-          'name' => 'CONSTRUCCIÓN E INFRAESTRUCTURA',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'I',
-          'name' => 'FORESTAL, ECOLOGÍA Y AMBIENTE',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'J',
-          'name' => 'EDUCACIÓN Y CAPACITACIÓN',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'K',
-          'name' => 'ELECTRICIDAD Y ELECTRÓNICA',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'L',
-          'name' => 'ESPECIES ACUÁTICAS Y PESCA',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'M',
-          'name' => 'COMUNICACIÓN Y ARTES GRÁFICAS',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'N',
-          'name' => 'MECÁNICA AUTOMOTRIZ',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'O',
-          'name' => 'MECÁNICA INDUSTRIAL Y MINERÍA',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'P',
-          'name' => 'PROCESOS INDUSTRIALES',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'Q',
-          'name' => 'TRANSPORTE Y LOGÍSTICA',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'R',
-          'name' => 'ARTES Y ARTESANÍA',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'S',
-          'name' => 'SERVICIOS SOCIOCULTURALES Y A LA COMUNIDAD',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        factory(CecyCatalogue::class)->create([
-          'code' => 'T',
-          'name' => 'INDUSTRIA AGROPECUARIA ',
-          'type' => 'Areas',
-          'state_id' => 1,
-        ]);
-        /*factory(IgnugCatalogue::class)->create([
-          'code' => 'T',
-          'name' => 'INDUSTRIA AGROPECUARIA ',
-          'type' => 'Especialidad',
-          'state_id' => 1,
-        ]);*/
 
         //catalogue levels
         factory(CecyCatalogue::class)->create([
@@ -762,6 +758,7 @@ class DatabaseSeeder extends Seeder
             'system_id' => 1,
             'state_id' => 1,
         ]);
+        
         //USERS CECY START
         factory(User::class)->create([
             'identification' => '1716346802',
