@@ -2147,11 +2147,32 @@ factory(CecyCatalogue::class)->create([
             'system_id' => 1,
             'state_id' => 1,
         ]);
-        //ROLE CECY
         factory(Role::class)->create([
             'code' => '3',
             'name' => 'PARTICIPANTE',
             'system_id' => 1,
+            'state_id' => 1,
+        ]);
+
+        // location
+        factory(CecyCatalogue::class)->create([
+            'code' => 'ec',
+            'name' => 'ECUADOR',
+            'type' => 'country',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 30,
+            'code' => '17',
+            'name' => 'PICHINCHA',
+            'type' => 'province',
+            'state_id' => 1,
+        ]);
+        factory(CecyCatalogue::class)->create([
+            'parent_code_id' => 30,
+            'code' => '1',
+            'name' => 'QUITO',
+            'type' => 'canton',
             'state_id' => 1,
         ]);
 
