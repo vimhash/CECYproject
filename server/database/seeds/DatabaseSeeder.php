@@ -525,7 +525,29 @@ class DatabaseSeeder extends Seeder
             'gender_id'=>42,
             'blood_type_id'=>52,
         ]);
-
+        factory(App\User::class)->create([
+            'identification' => '1755098736',
+            'postal_code' => '170308',
+            'first_name' => 'JACQUELIN',
+            'second_name' => 'JACQUELIN',
+            'first_lastname' => 'IBAÑEZ',
+            'second_lastname' => 'IBAÑEZ',
+            'personal_email' => 'jacquelin@mail.com',
+            'birthdate' => '23-04-1995',
+            'user_name' => 'Jackeline_ibañez',
+            'email' => 'jel.ibanez@yavirac.edu.ec',
+          //  'email_verified_at' => '',
+            'password' => '123456',
+            'state_id' => 1,
+          //  'roles' => 3,
+          //  'attendances' => '',
+            'ethnic_origin_id'=>36,
+            'location_id'=>62,
+            'identification_type_id'=>44,
+            'sex_id'=>41,
+            'gender_id'=>43,
+            'blood_type_id'=>52,
+        ]);
 
        // factory(App\User::class, 100)->create();
         //factory(App\Models\JobBoard::class, 10)->create();
