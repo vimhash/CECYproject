@@ -2,9 +2,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {JobBoardRoutes} from './job-board.routing';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HojaVidaRoutes} from './hoja-vida.routing';
+import {KeyFilterModule} from 'primeng/keyfilter';
 // Modulos Externos
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {MultiSelectModule} from 'primeng/multiselect';
@@ -39,22 +39,22 @@ import {PickListModule} from 'primeng/picklist';
 import {OrderListModule} from 'primeng/orderlist';
 import {CarouselModule} from 'primeng/carousel';
 import {FullCalendarModule} from 'primeng/fullcalendar';
-import {AccordionModule, DialogService, TabViewModule} from 'primeng';
+import {AccordionModule, DialogService, MessageModule, TabViewModule} from 'primeng';
 import {DialogModule} from 'primeng/dialog';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
-
 // Mis componentes
-import { AppEmpresaComponentComponent } from './app-empresa-component/app-empresa-component.component';
-import { AppEmpresaDosComponent } from './app-empresa-dos/app-empresa-dos.component';
-import {HojaVidaModule} from './hoja-vida/hoja-vida.module';
+import {AppDatosPersonalesComponent} from './app-datos-personales/app-datos-personales.component';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import { HojaVidaComponent } from './hoja-vida.component';
+
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forChild(JobBoardRoutes),
+        RouterModule.forChild(HojaVidaRoutes),
         FormsModule,
         AutoCompleteModule,
         MultiSelectModule,
@@ -95,13 +95,15 @@ import {HojaVidaModule} from './hoja-vida/hoja-vida.module';
         AccordionModule,
         DialogModule,
         ConfirmDialogModule,
-        HojaVidaModule
+        MessageModule,
+        KeyFilterModule,
+        ReactiveFormsModule
     ],
     declarations: [
-        AppEmpresaComponentComponent,
-        AppEmpresaDosComponent
+        AppDatosPersonalesComponent,
+        HojaVidaComponent
     ],
-    providers: [DialogService]
+    providers: [DialogService, MessageService, ConfirmationService]
 })
-export class JobBoardModule {
+export class HojaVidaModule {
 }

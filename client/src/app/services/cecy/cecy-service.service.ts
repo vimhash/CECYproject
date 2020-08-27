@@ -9,7 +9,7 @@ export class CecyServiceService {
   headers: HttpHeaders;
 
   constructor(private _http: HttpClient) {
-    localStorage.setItem("accessToken", "pruebas")
+    localStorage.setItem("accessToken", "pruebas");
   }
 
   get(url: string) {
@@ -17,7 +17,10 @@ export class CecyServiceService {
       .set("X-Requested-With", "XMLHttpRequest")
       .append("Content-Type", "application/json")
       .append("Accept", "application/json")
-    .append('Authorization', 'Bearer ' + localStorage.getItem('accessToken').replace('"', ''));
+      .append(
+        "Authorization",
+        "Bearer " + localStorage.getItem("accessToken").replace('"', "")
+      );
     url = environment.API_URL_CECY + url;
     return this._http.get(url, { headers: this.headers });
   }

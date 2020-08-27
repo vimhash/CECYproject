@@ -22,7 +22,7 @@ class CourseController extends Controller
 
     public function filter(Request $request)
     {
-        $courses = Course::where('name', $request->name)->orderBy('name')->get();
+        $courses = Course::where('for_free', $request->for_free)->orderBy('id')->get();
         return response()->json([
                 'data' => [
                     'type' => 'courses',
