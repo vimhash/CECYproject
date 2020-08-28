@@ -3,7 +3,6 @@
 namespace App\Models\Cecy;
 
 use App\User;
-use App\Models\Attendance\Attendance;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
@@ -13,11 +12,6 @@ class Participant extends Model implements Auditable
 
     protected $connection = 'pgsql-ignug';
     protected $fillable = [];
-
-    public function attendances()
-    {
-        return $this->morphMany(Attendance::class, 'attendanceable');
-    }
 
     public function user()
     {
@@ -29,8 +23,8 @@ class Participant extends Model implements Auditable
         return $this->belongsTo(State::class);
     }
 
-    public function careers()
+    public function participant()
     {
-        return $this->morphToMany(Career::class, 'careerable');
+        return $this->belongsTo(Catalogue::class,'person_type_id');
     }
 }
