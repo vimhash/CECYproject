@@ -33,7 +33,7 @@ class AcademicRecord extends Model implements Auditable
 
     public function teacher()
     {
-        return $this->belongsTo(User::class,'state_id');
+        return $this->belongsTo(User::class,'teacher_id');
     }
 
     public function school_periods()
