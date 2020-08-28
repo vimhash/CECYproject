@@ -6,6 +6,8 @@ use App\Models\Attendance\Catalogue as AttendanceCatalogue;
 use App\Models\Ignug\Catalogue as IgnugCatalogue;
 use App\Models\Cecy\Catalogue as CecyCatalogue;
 use App\Models\Cecy\Course;
+use App\Models\Cecy\AcademicRecord;
+use App\Models\Cecy\SchoolPeriod;
 use App\Role;
 use App\User;
 use \App\Models\Ignug\Teacher;
@@ -2572,6 +2574,51 @@ class DatabaseSeeder extends Seeder
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS B1",
         ]);
 
+        // school_periods
+        factory(SchoolPeriod::class)->create([
+            "state_id" => 1,
+            'date_start' => "2020-08-28",
+            'date_end' => "2020-08-28",
+            'date_cancel' => "2020-08-28",
+            'date_start_ordinary' => "2020-08-28",
+            'date_end_ordinary' => "2020-08-28",
+            'date_cancel_ordinary' => "2020-08-28",
+            'date_start_extraordinary' => "2020-08-28",
+            'date_end_extraordinary' => "2020-08-28",
+            'date_cancel_extraordinary' => "2020-08-28"
+        ]);
+
+        // academic_record
+        factory(AcademicRecord::class)->create([
+            "state_id" => 1,
+            "user_id" => 4,
+            "course_id" => 1,
+            "teacher_id" => 1,
+            "school_period_id" => 1,
+            'grade1' => 85.00, 
+            'grade2' => 75.00,
+            'final_grade' => 80.00
+        ]);
+        factory(AcademicRecord::class)->create([
+            "state_id" => 1,
+            "user_id" => 4,
+            "course_id" => 2,
+            "teacher_id" => 2,
+            "school_period_id" => 1,
+            'grade1' => 85.00, 
+            'grade2' => 75.00,
+            'final_grade' => 80.00
+        ]);
+        factory(AcademicRecord::class)->create([
+            "state_id" => 1,
+            "user_id" => 5,
+            "course_id" => 1,
+            "teacher_id" => 3,
+            "school_period_id" => 1,
+            'grade1' => 85.00, 
+            'grade2' => 75.00,
+            'final_grade' => 80.00
+        ]);
         // factory(App\Models\JobBoard::class, 10)->create();
         
         /*
