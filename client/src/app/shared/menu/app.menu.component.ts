@@ -24,22 +24,6 @@ export class AppMenuComponent implements OnInit {
   ngOnInit() {
     this.model = [
       {
-        label: "CEC-Y",
-        icon: "pi pi-fw pi-calendar",
-        items: [
-          {
-            label: "Participantes",
-            icon: "pi pi-fw pi-clone",
-            routerLink: ["/cecy/dashboard/participantes"],
-          },
-          {
-            label: "Docentes",
-            icon: "pi pi-fw pi-sign-in",
-            routerLink: ["/cecy/dashboard/docentes"],
-          },
-        ],
-      },
-      {
         label: "Components",
         icon: "pi pi-fw pi-star",
         routerLink: ["/components"],
@@ -305,15 +289,31 @@ export class AppMenuComponent implements OnInit {
     if (this.role.code === "3") {
       this.model = [
         {
-          label: "Asistencia",
+          label: "CEC-Y",
           icon: "pi pi-fw pi-calendar",
-          routerLink: ["/attendance/asistencia-laboral"],
+          items: [
+            {
+              label: "Participantes",
+              icon: "pi pi-fw pi-clone",
+              routerLink: ["/cecy/dashboard/participantes"],
+            },
+            {
+              label: "Docentes",
+              icon: "pi pi-fw pi-sign-in",
+              routerLink: ["/cecy/dashboard/docentes"],
+            },
+          ],
         },
-        {
-          label: "Administración Asistencia",
-          icon: "pi pi-fw pi-clock",
-          routerLink: ["/attendance/administracion-asistencia-laboral"],
-        },
+        // {
+        //   label: "Asistencia",
+        //   icon: "pi pi-fw pi-calendar",
+        //   routerLink: ["/attendance/asistencia-laboral"],
+        // },
+        // {
+        //   label: "Administración Asistencia",
+        //   icon: "pi pi-fw pi-clock",
+        //   routerLink: ["/attendance/administracion-asistencia-laboral"],
+        // },
       ];
     }
     if (this.role.code === "4") {

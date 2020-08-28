@@ -40,8 +40,6 @@ export class AppLoginComponent {
     if (event.which === 13 || event === 13 || event.which === 1) {
       this.msgs = [];
       if (this.user.user_name == null || this.user.password == null) {
-      //  this.router.navigate(["/cecy/dashboard/participantes"]);
-
         this.msgs.push({
           severity: "error",
           summary: "Debes ingresar el usuario y la contraseña",
@@ -54,10 +52,9 @@ export class AppLoginComponent {
       const clientId = environment.CLIENT_ID;
       const clientSecret = environment.CLIENT_SECRET;
       const grantType = environment.GRANT_TYPE;
-console.log(this.user);
+
       this.authenticationService.login(this.user).subscribe(
         (response) => {
-          console.log(response)
           if (response["user"]["state_id"] === 1) {
             localStorage.setItem("isLoggedin", "true");
             localStorage.setItem("user", JSON.stringify(response["user"]));
@@ -73,7 +70,7 @@ console.log(this.user);
             response["roles"].forEach((role) => {
               let route = "";
               let selectedRole = "";
-              switch (role) {
+              switch (role.pivot.role_id) {
                 case "1":
                   route = "/attendance/asistencia-laboral";
                   selectedRole = role;
@@ -103,7 +100,7 @@ console.log(this.user);
                   selectedRole = role;
                   break;
                 default:
-                  route = "/attendance/asistencia-laboral";
+                  route = "/cecy/dashboard/participantes";
                   selectedRole = role;
                   break;
               }
