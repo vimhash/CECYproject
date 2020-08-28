@@ -30,7 +30,6 @@ export class CursosPagoComponent implements OnInit {
       .get("courses/filter?for_free=false")
       .subscribe((response: any) => {
         this.coursesList = response.data.attributes;
-        console.log(this.coursesList);
       });
   }
 }

@@ -32,7 +32,6 @@ export class CursosGratuitosComponent implements OnInit {
       .get("courses/filter?for_free=true")
       .subscribe((response: any) => {
         this.coursesList = response.data.attributes;
-        console.log(this.coursesList);
       });
   }
 
