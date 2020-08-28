@@ -13,12 +13,12 @@ class CreateParticipantsTable extends Migration
      */
     public function up()
     {
-        //estudiantes
+        // participantes
         Schema::connection('pgsql-cecy')->create('participants', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('authentication.users'); //id_usuario
             $table->foreignId('person_type_id')->constrained('cecy.catalogues'); //id_tipo_persona
-            $table->foreignId('state_id')->constrained();
+            $table->foreignId('state_id')->constrained('ignug.states');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateParticipantsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('students');
+        Schema::connection('pgsql-cecy')->dropIfExists('participants');
     }
 }
