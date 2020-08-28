@@ -21,9 +21,9 @@ class CreateAcademicRecordsTable extends Migration
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->foreignId('teacher_id')->constrained('authentication.users'); //id_docente
             $table->foreignId('school_period_id')->constrained('school_periods'); //id_periodo_lectivo
-            $table->decimal('grade1', 2, 3); //nota1
-            $table->decimal('grade2', 2, 3); //nota2
-            $table->decimal('final_grade', 2, 3); //nota_final
+            $table->numeric('grade1', 3,2); //nota1
+            $table->numeric('grade2', 3,2); //nota2
+            $table->numeric('final_grade', 3,2); //nota_final
             $table->timestamps();
         });
     }
