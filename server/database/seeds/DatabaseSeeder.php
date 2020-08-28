@@ -9,7 +9,7 @@ use App\Models\Cecy\Course;
 use App\Role;
 use App\User;
 use \App\Models\Ignug\Teacher;
-use \App\Models\Cecy\Student;
+use \App\Models\Cecy\Participant;
 
 class DatabaseSeeder extends Seeder
 {
@@ -2339,9 +2339,9 @@ class DatabaseSeeder extends Seeder
         //     $user->roles()->attach(1);
         // });
 
-        // student
+        // participant
         factory(User::class, 3)->create()->each(function ($user) {
-            $user->student()->save(factory(Student::class)->make());
+            $user->participant()->save(factory(Participant::class)->make());
             $user->roles()->attach(3);
         });
 

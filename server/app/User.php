@@ -6,7 +6,7 @@ use App\Models\Attendance;
 use App\Models\Ignug\Catalogue;
 use App\Models\Ignug\State;
 use App\Models\Ignug\Teacher;
-use App\Models\Cecy\Student;
+use App\Models\Cecy\Participant;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -82,9 +82,9 @@ class User extends Authenticatable implements Auditable
         return $this->hasOne(Teacher::class);
     }
 
-    public function student()
+    public function participant()
     {
-        return $this->hasOne(Student::class);
+        return $this->hasOne(Participant::class);
     }
 
     public function attendances()
