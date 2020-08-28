@@ -67,4 +67,16 @@ class AcademicRecordController extends Controller
             ]
         ], 201);
     }
+
+    public function userAcademicRecord($user_id)
+    {
+        $academic_record = AcademicRecord::where('user_id', $user_id)->orderBy('id')->get();
+
+        return response()->json([
+            'data' => [
+                'attributes' => $academic_record,
+                'type' => 'academic_record'
+            ]
+        ], 201);
+    }
 }

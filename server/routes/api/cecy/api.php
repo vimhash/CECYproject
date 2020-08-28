@@ -18,6 +18,7 @@ Route::group(['prefix' => 'academic_record'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\AcademicRecordController');
       Route::get('filter', 'Cecy\AcademicRecordController@filter');
+      Route::get("{user_id}", "Cecy\AcademicRecordController@userAcademicRecord");
       Route::put("{id}", "Cecy\AcademicRecordController@update");
       Route::delete('{id}', "Cecy\AcademicRecordController@destroy");
    //});
