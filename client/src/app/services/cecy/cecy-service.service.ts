@@ -1,12 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../../../environments/environment";
+import {User} from '../../models/authentication/user';
 
 @Injectable({
   providedIn: "root",
 })
 export class CecyServiceService {
   headers: HttpHeaders;
+  user: User;
 
   constructor(private _http: HttpClient) {
     localStorage.setItem("accessToken", "pruebas");
@@ -62,5 +64,12 @@ export class CecyServiceService {
       );
     url = environment.API_URL_CECY + url;
     return this._http.delete(url, { headers: this.headers });
+  }
+
+  academic_record() {
+    this.user = JSON.parse(localStorage.getItem('user')) as User;
+      const url = environment.API_URL_CECY + 'academic_record'+ this.user.id;
+      this.headers = new HttpHeaders().set('Content-Type', 'application/json').append('X-Requested-With', 'XMLHttpRequest');
+      return this._http.get(url);
   }
 }

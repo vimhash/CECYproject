@@ -18,7 +18,7 @@ export class CursosGratuitosComponent implements OnInit {
     private cecyService: CecyServiceService
   ) {
     this.breadcrumbService.setItems([
-      { label: "CEC-Y", routerLink: ["/cecy/dashboard/bienvenida"] },
+      { label: "CEC-Y", routerLink: ["/cecy/dashboard/docentes"] },
       { label: "Cursos Gratuitos" },
     ]);
   }
