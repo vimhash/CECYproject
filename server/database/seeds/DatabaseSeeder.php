@@ -2333,12 +2333,6 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1,
         ]);
 
-        // // teacher
-        // factory(User::class, 3)->create()->each(function ($user) {
-        //     $user->teacher()->save(factory(Teacher::class)->make());
-        //     $user->roles()->attach(1);
-        // });
-
         // participant
         factory(User::class, 3)->create()->each(function ($user) {
             $user->participant()->save(factory(Participant::class)->make());

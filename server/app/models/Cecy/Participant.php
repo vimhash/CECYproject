@@ -10,7 +10,7 @@ class Participant extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
 
-    protected $connection = 'pgsql-ignug';
+    protected $connection = 'pgsql-cecy';
     protected $fillable = [];
 
     public function user()
