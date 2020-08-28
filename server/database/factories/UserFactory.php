@@ -18,7 +18,6 @@ use Faker\Generator as Faker;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-
         'ethnic_origin_id' => random_int(1, 8),
         'location_id' => 30,
         'identification_type_id' => random_int(14, 15),
