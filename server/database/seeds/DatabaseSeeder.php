@@ -2595,9 +2595,9 @@ class DatabaseSeeder extends Seeder
             "course_id" => 1,
             "teacher_id" => 1,
             "school_period_id" => 1,
-            'grade1' => 85.00, 
-            'grade2' => 75.00,
-            'final_grade' => 80.00
+            'grade1' => 85, 
+            'grade2' => 75.2,
+            'final_grade' => 80.1
         ]);
         factory(AcademicRecord::class)->create([
             "state_id" => 1,
@@ -2605,9 +2605,9 @@ class DatabaseSeeder extends Seeder
             "course_id" => 2,
             "teacher_id" => 2,
             "school_period_id" => 1,
-            'grade1' => 85.00, 
-            'grade2' => 75.00,
-            'final_grade' => 80.00
+            'grade1' => 100, 
+            'grade2' => 75.0,
+            'final_grade' => 87.5
         ]);
         factory(AcademicRecord::class)->create([
             "state_id" => 1,
@@ -2615,9 +2615,9 @@ class DatabaseSeeder extends Seeder
             "course_id" => 1,
             "teacher_id" => 3,
             "school_period_id" => 1,
-            'grade1' => 85.00, 
-            'grade2' => 75.00,
-            'final_grade' => 80.00
+            'grade1' => 85.0, 
+            'grade2' => 75.0,
+            'final_grade' => 80.0
         ]);
         // factory(App\Models\JobBoard::class, 10)->create();
         
