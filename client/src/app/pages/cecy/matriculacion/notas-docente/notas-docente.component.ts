@@ -39,7 +39,8 @@ export class NotasDocentesComponent implements OnInit {
     private breadcrumbService: BreadcrumbService
   ) {
     this.breadcrumbService.setItems([
-      { label: "CEC-Y", routerLink: ["/cecy/notas-docente"] },
+      { label: "CEC-Y", routerLink: ["/cecy/dashboard/docentes"] },
+      { label: "Cursos Docente", routerLink: ["/cecy/notas-docente"] },
       { label: "Notas Docente" },
     ]);
   }
