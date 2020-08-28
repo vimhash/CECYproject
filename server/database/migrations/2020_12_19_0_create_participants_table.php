@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentsTable extends Migration
+class CreateParticipantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,11 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         //estudiantes
-        Schema::connection('pgsql-cecy')->create('students', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('participants', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('authentication.users'); //id_usuario
             $table->foreignId('person_type_id')->constrained('cecy.catalogues'); //id_tipo_persona
+            $table->foreignId('state_id')->constrained();
             $table->timestamps();
         });
     }

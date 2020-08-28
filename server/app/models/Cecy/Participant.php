@@ -7,7 +7,7 @@ use App\Models\Attendance\Attendance;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class Student extends Model implements Auditable
+class Participant extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
 
