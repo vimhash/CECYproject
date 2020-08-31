@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { HomeRoutes } from "./dashboard.routing";
+import { HomeRoutes } from "./academic-records.routing";
 import { FormsModule } from "@angular/forms";
 import { AutoCompleteModule } from "primeng/autocomplete";
 import { MultiSelectModule } from "primeng/multiselect";
@@ -25,9 +25,8 @@ import { ToggleButtonModule } from "primeng/togglebutton";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { SplitButtonModule } from "primeng/splitbutton";
 import { PasswordModule } from "primeng/password";
-import { ParticipantsComponent } from "./participants/participants.component";
-import { DocentesComponent } from "./docentes/docentes.component";
-import { AcademicRecordsComponent } from "./academic-records/academic-records.component";
+import { SeeAcademicRecordsComponent } from "./see-academic-records/see-academic-records.component";
+import { NewAcademicRecordComponent } from "./new-academic-record/new-academic-record.component";
 
 @NgModule({
   imports: [
@@ -57,10 +56,6 @@ import { AcademicRecordsComponent } from "./academic-records/academic-records.co
     SplitButtonModule,
     PasswordModule,
   ],
-  declarations: [
-    ParticipantsComponent,
-    DocentesComponent,
-    AcademicRecordsComponent,
-  ],
+  declarations: [SeeAcademicRecordsComponent, NewAcademicRecordComponent],
 })
 export class DashboardModule {}

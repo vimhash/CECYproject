@@ -295,13 +295,23 @@ export class AppMenuComponent implements OnInit {
             {
               label: "Participantes",
               icon: "pi pi-fw pi-clone",
-              routerLink: ["/cecy/dashboard/participantes"],
+              routerLink: ["/cecy/dashboard/participants"],
             },
             {
-              label: "Docentes",
+              label: "Historial Académico",
               icon: "pi pi-fw pi-sign-in",
-              routerLink: ["/cecy/dashboard/docentes"],
+              routerLink: ["/cecy/dashboard/academic-records"],
             },
+            {
+              label: "Forms",
+              icon: "pi pi-fw pi-file",
+              routerLink: ["/components/forms"],
+            },
+            // {
+            //   label: "Docentes",
+            //   icon: "pi pi-fw pi-sign-in",
+            //   routerLink: ["/cecy/dashboard/docentes"],
+            // },
           ],
         },
         // {
