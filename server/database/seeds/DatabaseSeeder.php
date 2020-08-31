@@ -2342,18 +2342,17 @@ class DatabaseSeeder extends Seeder
         });
 
         // courses
-      /*  factory(Course::class)->create([
-            'course_code' => 'YEC-ST',
-            'course_name' => 'STARTER',
+        factory(Course::class)->create([
+            'code' => 'YEC-ST',
+            'name' => 'STARTER',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
             'resumen' => '',
             'lasting_hours' => 80,
             'modality_id' => 23, //presencial
-            'course_capacity_size' => 30,
-            'for_free' => true,
+            'free' => true,
             'state_id' => 1, //activo
-            'course_observation' => '',
+            'observation' => '',
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
@@ -2367,26 +2366,25 @@ class DatabaseSeeder extends Seeder
             "person_proposal_id" => 1,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
-            "local_proposal_to_be_held" => "",
+            "local_proposal" => "",
             "schedules_id" => 28,
-            "course_project" => "",
+            "project" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 32,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS STARTER",
         ]);
         factory(Course::class)->create([
-            'course_code' => 'YEC-A1.1',
-            'course_name' => 'A1.1',
+            'code' => 'YEC-A1.1',
+            'name' => 'A1.1',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
             'resumen' => '',
             'lasting_hours' => 80,
             'modality_id' => 23, //presencial
-            'course_capacity_size' => 30,
-            'for_free' => true,
+            'free' => true,
             'state_id' => 1, //activo
-            'course_observation' => '',
+            'observation' => '',
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
@@ -2400,26 +2398,25 @@ class DatabaseSeeder extends Seeder
             "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
-            "local_proposal_to_be_held" => "",
+            "local_proposal" => "",
             "schedules_id" => 28,
-            "course_project" => "",
+            "project" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 33,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS A1.1",
         ]);
         factory(Course::class)->create([
-            'course_code' => 'YEC-A1.2',
-            'course_name' => 'A1.2',
+            'code' => 'YEC-A1.2',
+            'name' => 'A1.2',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
             'resumen' => '',
             'lasting_hours' => 80,
             'modality_id' => 23, //presencial
-            'course_capacity_size' => 30,
-            'for_free' => true,
+            'free' => true,
             'state_id' => 1, //activo
-            'course_observation' => '',
+            'observation' => '',
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
@@ -2433,26 +2430,25 @@ class DatabaseSeeder extends Seeder
             "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
-            "local_proposal_to_be_held" => "",
+            "local_proposal" => "",
             "schedules_id" => 28,
-            "course_project" => "",
+            "project" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 34,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS A1",
         ]);
         factory(Course::class)->create([
-            'course_code' => 'YEC-A2.1',
-            'course_name' => 'A2.1',
+            'code' => 'YEC-A2.1',
+            'name' => 'A2.1',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
             'resumen' => '',
             'lasting_hours' => 80,
             'modality_id' => 23, //presencial
-            'course_capacity_size' => 30,
-            'for_free' => true,
+            'free' => true,
             'state_id' => 1, //activo
-            'course_observation' => '',
+            'observation' => '',
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
@@ -2466,26 +2462,25 @@ class DatabaseSeeder extends Seeder
             "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
-            "local_proposal_to_be_held" => "",
+            "local_proposal" => "",
             "schedules_id" => 28,
-            "course_project" => "",
+            "project" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 35,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS A2.1",
         ]);
         factory(Course::class)->create([
-            'course_code' => 'YEC-A2.2',
-            'course_name' => 'A2.2',
+            'code' => 'YEC-A2.2',
+            'name' => 'A2.2',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
             'resumen' => '',
             'lasting_hours' => 80,
             'modality_id' => 23, //presencial
-            'course_capacity_size' => 30,
-            'for_free' => true,
+            'free' => true,
             'state_id' => 1, //activo
-            'course_observation' => '',
+            'observation' => '',
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
@@ -2499,26 +2494,25 @@ class DatabaseSeeder extends Seeder
             "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
-            "local_proposal_to_be_held" => "",
+            "local_proposal" => "",
             "schedules_id" => 28,
-            "course_project" => "",
+            "project" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 36,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS A2",
         ]);
         factory(Course::class)->create([
-            'course_code' => 'YEC-B1.1',
-            'course_name' => 'B1.1',
+            'code' => 'YEC-B1.1',
+            'name' => 'B1.1',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
             'resumen' => '',
             'lasting_hours' => 80,
             'modality_id' => 23, //presencial
-            'course_capacity_size' => 30,
-            'for_free' => true,
+            'free' => true,
             'state_id' => 1, //activo
-            'course_observation' => '',
+            'observation' => '',
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
@@ -2532,26 +2526,25 @@ class DatabaseSeeder extends Seeder
             "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
-            "local_proposal_to_be_held" => "",
+            "local_proposal" => "",
             "schedules_id" => 28,
-            "course_project" => "",
+            "project" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 37,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS B1.1",
         ]);
         factory(Course::class)->create([
-            'course_code' => 'YEC-B1.2',
-            'course_name' => 'B1.2',
+            'code' => 'YEC-B1.2',
+            'name' => 'B1.2',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
             'resumen' => '',
             'lasting_hours' => 80,
             'modality_id' => 23, //presencial
-            'course_capacity_size' => 30,
-            'for_free' => true,
+            'free' => true,
             'state_id' => 1, //activo
-            'course_observation' => '',
+            'observation' => '',
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
@@ -2565,14 +2558,14 @@ class DatabaseSeeder extends Seeder
             "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
-            "local_proposal_to_be_held" => "",
+            "local_proposal" => "",
             "schedules_id" => 28,
-            "course_project" => "",
+            "project" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 38,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS B1",
-        ]);*/
+        ]);
 
         // school_periods
         factory(SchoolPeriod::class)->create([

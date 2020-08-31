@@ -192,3 +192,12 @@ Route::group(['prefix' => 'working_information'], function () {
       Route::delete('{id}', "Cecy\WorkingInformationController@destroy");
    //});
 });
+
+Route::group(['prefix' => 'planification'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\PlanificationController');
+      Route::get('filter', 'Cecy\PlanificationController@filter');
+      Route::put("{id}", "Cecy\PlanificationController@update");
+      Route::delete('{id}', "Cecy\PlanificationController@destroy");
+   //});
+});
