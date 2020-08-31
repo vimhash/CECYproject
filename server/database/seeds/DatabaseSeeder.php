@@ -6,6 +6,8 @@ use App\Models\Attendance\Catalogue as AttendanceCatalogue;
 use App\Models\Ignug\Catalogue as IgnugCatalogue;
 use App\Models\Cecy\Catalogue as CecyCatalogue;
 use App\Models\Cecy\Course;
+use App\Models\Cecy\Planification;
+use App\Models\Cecy\Schedule;
 use App\Models\Cecy\AcademicRecord;
 use App\Models\Cecy\SchoolPeriod;
 use App\Role;
@@ -2580,6 +2582,30 @@ class DatabaseSeeder extends Seeder
             'date_end_extraordinary' => "2020-08-28",
             'date_cancel_extraordinary' => "2020-08-28"
         ]);
+
+        factory(Schedule::class)->create([
+            'name' => "Horario 1",
+            'schedule_id' =>28,
+        ]);
+        factory(Schedule::class)->create([
+            'name' => "Horario 2",
+            'schedule_id' =>28,
+        ]);
+
+
+        factory(Planification::class)->create([
+            'date_start' => '2020-08-28',
+            'date_end' => '2020-10-28',
+            'course_id' => 1,
+            'teacher_id'  => 1,
+            'state_id' => 1,
+            'schedule_id' => 1,
+            'school_period_id' => 1,
+            'classroom' => "Yec1",
+            'planned_end_date' =>'2020-10-28',
+            'course_capacity' => '20',
+        ]);
+
 
         // academic_record
       /*  factory(AcademicRecord::class)->create([

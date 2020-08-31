@@ -11,9 +11,10 @@ class Schedule extends Model implements Auditable
 
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
+      'name',
     ];
     public function schedules()
     {
-        return $this->hasMany(Schedule::class, 'schedule_id');
+        return $this->hasMany(Catalogue::class, 'schedule_id');
     }
 }
