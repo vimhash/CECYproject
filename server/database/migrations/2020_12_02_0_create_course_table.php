@@ -16,17 +16,17 @@ class CreateCourseTable extends Migration
         //cursos
         Schema::connection('pgsql-cecy')->create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('course_code',20); //codigo_curso
-            $table->string('course_name',20); //nombre_curso
+            $table->string('code',20); //codigo_curso
+            $table->string('name',20); //nombre_curso
             $table->decimal('cost', 3, 2); //costo
             $table->text('photo'); //foto
             $table->string('resumen',225); //resumen
             $table->integer('lasting_hours'); //duracion_horas
             $table->foreignId('modality_id')->constrained('cecy.catalogues'); //id_modalidad
             $table->integer('course_capacity_size'); //capacidad_del_curso
-            $table->boolean('for_free'); //gratuito
+            $table->boolean('free'); //gratuito
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
-            $table->string('course_observation',225); //observacion_curso
+            $table->string('observation',225); //observacion_curso
             $table->string('objective',225); //objetivo
             $table->foreignId('participant_type_id')->constrained('cecy.catalogues'); //id_tipo_participante
             $table->foreignId('area_id')->constrained('cecy.catalogues'); //id_area
@@ -40,15 +40,15 @@ class CreateCourseTable extends Migration
             $table->foreignId('person_proposal_id')->constrained('authentication.users'); //id_persona_propuesta
             $table->date('proposed_date'); //fecha_propuesta
             $table->date('approval_date'); //fecha_aprobacion
-            $table->string('local_proposal_to_be_held',150); //local_propuesta_a_dictar
+            $table->string('local_proposal',150); //local_propuesta_a_dictar
             $table->foreignId('schedules_id')->constrained('cecy.catalogues'); //id_horario_propuesta
-            $table->string('course_project',150); //proyecto_curso
+            $table->string('project',150); //proyecto_curso
             $table->foreignId('course_type_id')->constrained('cecy.catalogues'); //id_tipo_curso
             $table->foreignId('specialty_id')->constrained('cecy.catalogues'); //id_especialidad
             $table->foreignId('academic_period_id')->constrained('cecy.catalogues'); //id_periodo_academico
             $table->string('setec_name',200); //nombre_setec
             $table->timestamps();
-            
+
             //$table->foreignId('mood_id')->constrained('cecy.catalogues');
             //$table->foreign('schedule_proposal_id')->references('id')->on('');
         });

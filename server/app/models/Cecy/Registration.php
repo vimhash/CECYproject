@@ -15,7 +15,6 @@ class Registration extends Model implements Auditable
         'person_participant_id',
         'approved',
         'school_period_id',
-        'registration_type_id',
         'number_registration',
     ];
     public function state()
@@ -33,5 +32,9 @@ class Registration extends Model implements Auditable
     public function registration()
     {
         return $this->hasMany(Catalogue::class, 'registration_type_id');
+    }
+    public function planifications()
+    {
+        return $this->hasMany(Planification::class, 'planification_id');
     }
 }

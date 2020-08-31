@@ -11,15 +11,14 @@ class Course extends Model implements Auditable
 
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
-      'course_code',
-      'course_name',
+      'code',
+      'name',
       'cost',
       'photo',
       'resumen',
       'lasting_hours',
-      'course_capacity_size',
-      'for_free',
-      'course_observation',
+      'free',
+      'observation',
       'objective',
       'required_installing_sources',
       'practice_hours',
@@ -30,7 +29,7 @@ class Course extends Model implements Auditable
       'proposed_date',
       'approval_date',
       'local_proposal_to_be_held',
-      'course_project',
+      'project',
       'setec_name'
     ];
     public function modality()
@@ -56,10 +55,6 @@ class Course extends Model implements Auditable
     public function user()
     {
         return $this->belongsTo(User::class,'person_proposal_id');
-    }
-    public function schedule()
-    {
-        return $this->belongsTo(Catalogue::class,'schedules_id');
     }
     public function course()
     {

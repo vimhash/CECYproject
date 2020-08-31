@@ -2342,7 +2342,7 @@ class DatabaseSeeder extends Seeder
         });
 
         // courses
-        factory(Course::class)->create([
+      /*  factory(Course::class)->create([
             'course_code' => 'YEC-ST',
             'course_name' => 'STARTER',
             'cost' => 0,
@@ -2572,7 +2572,7 @@ class DatabaseSeeder extends Seeder
             "specialty_id" => 39,
             "academic_period_id" => 38,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS B1",
-        ]);
+        ]);*/
 
         // school_periods
         factory(SchoolPeriod::class)->create([
@@ -2589,13 +2589,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // academic_record
-        factory(AcademicRecord::class)->create([
+      /*  factory(AcademicRecord::class)->create([
             "state_id" => 1,
             "user_id" => 4,
             "course_id" => 1,
             "teacher_id" => 1,
             "school_period_id" => 1,
-            'grade1' => 85, 
+            'grade1' => 85,
             'grade2' => 75.2,
             'final_grade' => 80.1
         ]);
@@ -2605,7 +2605,7 @@ class DatabaseSeeder extends Seeder
             "course_id" => 2,
             "teacher_id" => 2,
             "school_period_id" => 1,
-            'grade1' => 100, 
+            'grade1' => 100,
             'grade2' => 75.0,
             'final_grade' => 87.5
         ]);
@@ -2615,12 +2615,12 @@ class DatabaseSeeder extends Seeder
             "course_id" => 1,
             "teacher_id" => 3,
             "school_period_id" => 1,
-            'grade1' => 85.0, 
+            'grade1' => 85.0,
             'grade2' => 75.0,
             'final_grade' => 80.0
-        ]);
+        ]);*/
         // factory(App\Models\JobBoard::class, 10)->create();
-        
+
         /*
             drop schema if exists attendance cascade;
             drop schema if exists ignug cascade;
