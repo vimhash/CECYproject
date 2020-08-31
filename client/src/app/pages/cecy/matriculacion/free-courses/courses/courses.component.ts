@@ -47,7 +47,7 @@ export class CoursesComponent implements OnInit {
 
   obtenerCursosGratuitos() {
     this.cecyService
-      .get("planification/filter?free=true")
+      .get("planification?free=true")
       .subscribe((response: any) => {
         this.coursesList = response.data.attributes;
       });
