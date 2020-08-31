@@ -16,14 +16,13 @@ class CreateCourseTable extends Migration
         //cursos
         Schema::connection('pgsql-cecy')->create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('code',20); //codigo_curso
-            $table->string('name',20); //nombre_curso
+            $table->string('code',20); //codigo
+            $table->string('name',20); //nombre
             $table->decimal('cost', 3, 2); //costo
             $table->text('photo'); //foto
             $table->string('resumen',225); //resumen
             $table->integer('lasting_hours'); //duracion_horas
             $table->foreignId('modality_id')->constrained('cecy.catalogues'); //id_modalidad
-            $table->integer('course_capacity_size'); //capacidad_del_curso
             $table->boolean('free'); //gratuito
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('observation',225); //observacion_curso
@@ -48,9 +47,6 @@ class CreateCourseTable extends Migration
             $table->foreignId('academic_period_id')->constrained('cecy.catalogues'); //id_periodo_academico
             $table->string('setec_name',200); //nombre_setec
             $table->timestamps();
-
-            //$table->foreignId('mood_id')->constrained('cecy.catalogues');
-            //$table->foreign('schedule_proposal_id')->references('id')->on('');
         });
     }
 
