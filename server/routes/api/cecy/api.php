@@ -111,6 +111,16 @@ Route::group(['prefix' => 'person_prerequisites_course'], function () {
    //});
 });
 
+
+Route::group(['prefix' => 'planification'], function () {
+   //Route::group(['middleware' => 'auth:api'], function () {
+      Route::apiResource('', 'Cecy\PlanificationController');
+      Route::get('filter', 'Cecy\PlanificationController@filter');
+      Route::put("{id}", "Cecy\PlanificationController@update");
+      Route::delete('{id}', "Cecy\PlanificationController@destroy");
+   //});
+});
+
 Route::group(['prefix' => 'profile_instructor_course'], function () {
    //Route::group(['middleware' => 'auth:api'], function () {
       Route::apiResource('', 'Cecy\ProfileInstructorCourseController');
@@ -190,14 +200,5 @@ Route::group(['prefix' => 'working_information'], function () {
       Route::get('filter', 'Cecy\WorkingInformationController@filter');
       Route::put("{id}", "Cecy\WorkingInformationController@update");
       Route::delete('{id}', "Cecy\WorkingInformationController@destroy");
-   //});
-});
-
-Route::group(['prefix' => 'planification'], function () {
-   //Route::group(['middleware' => 'auth:api'], function () {
-      Route::apiResource('', 'Cecy\PlanificationController');
-      Route::get('filter', 'Cecy\PlanificationController@filter');
-      Route::put("{id}", "Cecy\PlanificationController@update");
-      Route::delete('{id}', "Cecy\PlanificationController@destroy");
    //});
 });
