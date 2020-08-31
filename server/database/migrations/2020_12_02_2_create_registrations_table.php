@@ -22,7 +22,7 @@ class CreateRegistrationsTable extends Migration
             $table->foreignId('state_id')->constrained("ignug.states"); //id_estado
             $table->foreignId('registration_type_id')->constrained('cecy.catalogues'); //id_tipo_matricula
             $table->integer('number_registration'); //numero_de_matricula
-            $table->foreignId('planification_id')->constrained('cecy.planifications'); //id_tipo_matricula
+            $table->foreignId('planification_id')->constrained('cecy.planifications'); //id_planificación
             $table->timestamps();
         });
     }

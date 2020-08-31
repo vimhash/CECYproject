@@ -23,8 +23,8 @@ class CreatePlanificationTable extends Migration
             $table->foreignId('schedule_id')->constrained('cecy.schedules');
             $table->foreignId('school_period_id')->constrained('cecy.school_periods');
             $table->string('classroom', 100);
-            $table->string('planned_end_date', 500);//fecha fin prevista
-            $table->string('capacity', 200);
+            $table->string('planned_end_date', 500); //fecha fin prevista
+            $table->integer('course_capacity'); //capacidad_curso
             $table->timestamps();
         });
     }
