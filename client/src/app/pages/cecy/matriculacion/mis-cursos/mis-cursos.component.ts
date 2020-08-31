@@ -11,7 +11,7 @@ import {BreadcrumbService} from '../../../../shared/breadcrumb/breadcrumb.servic
 export class MisCursosComponent implements OnInit {
     constructor(private breadcrumbService: BreadcrumbService) {
       this.breadcrumbService.setItems([
-          {label: 'CEC-Y', routerLink: ['/cecy/dashboard/bienvenida']},
+          {label: 'CEC-Y', routerLink: ['/cecy/dashboard/participantes']},
           {label: 'Mis Cursos'},
       ]);
     }
