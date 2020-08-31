@@ -1,16 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 //import {CountryService} from '../../../../demo/service/countryservice';
 //import { SelectItem, MenuItem } from "primeng/api";
-import { BreadcrumbService } from "../../../../shared/breadcrumb/breadcrumb.service";
+import { BreadcrumbService } from "../../../../../shared/breadcrumb/breadcrumb.service";
 //import { NgxSpinnerService } from "ngx-spinner";
 
-import { CecyServiceService } from "../../../../services/cecy/cecy-service.service";
+import { CecyServiceService } from "../../../../../services/cecy/cecy-service.service";
 
 @Component({
-  selector: "app-dashboard-coordinador",
-  templateUrl: "./cursos-gratuitos.component.html",
+  selector: "app-details-course",
+  templateUrl: "./details-course.component.html",
 })
-export class CursosGratuitosComponent implements OnInit {
+export class DetailsCourseComponent implements OnInit {
   coursesList: [];
 
   constructor(

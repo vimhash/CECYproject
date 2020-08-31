@@ -42,7 +42,7 @@ import { TabViewModule } from "primeng";
 import { InputNumberModule } from "primeng/inputnumber";
 
 import { CursosPagoComponent } from "./matriculacion/cursos-pago/cursos-pago.component";
-import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/cursos-gratuitos.component";
+// import { CursosGratuitosComponent } from "./matriculacion/cursos-gratuitos/cursos-gratuitos.component";
 import { MisCursosComponent } from "./matriculacion/mis-cursos/mis-cursos.component";
 import { CursosDocentesComponent } from "./matriculacion/cursos-docente/cursos-docente.component";
 import { NotasDocentesComponent } from "./matriculacion/notas-docente/notas-docente.component";
@@ -90,7 +90,7 @@ import { NotasDocentesComponent } from "./matriculacion/notas-docente/notas-doce
   ],
   declarations: [
     CursosPagoComponent,
-    CursosGratuitosComponent,
+    // CursosGratuitosComponent,
     MisCursosComponent,
     CursosDocentesComponent,
     NotasDocentesComponent,
