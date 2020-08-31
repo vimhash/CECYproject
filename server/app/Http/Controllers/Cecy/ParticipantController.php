@@ -22,7 +22,7 @@ class ParticipantController extends Controller
 
     public function filter(Request $request)
     {
-        $participant = Participant::where('name', $request->name)->orderBy('name')->get();
+        $participant = Participant::where('free', $request->free)->orderBy('id')->get();
         return response()->json([
                 'data' => [
                     'type' => 'participant',

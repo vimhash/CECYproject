@@ -14,6 +14,7 @@ class Planification extends Model implements Auditable
         'date_start',
         'date_end',
         'classroom',
+        'free',
         'planned_end_date',
         'capacity',
     ];
