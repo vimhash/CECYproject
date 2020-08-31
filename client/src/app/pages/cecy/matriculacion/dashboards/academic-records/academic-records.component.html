@@ -29,14 +29,25 @@
         </div>
         <div class="feature-card-title">Añadir Historial Académico</div>
         <!-- <div class="feature-card-content">Cursos disponibles 50</div> -->
-        <div class="feature-card-content">
-          <!-- <button
-          type="file"
-          label="Subir Matriz"
-          pButton
-          icon="pi pi-sign-in"
-          routerLink="/cecy/academic-records/new-academic-record"
-        ></button> -->
+        <div class="card">
+          <h4>Subir Matriz</h4>
+
+          <p-fileUpload
+            name="demo[]"
+            url="./upload.php"
+            (onUpload)="onUpload($event)"
+            multiple="multiple"
+            accept="image/*"
+            maxFileSize="1000000"
+          >
+            <ng-template pTemplate="content">
+              <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">
+                  {{ file.name }} - {{ file.size }} bytes
+                </li>
+              </ul>
+            </ng-template>
+          </p-fileUpload>
         </div>
       </div>
     </div>

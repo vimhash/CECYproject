@@ -24,6 +24,7 @@ import { ToggleButtonModule } from "primeng/togglebutton";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { SplitButtonModule } from "primeng/splitbutton";
 import { PasswordModule } from "primeng/password";
+import { FileUploadModule } from "primeng/fileupload";
 
 import { FormsModule } from "@angular/forms";
 import { CecyRoutes } from "./cecy.routing";
@@ -57,6 +58,7 @@ import { NotasDocentesComponent } from "./matriculacion/notas-docente/notas-doce
     CalendarModule,
     ChipsModule,
     CheckboxModule,
+    FileUploadModule,
     RadioButtonModule,
     InputMaskModule,
     InputSwitchModule,

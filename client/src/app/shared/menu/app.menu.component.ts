@@ -302,11 +302,6 @@ export class AppMenuComponent implements OnInit {
               icon: "pi pi-fw pi-sign-in",
               routerLink: ["/cecy/dashboard/academic-records"],
             },
-            {
-              label: "Forms",
-              icon: "pi pi-fw pi-file",
-              routerLink: ["/components/forms"],
-            },
             // {
             //   label: "Docentes",
             //   icon: "pi pi-fw pi-sign-in",

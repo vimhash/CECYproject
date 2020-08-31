@@ -15,6 +15,7 @@ import { InputTextModule } from "primeng/inputtext";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { DropdownModule } from "primeng/dropdown";
 import { SpinnerModule } from "primeng/spinner";
+import { FileUploadModule } from "primeng/fileupload";
 import { SliderModule } from "primeng/slider";
 import { LightboxModule } from "primeng/lightbox";
 import { ListboxModule } from "primeng/listbox";
@@ -36,6 +37,7 @@ import { AcademicRecordsComponent } from "./academic-records/academic-records.co
     FormsModule,
     AutoCompleteModule,
     MultiSelectModule,
+    FileUploadModule,
     CalendarModule,
     ChipsModule,
     CheckboxModule,

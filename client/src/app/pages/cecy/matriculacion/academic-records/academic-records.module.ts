@@ -25,6 +25,7 @@ import { ToggleButtonModule } from "primeng/togglebutton";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { SplitButtonModule } from "primeng/splitbutton";
 import { PasswordModule } from "primeng/password";
+import { TableModule } from "primeng/table";
 import { SeeAcademicRecordsComponent } from "./see-academic-records/see-academic-records.component";
 import { NewAcademicRecordComponent } from "./new-academic-record/new-academic-record.component";
 
@@ -55,6 +56,7 @@ import { NewAcademicRecordComponent } from "./new-academic-record/new-academic-r
     SelectButtonModule,
     SplitButtonModule,
     PasswordModule,
+    TableModule,
   ],
   declarations: [SeeAcademicRecordsComponent, NewAcademicRecordComponent],
 })
