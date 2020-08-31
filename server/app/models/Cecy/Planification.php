@@ -35,6 +35,6 @@ class Planification extends Model implements Auditable
     }
     public function school_period()
     {
-        return $this->hasMany(Schedule::class,'school_period_id');
+        return $this->hasMany(SchoolPeriod::class,'school_period_id');
     }
 }

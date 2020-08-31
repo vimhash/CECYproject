@@ -36,6 +36,6 @@ class CreatePlanificationTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('catalogues');
+        Schema::connection('pgsql-cecy')->dropIfExists('planifications');
     }
 }
