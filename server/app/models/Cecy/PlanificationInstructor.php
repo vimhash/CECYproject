@@ -5,7 +5,7 @@ namespace App\Models\Cecy;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class CourseInstructor extends Model implements Auditable
+class PlanificationInstructor extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
 
@@ -18,10 +18,14 @@ class CourseInstructor extends Model implements Auditable
     }
     public function user()
     {
-        return $this->belongsTo(User::class,'person_instructor_id');
+        return $this->belongsTo(User::class,'instructor_id');
     }
-    public function course()
+    public function planification()
     {
-        return $this->belongsTo(Course::class,'course_code_id');
+        return $this->belongsTo(Planification::class,'planification_id');
+    }
+    public function detail()
+    {
+        return $this->belongsTo(DetailRegistration::class,'detail_registrations');
     }
 }

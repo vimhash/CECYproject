@@ -12,26 +12,19 @@ class Registration extends Model implements Auditable
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
         'date_registration',
-        'person_participant_id',
-        'approved',
-        'school_period_id',
-        'number_registration',
+        'number',
     ];
     public function state()
     {
-        return $this->belongsTo(State::class);
+        return $this->belongsTo(State::class,'state_id');
     }
     public function user()
     {
-        return $this->belongsTo(User::class,'person_participant_id');
-    }
-    public function school_period()
-    {
-        return $this->belongsTo(SchoolPeriod::class,'school_period_id');
+        return $this->belongsTo(User::class,'participant_id');
     }
     public function registration()
     {
-        return $this->hasMany(Catalogue::class, 'registration_type_id');
+        return $this->hasMany(Catalogue::class, 'type_id');
     }
     public function planifications()
     {

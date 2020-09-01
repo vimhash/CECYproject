@@ -11,16 +11,18 @@ class DetailRegistration extends Model implements Auditable
 
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
-        'grade1',
-        'grade2',
         'final_grade',
     ];
-    public function course()
+    public function planification()
     {
-        return $this->belongsTo(Course::class,'code_id');
+        return $this->belongsTo(Planification::class,'planification_id');
     }
     public function registration()
     {
         return $this->belongsTo(Registration::class,'registration_id');
+    }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
     }
 }

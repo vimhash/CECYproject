@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCourseInstructorsTable extends Migration
+class CreatePlanificationInstructorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,9 +17,9 @@ class CreateCourseInstructorsTable extends Migration
         Schema::connection('pgsql-cecy')->create('course_instructors', function (Blueprint $table) {
             $table->id();
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
-            $table->foreignId('person_instructor_id')->constrained('authentication.users'); //id_persona_instructor
-            $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
-            $table->foreignId('detail_registration_id')->constrained('detail_registrations'); //id_detalle_matricula            
+            $table->foreignId('instructor_id')->constrained('authentication.users'); //id_persona_instructor
+            $table->foreignId('planification_id')->constrained('planifications'); //id_planificaion
+            $table->foreignId('detail_registration_id')->constrained('detail_registrations'); //id_detalle_matricula
             $table->timestamps();
         });
     }

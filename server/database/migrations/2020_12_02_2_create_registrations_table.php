@@ -17,11 +17,11 @@ class CreateRegistrationsTable extends Migration
         Schema::connection('pgsql-cecy')->create('registrations', function (Blueprint $table) {
             $table->id();
             $table->string('date_registration', 50); //fecha_matricula
-            $table->foreignId('person_participant_id')->constrained('authentication.users'); //id_persona_participante
-            $table->boolean('approved'); //aprobado
+            $table->foreignId('participant_id')->constrained('authentication.users'); //id_persona_participante
+          //  $table->boolean('approved'); //aprobado
             $table->foreignId('state_id')->constrained("ignug.states"); //id_estado
-            $table->foreignId('registration_type_id')->constrained('cecy.catalogues'); //id_tipo_matricula
-            $table->integer('number_registration'); //numero_de_matricula
+            $table->foreignId('type_id')->constrained('cecy.catalogues'); //id_tipo_matricula
+            $table->string('number',100); //numero_de_matricula
             $table->foreignId('planification_id')->constrained('cecy.planifications'); //id_planificación
             $table->timestamps();
         });

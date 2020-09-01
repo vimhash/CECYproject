@@ -15,8 +15,10 @@ class CreateSchedulesTable extends Migration
     {
         Schema::connection('pgsql-cecy')->create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('schedule_id')->constrained('cecy.catalogues');
-            $table->string('name', 100);
+            $table->foreignId('state_id')->constrained('ignug.states');
+            $table->string('start_time', 50);//hora inicio
+            $table->string('end_time', 50);//hora fin
+            $table->string('place', 50);//lugar
             $table->timestamps();
         });
     }

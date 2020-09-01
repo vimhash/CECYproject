@@ -17,15 +17,17 @@ class CreatePlanificationsTable extends Migration
             $table->id();
             $table->date('date_start')->nullable();
             $table->date('date_end')->nullable();
-            $table->foreignId('course_id')->constrained('cecy.courses');
+            $table->foreignId('course_id')->constrained('cecy.courses');//cursos_id
             $table->foreignId('teacher_id')->constrained('authentication.users');
-            $table->foreignId('state_id')->constrained('ignug.states');
-            $table->foreignId('schedule_id')->constrained('cecy.schedules');
-            $table->foreignId('school_period_id')->constrained('cecy.school_periods');
+            $table->foreignId('state_id')->constrained('ignug.states');//stado_id
+            $table->foreignId('schedule_id')->constrained('cecy.schedules');//horaios_id
+            $table->foreignId('school_period_id')->constrained('cecy.school_periods');//periodo_id
             $table->string('classroom', 100);
             $table->boolean('free'); //gratuito
             $table->date('planned_end_date'); //fecha fin prevista
-            $table->integer('course_capacity'); //capacidad_curso
+            $table->integer('capacity'); //capacidad_curso
+            $table->foreignId('conference')->constrained('cecy.catalogues'); //jornada
+            $table->foreignId('parallel')->constrained('cecy.catalogues'); //jornada
             $table->timestamps();
         });
     }

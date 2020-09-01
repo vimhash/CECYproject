@@ -2329,6 +2329,32 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1,
         ]);
 
+          //catalogos jornada
+          factory(CecyCatalogue::class)->create([
+              'code' => 'pruebas',
+              'name' => 'MATUTINA',
+              'type' => 'jornada',
+              'state_id' => 1,
+          ]);
+          factory(CecyCatalogue::class)->create([
+              'code' => 'pruebas',
+              'name' => 'NOCTURNA',
+              'type' => 'jornada',
+              'state_id' => 1,
+          ]);
+            //catalogos paralelo
+            factory(CecyCatalogue::class)->create([
+                'code' => 'pruebas',
+                'name' => 'A',
+                'type' => 'paralelo',
+                'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+                'code' => 'pruebas',
+                'name' => 'B',
+                'type' => 'paralelo',
+                'state_id' => 1,
+            ]);
         // roles
         factory(Role::class)->create([
             'code' => '3',
@@ -2582,17 +2608,21 @@ class DatabaseSeeder extends Seeder
             'date_end_extraordinary' => "2020-08-28",
             'date_cancel_extraordinary' => "2020-08-28"
         ]);
-
+//horarios
         factory(Schedule::class)->create([
-            'name' => "Horario 1",
-            'schedule_id' =>28,
+            'start_time' =>'14:00',
+            'end_time' =>'16:00',
+            'place' =>'YEC1',
+            'state_id' => 1,
         ]);
         factory(Schedule::class)->create([
-            'name' => "Horario 2",
-            'schedule_id' =>28,
+            'start_time' =>'14:00',
+            'end_time' =>'16:00',
+            'place' =>'YEC1',
+            'state_id' => 1,
         ]);
 
-
+//planificacion
         factory(Planification::class)->create([
             'date_start' => '2020-08-28',
             'date_end' => '2020-10-28',
@@ -2604,7 +2634,9 @@ class DatabaseSeeder extends Seeder
             'school_period_id' => 1,
             'classroom' => "Yec1",
             'planned_end_date' =>'2020-10-28',
-            'course_capacity' => '20',
+            'capacity' => '20',
+            'conference' => 263,
+            'parallel' => 265,
         ]);
 
 

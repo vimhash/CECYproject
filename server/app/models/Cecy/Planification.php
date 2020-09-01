@@ -28,7 +28,7 @@ class Planification extends Model implements Auditable
     }
     public function course()
     {
-        return $this->belongsTo(User::class,'course_id');
+        return $this->belongsTo(Course::class,'course_id');
     }
     public function schedules()
     {
@@ -37,5 +37,13 @@ class Planification extends Model implements Auditable
     public function school_period()
     {
         return $this->hasMany(SchoolPeriod::class,'school_period_id');
+    }
+    public function conference()
+    {
+        return $this->belongsTo(Catalogue::class,'conference');
+    }
+    public function parallel()
+    {
+        return $this->belongsTo(Catalogue::class,'parallel');
     }
 }
