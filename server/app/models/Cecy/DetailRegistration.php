@@ -13,10 +13,6 @@ class DetailRegistration extends Model implements Auditable
     protected $fillable = [
         'final_grade',
     ];
-    public function planification()
-    {
-        return $this->belongsTo(Planification::class,'planification_id');
-    }
     public function registration()
     {
         return $this->belongsTo(Registration::class,'registration_id');
