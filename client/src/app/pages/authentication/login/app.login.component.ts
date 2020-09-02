@@ -100,7 +100,7 @@ export class AppLoginComponent {
                   selectedRole = role;
                   break;
                 default:
-                  route = "/cecy/free-courses/courses";
+                  route = "/cecy/dashboard/participants";
                   selectedRole = role;
                   break;
               }
