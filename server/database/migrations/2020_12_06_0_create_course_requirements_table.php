@@ -18,14 +18,15 @@ class CreateCourseRequirementsTable extends Migration
             $table->id();
             $table->foreignId('requirement_id')->constrained('courses'); //id_requisito
             $table->foreignId('course_id')->constrained('courses'); //id_curso
+            $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->foreignId('course_requirement_type_id')->constrained('cecy.catalogues'); //id_tipo_requerimiento_curso
             $table->timestamps();
-            
+
             // $table->boolean('enrollement_payment');
             // $table->string('certificate_number',155);
             // $table->date('withdrawal_date');
             // $table->boolean('witdrawal_certificate');
-            
+
         });
     }
 

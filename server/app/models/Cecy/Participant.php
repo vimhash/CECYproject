@@ -20,7 +20,7 @@ class Participant extends Model implements Auditable
 
     public function state()
     {
-        return $this->belongsTo(State::class);
+        return $this->belongsTo(State::class,'state_id');
     }
 
     public function participant()

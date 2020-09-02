@@ -17,6 +17,7 @@ class CreateProfileInstructorCourseTable extends Migration
         Schema::connection('pgsql-cecy')->create('profile_instructor_courses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
+            $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('required_knowledge', 150); //conocimientos_requeridos
             $table->string('required_experience', 150); //experiencias_requeridas
             $table->string('required_skills', 150); //habilidades_requeridas

@@ -25,4 +25,8 @@ class CourseRequirement extends Model implements Auditable
     {
         return $this->hasMany(Catalogue::class,'course_requirement_type_id');
     }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
+    }
 }

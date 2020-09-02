@@ -25,6 +25,7 @@ class CreateWorkingInformationTable extends Migration
             $table->boolean('company_sponsor'); //empresa_auspiciado
             $table->string('sponsor_name',255); //nombre_auspiciante
             $table->foreignId('person_instructor_id')->constrained('authentication.users'); //id_persona_instructor
+            $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('knowledge_course',150); //conocimiento_curso
             $table->string('recomendation_course',150); //recomendacion_curso
             $table->timestamps();

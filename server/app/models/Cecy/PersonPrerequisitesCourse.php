@@ -25,4 +25,8 @@ class PersonPrerequisitesCourse extends Model implements Auditable
     {
         return $this->belongsTo(User::class, 'prerequisite_course_id');
     }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
+    }
 }

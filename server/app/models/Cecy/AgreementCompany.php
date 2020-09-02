@@ -21,4 +21,8 @@ class AgreementCompany extends Model implements Auditable
     {
         return $this->hasMany(Agreement::class,'agreement_id');
     }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
+    }
 }

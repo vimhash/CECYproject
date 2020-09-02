@@ -16,9 +16,12 @@ class TargetGroup extends Model implements Auditable
     {
         return $this->belongsTo(Catalogue::class,'population_id');
     }
-
     public function course()
     {
         return $this->belongsTo(Course::class,'course_code_id');
+    }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
     }
 }

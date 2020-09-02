@@ -22,4 +22,8 @@ class DepartmentData extends Model implements Auditable
     {
         return $this->belongsTo(Catalogue::class,'schedule_id');
     }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
+    }
 }

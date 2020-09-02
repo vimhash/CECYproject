@@ -8,7 +8,7 @@ use OwenIt\Auditing\Contracts\Auditable;
 class ProposalCourses extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
- 
+
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
     ];
@@ -25,5 +25,9 @@ class ProposalCourses extends Model implements Auditable
     public function type()
     {
         return $this->belongsTo(Catalogue::class,'course_type_id');
+    }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
     }
 }

@@ -21,4 +21,8 @@ class ProposedRequirement extends Model implements Auditable
     {
         return $this->belongsTo(Course::class,'course_code_id');
     }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
+    }
 }

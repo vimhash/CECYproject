@@ -26,4 +26,8 @@ class WorkingInformation extends Model implements Auditable
     {
         return $this->belongsTo(User::class, 'person_instructor_id');
     }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
+    }
 }

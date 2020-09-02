@@ -16,6 +16,7 @@ class CreateAgreementsTable extends Migration
         //convenios
         Schema::connection('pgsql-cecy')->create('agreements', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('name',150); //nombre
             $table->timestamps();
         });

@@ -13,4 +13,8 @@ class Agreement extends Model implements Auditable
     protected $fillable = [
         'name',
     ];
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
+    }
 }

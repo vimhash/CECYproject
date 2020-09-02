@@ -17,6 +17,7 @@ class CreateAgreementCompanyTable extends Migration
         Schema::connection('pgsql-cecy')->create('agreement_companies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('agreement_id')->constrained('agreements'); //id_agreement
+            $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('objective',255); //objetivo
             $table->date('date_agreement_signature'); //fecha_firma_convenio
             $table->date('expiry_date'); //fecha_caducidad
