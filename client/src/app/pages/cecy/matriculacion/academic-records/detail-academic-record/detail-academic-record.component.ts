@@ -7,10 +7,10 @@ import { BreadcrumbService } from "../../../../../shared/breadcrumb/breadcrumb.s
 import { CecyServiceService } from "../../../../../services/cecy/cecy-service.service";
 
 @Component({
-  selector: "app-new-academic-record",
-  templateUrl: "./new-academic-record.component.html",
+  selector: "app-detail-academic-record",
+  templateUrl: "./detail-academic-record.component.html",
 })
-export class NewAcademicRecordComponent implements OnInit {
+export class DetailAcademicRecordComponent implements OnInit {
   coursesList: [];
 
   constructor(

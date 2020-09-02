@@ -27,7 +27,7 @@ import { SplitButtonModule } from "primeng/splitbutton";
 import { PasswordModule } from "primeng/password";
 import { TableModule } from "primeng/table";
 import { SeeAcademicRecordsComponent } from "./see-academic-records/see-academic-records.component";
-import { NewAcademicRecordComponent } from "./new-academic-record/new-academic-record.component";
+import { DetailAcademicRecordComponent } from "./detail-academic-record/detail-academic-record.component";
 
 @NgModule({
   imports: [
@@ -58,6 +58,6 @@ import { NewAcademicRecordComponent } from "./new-academic-record/new-academic-r
     PasswordModule,
     TableModule,
   ],
-  declarations: [SeeAcademicRecordsComponent, NewAcademicRecordComponent],
+  declarations: [SeeAcademicRecordsComponent, DetailAcademicRecordComponent],
 })
 export class DashboardModule {}

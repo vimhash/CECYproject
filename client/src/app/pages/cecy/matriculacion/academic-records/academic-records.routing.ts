@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 import { SeeAcademicRecordsComponent } from "./see-academic-records/see-academic-records.component";
-import { NewAcademicRecordComponent } from "./new-academic-record/new-academic-record.component";
+import { DetailAcademicRecordComponent } from "./detail-academic-record/detail-academic-record.component";
 
 export const HomeRoutes: Routes = [
   {
@@ -11,8 +11,8 @@ export const HomeRoutes: Routes = [
         component: SeeAcademicRecordsComponent,
       },
       {
-        path: "new-academic-record",
-        component: NewAcademicRecordComponent,
+        path: "detail-academic-record",
+        component: DetailAcademicRecordComponent,
       },
     ],
   },

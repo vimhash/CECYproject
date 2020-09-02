@@ -15,8 +15,8 @@
         [rows]="10"
         dataKey="person_participant_id"
       >
-        <!-- <ng-template pTemplate="caption">
-          DataTable
+        <ng-template pTemplate="caption">
+          Filtrar
           <div class="ui-table-globalfilter-container">
             <input
               type="text"
@@ -27,7 +27,7 @@
               style="width: 250px"
             />
           </div>
-        </ng-template> -->
+        </ng-template>
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th
@@ -59,16 +59,17 @@
               <button
                 pButton
                 type="button"
+                routerLink="/cecy/academic-records/detail-academic-record"
                 class="ui-button-success"
                 icon="pi pi-search"
                 style="margin-right: 0.5em"
               ></button>
-              <button
+              <!-- <button
                 pButton
                 type="button"
                 class="ui-button-warning"
                 icon="pi pi-pencil"
-              ></button>
+              ></button> -->
             </td>
           </tr>
         </ng-template>

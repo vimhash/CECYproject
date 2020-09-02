@@ -33,7 +33,7 @@ export class SeeAcademicRecordsComponent implements OnInit {
       { field: "number_registration", header: "N° de Matrícula" },
       { field: "person_participant_id", header: "Estudiante" },
       { field: "planification_id", header: "Curso" },
-      { field: "approved", header: "¿Aprovado?" },
+      { field: "approved", header: "¿Aprobado?" },
     ];
   }
 }

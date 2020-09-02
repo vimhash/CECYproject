@@ -33,11 +33,9 @@
           <h4>Subir Matriz</h4>
 
           <p-fileUpload
-            name="demo[]"
             url="./upload.php"
             (onUpload)="onUpload($event)"
-            multiple="multiple"
-            accept="image/*"
+            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
             maxFileSize="1000000"
           >
             <ng-template pTemplate="content">
