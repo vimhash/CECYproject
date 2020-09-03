@@ -19,10 +19,10 @@ class CreateSchedulesTable extends Migration
             $table->string('start_time', 50);//hora inicio
             $table->string('end_time', 50);//hora fin
             $table->string('place', 50);//lugar
-            $table->foreignId('planification_id')->constrained('cecy.planifications');//planifications_id
-            $table->foreignId('course_id')->constrained('cecy.courses');//cursos_id
+          //  $table->foreignId('planification_id')->constrained('cecy.planifications');//planifications_id
+          //  $table->foreignId('course_id')->constrained('cecy.courses');//cursos_id
             $table->foreignId('day_id')->constrained('cecy.catalogues'); //id_tipo_curso
-            $table->morphs('schedulrable');
+          //  $table->morphs('schedulrable');
             $table->timestamps();
         });
     }
