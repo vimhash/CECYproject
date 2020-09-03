@@ -2362,14 +2362,8 @@ class DatabaseSeeder extends Seeder
             'system_id' => 1,
             'state_id' => 1,
         ]);
-
-        // participant
-        factory(User::class, 3)->create()->each(function ($user) {
-            $user->participant()->save(factory(Participant::class)->make());
-            $user->roles()->attach(3);
-        });
         //Instructors
-      /*  factory(Instructor::class)->create([
+        factory(Instructor::class)->create([
             'state_id' => 1,
             'user_id' => 4,
         ]);
@@ -2380,7 +2374,13 @@ class DatabaseSeeder extends Seeder
         factory(Instructor::class)->create([
             'state_id' => 1,
             'user_id' => 5,
-        ]);*/
+        ]);
+        // participant
+        factory(User::class, 3)->create()->each(function ($user) {
+            $user->participant()->save(factory(Participant::class)->make());
+            $user->roles()->attach(3);
+        });
+
         // courses
         factory(Course::class)->create([
             'code' => 'YEC-ST',
