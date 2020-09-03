@@ -13,7 +13,7 @@ export class ParticipantsComponent implements OnInit {
     private spinner: NgxSpinnerService
   ) {
     this.breadcrumbService.setItems([
-      { label: "CEC-Y", routerLink: ["/cecy/dashboard/participantes"] },
+      { label: "CEC-Y" },
     ]);
   }
 

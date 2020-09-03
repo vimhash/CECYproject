@@ -18,8 +18,9 @@ export class DetailAcademicRecordComponent implements OnInit {
     private cecyService: CecyServiceService
   ) {
     this.breadcrumbService.setItems([
-      { label: "CEC-Y", routerLink: ["/cecy/dashboard/participantes"] },
-      { label: "Cursos Gratuitos" },
+      { label: "CEC-Y", routerLink: ["/cecy/dashboard/academic-records"]  },
+      { label: "Historial Acádemico", routerLink: ["/cecy/academic-records/see-academic-records"]   },
+      { label: "Detalle Historial Acádemico"},
     ]);
   }
 

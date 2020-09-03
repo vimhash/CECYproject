@@ -18,8 +18,10 @@ export class DetailsCourseComponent implements OnInit {
     private cecyService: CecyServiceService
   ) {
     this.breadcrumbService.setItems([
-      { label: "CEC-Y", routerLink: ["/cecy/dashboard/participantes"] },
-      { label: "Cursos Gratuitos" },
+      { label: "CEC-Y", routerLink: ["/cecy/dashboard/participants"] },
+      { label: "Cursos Gratuitos", routerLink: ["/cecy/free-courses/courses"] },
+      { label: "Detalles De Curso" },
+
     ]);
   }
 

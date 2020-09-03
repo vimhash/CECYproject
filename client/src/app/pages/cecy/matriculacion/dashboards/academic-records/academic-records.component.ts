@@ -18,7 +18,7 @@ export class AcademicRecordsComponent implements OnInit {
     private router: Router
   ) {
     this.breadcrumbService.setItems([
-      { label: "CEC-Y", routerLink: ["/cecy/dashboard/participantes"] },
+      { label: "CEC-Y"},
     ]);
   }
 
