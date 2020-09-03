@@ -2376,10 +2376,10 @@ class DatabaseSeeder extends Seeder
             'user_id' => 5,
         ]);
         // participant
-        factory(User::class, 3)->create()->each(function ($user) {
+      /*  factory(User::class, 3)->create()->each(function ($user) {
             $user->participant()->save(factory(Participant::class)->make());
             $user->roles()->attach(3);
-        });
+        });*/
 
         // courses
         factory(Course::class)->create([
