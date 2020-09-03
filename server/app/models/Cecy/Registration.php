@@ -20,7 +20,7 @@ class Registration extends Model implements Auditable
     }
     public function user()
     {
-        return $this->belongsTo(User::class,'participant_id');
+        return $this->belongsTo(Instructor::class,'participant_id');
     }
     public function registration()
     {

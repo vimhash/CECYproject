@@ -11,20 +11,20 @@ class WorkingInformation extends Model implements Auditable
 
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
-        'company_name',
-        'company_address',
-        'company_email',
-        'company_phone',
-        'company_activity',
-        'company_summmary',
-        'company_sponsor',
+        'name',
+        'address',
+        'email',
+        'phone',
+        'activity',
+        'summmary',
+        'sponsor',
         'sponsor_name',
         'knowledge_course',
         'recomendation_course',
     ];
     public function user()
     {
-        return $this->belongsTo(User::class, 'person_instructor_id');
+        return $this->belongsTo(Instructor::class, 'instructor_id');
     }
     public function state()
     {

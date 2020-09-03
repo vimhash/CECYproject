@@ -11,15 +11,11 @@ class Need extends Model implements Auditable
 
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
+      'description',
     ];
-    public function type()
-    {
-        return $this->belongsTo(Catalogue::class,'need_id');
-    }
-
     public function course()
     {
-        return $this->belongsTo(Course::class,'course_code_id');
+        return $this->belongsTo(Course::class,'course_id');
     }
     public function state()
     {

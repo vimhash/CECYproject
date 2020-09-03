@@ -17,7 +17,7 @@ class ProfileInstructorCourse extends Model implements Auditable
     ];
     public function course()
     {
-        return $this->belongsTo(Course::class,'course_code_id');
+        return $this->belongsTo(Course::class,'course_id');
     }
     public function state()
     {

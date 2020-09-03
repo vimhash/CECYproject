@@ -11,18 +11,18 @@ class SchoolPeriod extends Model implements Auditable
 
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
-        'date_start',
-        'date_end',
-        'date_cancel',
-        'date_start_ordinary',
-        'date_end_ordinary',
-        'date_cancel_ordinary',
-        'date_start_extraordinary',
-        'date_end_extraordinary',
-        'date_cancel_extraordinary'
+        'start',
+        'end',
+        'cancel',
+        'start_ordinary',
+        'end_ordinary',
+        'cancel_ordinary',
+        'start_extraordinary',
+        'end_extraordinary',
+        'cancel_extraordinary'
     ];
     public function state()
     {
-        return $this->belongsTo(State::class);
+        return $this->belongsTo(State::class,'state_id');
     }
 }

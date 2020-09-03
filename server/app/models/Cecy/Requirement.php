@@ -5,21 +5,21 @@ namespace App\Models\Cecy;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class AgreementCompany extends Model implements Auditable
+class Requirement extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
 
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
-        'objective',
-        'date_agreement_signature',
-        'expiry_date',
-        'representative',
-        'social_reason'
+
     ];
-    public function agreements()
+    public function requirement()
     {
-        return $this->hasMany(Agreement::class,'agreement_id');
+        return $this->hasMany(Catalogue::class,'requirement_type_id');
+    }
+    public function course()
+    {
+        return $this->belongsTo(Course::class,'course_id');
     }
     public function state()
     {

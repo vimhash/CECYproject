@@ -24,7 +24,7 @@ class CreateWorkingInformationTable extends Migration
             $table->string('summmary',255); //empresa_resumen
             $table->boolean('sponsor'); //empresa_auspiciado
             $table->string('sponsor_name',255); //nombre_auspiciante
-            $table->foreignId('instructor_id')->constrained('cecy.instructors'); //id_persona_instructor
+            $table->foreignId('instructor_id')->constrained('instructors'); //id_persona_instructor
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('knowledge_course',150); //conocimiento_curso
             $table->string('recomendation_course',150); //recomendacion_curso

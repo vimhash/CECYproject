@@ -16,6 +16,7 @@ class CreateInstructorsTable extends Migration
         Schema::connection('pgsql-cecy')->create('instructors', function (Blueprint $table) {
             $table->id();
             $table->foreignId('state_id')->constrained('ignug.states');
+            $table->foreignId('user_id')->constrained('authentication.users');
             $table->timestamps();
         });
     }

@@ -14,11 +14,11 @@ class PlanificationInstructor extends Model implements Auditable
     ];
     public function state()
     {
-        return $this->belongsTo(State::class);
+        return $this->belongsTo(State::class,'state_id');
     }
     public function user()
     {
-        return $this->belongsTo(User::class,'instructor_id');
+        return $this->belongsTo(Instructor::class,'instructor_id');
     }
     public function planification()
     {
@@ -26,6 +26,6 @@ class PlanificationInstructor extends Model implements Auditable
     }
     public function detail()
     {
-        return $this->belongsTo(DetailRegistration::class,'detail_registrations');
+        return $this->belongsTo(DetailRegistration::class,'detail_registration_id');
     }
 }

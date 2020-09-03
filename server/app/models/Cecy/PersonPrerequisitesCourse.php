@@ -11,19 +11,19 @@ class PersonPrerequisitesCourse extends Model implements Auditable
 
     protected $connection = 'pgsql-cecy';
     protected $fillable = [
-        'registration_payment',
-        'certified_number',
-        'withdrawal_date',
-        'withdrawn_certificate'
+        'payment',
+        'certified',
+        'withdrawal',
+        'withdrawn'
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'person_participant_id');
+        return $this->belongsTo(Instructor::class, 'participant_id');
     }
     public function course()
     {
-        return $this->belongsTo(User::class, 'prerequisite_course_id');
+        return $this->belongsTo(Course::class, 'course_id');
     }
     public function state()
     {

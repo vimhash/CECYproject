@@ -19,4 +19,8 @@ class Schedule extends Model implements Auditable
     {
         return $this->hasMany(State::class, 'state_id');
     }
+    public function day()
+    {
+        return $this->hasMany(Catalogue::class, 'day_id');
+    }
 }

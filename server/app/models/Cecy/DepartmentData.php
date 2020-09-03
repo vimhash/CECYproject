@@ -16,7 +16,7 @@ class DepartmentData extends Model implements Auditable
     ];
     public function user()
     {
-        return $this->belongsTo(User::class,'person_in_charge_id');
+        return $this->belongsTo(Instructor::class,'charge_id');
     }
     public function schedule()
     {

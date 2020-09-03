@@ -10,11 +10,11 @@ use App\Models\Cecy\Planification;
 use App\Models\Cecy\Schedule;
 use App\Models\Cecy\AcademicRecord;
 use App\Models\Cecy\SchoolPeriod;
+use App\Models\Cecy\Instructor;
 use App\Role;
 use App\User;
 use \App\Models\Ignug\Teacher;
 use \App\Models\Cecy\Participant;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -2368,7 +2368,19 @@ class DatabaseSeeder extends Seeder
             $user->participant()->save(factory(Participant::class)->make());
             $user->roles()->attach(3);
         });
-
+        //Instructors
+      /*  factory(Instructor::class)->create([
+            'state_id' => 1,
+            'user_id' => 4,
+        ]);
+        factory(Instructor::class)->create([
+            'state_id' => 1,
+            'user_id' => 5,
+        ]);
+        factory(Instructor::class)->create([
+            'state_id' => 1,
+            'user_id' => 5,
+        ]);*/
         // courses
         factory(Course::class)->create([
             'code' => 'YEC-ST',
