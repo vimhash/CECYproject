@@ -22,4 +22,8 @@ class CoursesContent extends Model implements Auditable
     {
         return $this->belongsTo(State::class,'state_id');
     }
+    public function user()
+    {
+        return $this->belongsTo(Instructor::class,'person_proposal_id');
+    }
 }

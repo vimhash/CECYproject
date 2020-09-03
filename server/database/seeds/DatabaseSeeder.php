@@ -2355,6 +2355,49 @@ class DatabaseSeeder extends Seeder
                 'type' => 'paralelo',
                 'state_id' => 1,
             ]);
+            //display
+            factory(CecyCatalogue::class)->create([
+                'code' => 'pruebas',
+                'name' => 'Lunes',
+                'type' => 'Dias',
+                'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+                'code' => 'pruebas',
+                'name' => 'Martes',
+                'type' => 'Dias',
+                'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+                'code' => 'pruebas',
+                'name' => 'Miercoles',
+                'type' => 'Dias',
+                'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+                'code' => 'pruebas',
+                'name' => 'Jueves',
+                'type' => 'Dias',
+                'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+                'code' => 'pruebas',
+                'name' => 'Viernes',
+                'type' => 'Dias',
+                'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+                'code' => 'pruebas',
+                'name' => 'Sábado',
+                'type' => 'Dias',
+                'state_id' => 1,
+            ]);
+            factory(CecyCatalogue::class)->create([
+                'code' => 'pruebas',
+                'name' => 'Domingo',
+                'type' => 'Dias',
+                'state_id' => 1,
+            ]);
         // roles
         factory(Role::class)->create([
             'code' => '3',
@@ -2362,22 +2405,9 @@ class DatabaseSeeder extends Seeder
             'system_id' => 1,
             'state_id' => 1,
         ]);
-        //Instructors
-        factory(Instructor::class)->create([
-            'state_id' => 1,
-            'user_id' => 4,
-        ]);
-        factory(Instructor::class)->create([
-            'state_id' => 1,
-            'user_id' => 5,
-        ]);
-        factory(Instructor::class)->create([
-            'state_id' => 1,
-            'user_id' => 5,
-        ]);
-        // participant
+        // Instructors
        factory(User::class, 3)->create()->each(function ($user) {
-            $user->participant()->save(factory(Participant::class)->make());
+            $user->participant()->save(factory(Instructor::class)->make());
             $user->roles()->attach(3);
         });
 
@@ -2387,8 +2417,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'STARTER',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
-            'resumen' => '',
-            'lasting_hours' => 80,
+            'summary' => '',
+            'duration' => 80,
             'modality_id' => 23, //presencial
             'free' => true,
             'state_id' => 1, //activo
@@ -2396,19 +2426,20 @@ class DatabaseSeeder extends Seeder
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
-            "levels_id" => 26, //niveles curso
+            "level_id" => 26, //niveles curso
             "required_installing_sources" => "",
             "practice_hours" => 40,
             "theory_hours" => 40,
             "practice_required_resources" => "",
             "aimtheory_required_resources" => "",
             "learning_teaching_strategy" => "",
-            "person_proposal_id" => 1,
+            "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
+            "capacity"=>20,
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 32,
@@ -2419,8 +2450,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'A1.1',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
-            'resumen' => '',
-            'lasting_hours' => 80,
+            'summary' => '',
+            'duration' => 80,
             'modality_id' => 23, //presencial
             'free' => true,
             'state_id' => 1, //activo
@@ -2428,7 +2459,7 @@ class DatabaseSeeder extends Seeder
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
-            "levels_id" => 26, //niveles curso
+            "level_id" => 26, //niveles curso
             "required_installing_sources" => "",
             "practice_hours" => 40,
             "theory_hours" => 40,
@@ -2441,6 +2472,7 @@ class DatabaseSeeder extends Seeder
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
+            "capacity"=>20,
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 33,
@@ -2451,8 +2483,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'A1.2',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
-            'resumen' => '',
-            'lasting_hours' => 80,
+            'summary' => '',
+            'duration' => 80,
             'modality_id' => 23, //presencial
             'free' => true,
             'state_id' => 1, //activo
@@ -2460,7 +2492,7 @@ class DatabaseSeeder extends Seeder
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
-            "levels_id" => 26, //niveles curso
+            "level_id" => 26, //niveles curso
             "required_installing_sources" => "",
             "practice_hours" => 40,
             "theory_hours" => 40,
@@ -2473,6 +2505,7 @@ class DatabaseSeeder extends Seeder
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
+            "capacity"=>20,
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 34,
@@ -2483,8 +2516,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'A2.1',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
-            'resumen' => '',
-            'lasting_hours' => 80,
+            'summary' => '',
+            'duration' => 80,
             'modality_id' => 23, //presencial
             'free' => true,
             'state_id' => 1, //activo
@@ -2492,7 +2525,7 @@ class DatabaseSeeder extends Seeder
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
-            "levels_id" => 26, //niveles curso
+            "level_id" => 26, //niveles curso
             "required_installing_sources" => "",
             "practice_hours" => 40,
             "theory_hours" => 40,
@@ -2505,6 +2538,7 @@ class DatabaseSeeder extends Seeder
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
+            "capacity"=>20,
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 35,
@@ -2515,8 +2549,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'A2.2',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
-            'resumen' => '',
-            'lasting_hours' => 80,
+            'summary' => '',
+            'duration' => 80,
             'modality_id' => 23, //presencial
             'free' => true,
             'state_id' => 1, //activo
@@ -2524,7 +2558,7 @@ class DatabaseSeeder extends Seeder
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
-            "levels_id" => 26, //niveles curso
+            "level_id" => 26, //niveles curso
             "required_installing_sources" => "",
             "practice_hours" => 40,
             "theory_hours" => 40,
@@ -2537,6 +2571,7 @@ class DatabaseSeeder extends Seeder
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
+            "capacity"=>20,
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 36,
@@ -2547,8 +2582,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'B1.1',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
-            'resumen' => '',
-            'lasting_hours' => 80,
+            'summary' => '',
+            'duration' => 80,
             'modality_id' => 23, //presencial
             'free' => true,
             'state_id' => 1, //activo
@@ -2556,7 +2591,7 @@ class DatabaseSeeder extends Seeder
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
-            "levels_id" => 26, //niveles curso
+            "level_id" => 26, //niveles curso
             "required_installing_sources" => "",
             "practice_hours" => 40,
             "theory_hours" => 40,
@@ -2569,6 +2604,7 @@ class DatabaseSeeder extends Seeder
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
+            "capacity"=>20,
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 37,
@@ -2579,8 +2615,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'B1.2',
             'cost' => 0,
             'photo'  => 'imagen.jpg',
-            'resumen' => '',
-            'lasting_hours' => 80,
+            'summary' => '',
+            'duration' => 80,
             'modality_id' => 23, //presencial
             'free' => true,
             'state_id' => 1, //activo
@@ -2588,7 +2624,7 @@ class DatabaseSeeder extends Seeder
             'objective' => '',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
-            "levels_id" => 26, //niveles curso
+            "level_id" => 26, //niveles curso
             "required_installing_sources" => "",
             "practice_hours" => 40,
             "theory_hours" => 40,
@@ -2601,6 +2637,7 @@ class DatabaseSeeder extends Seeder
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
+            "capacity"=>20,
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 38,
@@ -2610,15 +2647,15 @@ class DatabaseSeeder extends Seeder
         // school_periods
         factory(SchoolPeriod::class)->create([
             "state_id" => 1,
-            'date_start' => "2020-08-28",
-            'date_end' => "2020-08-28",
-            'date_cancel' => "2020-08-28",
-            'date_start_ordinary' => "2020-08-28",
-            'date_end_ordinary' => "2020-08-28",
-            'date_cancel_ordinary' => "2020-08-28",
-            'date_start_extraordinary' => "2020-08-28",
-            'date_end_extraordinary' => "2020-08-28",
-            'date_cancel_extraordinary' => "2020-08-28"
+            'start' => "2020-08-28",
+            'end' => "2020-08-28",
+            'cancel' => "2020-08-28",
+            'start_ordinary' => "2020-08-28",
+            'end_ordinary' => "2020-08-28",
+            'cancel_ordinary' => "2020-08-28",
+            'start_extraordinary' => "2020-08-28",
+            'end_extraordinary' => "2020-08-28",
+            'cancel_extraordinary' => "2020-08-28",
         ]);
 //horarios
         factory(Schedule::class)->create([
@@ -2626,12 +2663,14 @@ class DatabaseSeeder extends Seeder
             'end_time' =>'16:00',
             'place' =>'YEC1',
             'state_id' => 1,
+            'day_id'=>267,
         ]);
         factory(Schedule::class)->create([
             'start_time' =>'14:00',
             'end_time' =>'16:00',
             'place' =>'YEC1',
             'state_id' => 1,
+            'day_id'=>268,
         ]);
 
 //planificacion
@@ -2642,7 +2681,6 @@ class DatabaseSeeder extends Seeder
             'free' => true,
             'teacher_id'  => 1,
             'state_id' => 1,
-            'schedule_id' => 1,
             'school_period_id' => 1,
             'classroom' => "Yec1",
             'planned_end_date' =>'2020-10-28',

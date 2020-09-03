@@ -36,7 +36,7 @@ class CreateCourseTable extends Migration
             $table->string('practice_required_resources',150); //recursos_requeridos_practica
             $table->string('aimtheory_required_resources',150); //recursos_requeridos_teoricos
             $table->string('learning_teaching_strategy',150); //estrategias_enseñanza_aprendizaje
-            $table->foreignId('person_proposal_id')->constrained('authentication.users'); //id_persona_propuesta
+            $table->foreignId('person_proposal_id')->constrained('instructors'); //id_persona_propuesta
             $table->date('proposed_date'); //fecha_propuesta
             $table->date('approval_date'); //fecha_aprobacion
             $table->string('local_proposal',500); //local_propuesta_a_dictar
