@@ -14,12 +14,11 @@ class CreateCourseRequirementsTable extends Migration
     public function up()
     {
         //requerimientos curso
-        Schema::connection('pgsql-cecy')->create('course_requirements', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('requirements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('requirement_id')->constrained('courses'); //id_requisito
             $table->foreignId('course_id')->constrained('courses'); //id_curso
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
-            $table->foreignId('course_requirement_type_id')->constrained('cecy.catalogues'); //id_tipo_requerimiento_curso
+            $table->foreignId('requirement_type_id')->constrained('cecy.catalogues'); //id_tipo_requerimiento_curso
             $table->timestamps();
 
             // $table->boolean('enrollement_payment');
@@ -37,6 +36,6 @@ class CreateCourseRequirementsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('course_requirements');
+        Schema::connection('pgsql-cecy')->dropIfExists('requirements');
     }
 }

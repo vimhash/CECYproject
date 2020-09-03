@@ -20,8 +20,8 @@ class CreateCourseTable extends Migration
             $table->string('name',20); //nombre
             $table->decimal('cost', 3, 2); //costo
             $table->text('photo'); //foto
-            $table->string('resumen',225); //resumen
-            $table->integer('lasting_hours'); //duracion_horas
+            $table->string('summary',225); //resumen
+            $table->integer('duration'); //duracion_horas
             $table->foreignId('modality_id')->constrained('cecy.catalogues'); //id_modalidad
             $table->boolean('free'); //gratuito
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
@@ -29,7 +29,7 @@ class CreateCourseTable extends Migration
             $table->string('objective',225); //objetivo
             $table->foreignId('participant_type_id')->constrained('cecy.catalogues'); //id_tipo_participante
             $table->foreignId('area_id')->constrained('cecy.catalogues'); //id_area
-            $table->foreignId('levels_id')->constrained('cecy.catalogues'); //id_niveles
+            $table->foreignId('level_id')->constrained('cecy.catalogues'); //id_niveles
             $table->string('required_installing_sources',150); //recursos_requeridos_instalacion
             $table->integer('practice_hours'); //horas_practicas
             $table->integer('theory_hours'); //horas_teoricas
@@ -39,9 +39,10 @@ class CreateCourseTable extends Migration
             $table->foreignId('person_proposal_id')->constrained('authentication.users'); //id_persona_propuesta
             $table->date('proposed_date'); //fecha_propuesta
             $table->date('approval_date'); //fecha_aprobacion
-            $table->string('local_proposal',150); //local_propuesta_a_dictar
+            $table->string('local_proposal',500); //local_propuesta_a_dictar
             $table->foreignId('schedules_id')->constrained('cecy.catalogues'); //id_horario_propuesta
             $table->string('project',150); //proyecto_curso
+            $table->integer('capacity'); //capacidad_curso
             $table->foreignId('course_type_id')->constrained('cecy.catalogues'); //id_tipo_curso
             $table->foreignId('specialty_id')->constrained('cecy.catalogues'); //id_especialidad
             $table->foreignId('academic_period_id')->constrained('cecy.catalogues'); //id_periodo_academico

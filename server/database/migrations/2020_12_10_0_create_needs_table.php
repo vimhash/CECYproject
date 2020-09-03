@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProposedRequirementsTable extends Migration
+class CreateNeedsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,10 @@ class CreateProposedRequirementsTable extends Migration
     public function up()
     {
         //necesidades_propuesta
-        Schema::connection('pgsql-cecy')->create('proposed_requirements', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('needs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('need_id')->constrained('cecy.catalogues'); //id_necesidad
-            $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
+            $table->string('description', 1000);//descripcion_necesidad
+            $table->foreignId('course_id')->constrained('courses'); //id_codigo_curso
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateProposedRequirementsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('proposed_requirements');
+        Schema::connection('pgsql-cecy')->dropIfExists('needs');
     }
 }

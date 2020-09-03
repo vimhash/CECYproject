@@ -18,9 +18,9 @@ class CreatePlanificationsTable extends Migration
             $table->date('date_start')->nullable();
             $table->date('date_end')->nullable();
             $table->foreignId('course_id')->constrained('cecy.courses');//cursos_id
-            $table->foreignId('teacher_id')->constrained('authentication.users');
+            $table->foreignId('teacher_id')->constrained('cecy.instructors');
             $table->foreignId('state_id')->constrained('ignug.states');//stado_id
-            $table->foreignId('schedule_id')->constrained('cecy.schedules');//horaios_id
+          //  $table->foreignId('schedule_id')->constrained('cecy.schedules');//horaios_id
             $table->foreignId('school_period_id')->constrained('cecy.school_periods');//periodo_id
             $table->string('classroom', 100);
             $table->boolean('free'); //gratuito

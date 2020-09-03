@@ -16,13 +16,13 @@ class CreatePersonPrerequisitesCourseTable extends Migration
         //persona_curso_prerequisitos
         Schema::connection('pgsql-cecy')->create('person_prerequisites_courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('person_participant_id')->constrained('authentication.users'); //id_persona_participante
-            $table->foreignId('prerequisite_course_id')->constrained('courses'); //id_curso_prerequisito
+            $table->foreignId('participant_id')->constrained('cecy.instructors'); //id_persona_participante=>cecy
+            $table->foreignId('course_id')->constrained('courses'); //id_curso_prerequisito
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
-            $table->boolean('registration_payment'); //pago_matricula
-            $table->string('certified_number', 155); //numero_certificado
-            $table->date('withdrawal_date'); //fecha_retiro
-            $table->boolean('withdrawn_certificate'); //certificado_retirado
+            $table->boolean('payment'); //pago_matricula
+            $table->string('certified', 155); //numero_certificado
+            $table->date('withdrawal'); //fecha_retiro
+            $table->boolean('withdrawn'); //certificado_retirado
             $table->timestamps();
         });
     }

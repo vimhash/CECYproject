@@ -17,7 +17,7 @@ class CreateTargetGroupTable extends Migration
         Schema::connection('pgsql-cecy')->create('target_groups', function (Blueprint $table) {
             $table->id();
             $table->foreignId('population_id')->constrained('cecy.catalogues'); //id_poblacion
-            $table->foreignId('course_code_id')->constrained('courses'); //id_codigo_curso
+            $table->foreignId('course_id')->constrained('courses'); //id_codigo_curso
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->timestamps();
         });

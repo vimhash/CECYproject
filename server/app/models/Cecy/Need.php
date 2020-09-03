@@ -5,7 +5,7 @@ namespace App\Models\Cecy;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class ProposedRequirement extends Model implements Auditable
+class Need extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
 

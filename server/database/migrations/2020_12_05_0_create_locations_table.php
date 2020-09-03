@@ -16,8 +16,8 @@ class CreateLocationsTable extends Migration
         //locations
         Schema::connection('pgsql-cecy')->create('locations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('name',150); //nombre
+            $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->timestamps();
         });
     }
