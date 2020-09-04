@@ -18,7 +18,7 @@ class CreateRequirementsTable extends Migration
             $table->id();
             $table->foreignId('course_id')->constrained('courses'); //id_curso
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
-            $table->foreignId('requirement_type_id')->constrained('cecy.catalogues'); //id_tipo_requerimiento_curso
+            $table->foreignId('requirement_type_id')->constrained('catalogues'); //id_tipo_requerimiento_curso
             $table->timestamps();
         });
     }

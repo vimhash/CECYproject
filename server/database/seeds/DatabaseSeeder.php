@@ -2678,7 +2678,6 @@ class DatabaseSeeder extends Seeder
             'date_start' => '2020-08-28',
             'date_end' => '2020-10-28',
             'course_id' => 1,
-            'free' => true,
             'teacher_id'  => 1,
             'state_id' => 1,
             'school_period_id' => 1,
