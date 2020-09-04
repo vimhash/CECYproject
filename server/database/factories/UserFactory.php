@@ -18,6 +18,7 @@ use Faker\Generator as Faker;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
+
         'ethnic_origin_id' => random_int(1, 8),
         'location_id' => 30,
         'identification_type_id' => random_int(14, 15),
@@ -35,5 +36,6 @@ $factory->define(User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'state_id' => 1,
         'password' => '$2y$10$Jspv6JzkO2O4EGxpCFiZquVdXfjozT5VdO9i0KfQn0Z4GxNYWRJIW', // password
+
     ];
 });
