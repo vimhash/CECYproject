@@ -15,6 +15,7 @@ use App\Role;
 use App\User;
 use \App\Models\Ignug\Teacher;
 use \App\Models\Cecy\Participant;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -507,7 +508,6 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1,
         ]);
 
-        // roles
         factory(Role::class)->create([
             'code' => '1',
             'name' => 'DOCENTE',
@@ -521,12 +521,14 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1,
         ]);
 
-        // teacher
-        factory(User::class, 3)->create()->each(function ($user) {
+
+        factory(User::class, 100)->create()->each(function ($user) {
             $user->teacher()->save(factory(Teacher::class)->make());
             $user->roles()->attach(1);
         });
+        // factory(App\Models\JobBoard::class, 10)->create();
 
+        
         //SCHEMA CECY SEEDS -------------------------------------------------------
         // areas
         factory(CecyCatalogue::class)->create([
@@ -2720,7 +2722,6 @@ class DatabaseSeeder extends Seeder
             'grade2' => 75.0,
             'final_grade' => 80.0
         ]);*/
-        // factory(App\Models\JobBoard::class, 10)->create();
 
         /*
             drop schema if exists attendance cascade;

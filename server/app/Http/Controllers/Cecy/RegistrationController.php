@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Cecy;
 use App\Http\Controllers\Controller;
 use App\Models\Cecy\Registration;
 use Illuminate\Http\Request;
+use App\Imports\AcademicRecordsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RegistrationController extends Controller
 {
@@ -66,5 +68,18 @@ class RegistrationController extends Controller
                 'type' => 'registration'
             ]
         ], 201);
+    }
+
+    public function import() 
+    {
+        Excel::import(new AcademicRecordsImport, request()->file('your_file'));
+        
+        return response()->json([
+            'data' => [
+                'msm' => "OK",
+                'type' => 'import Academic Records'
+            ]
+        ], 201);
+        // return redirect('/')->with('success', 'All good!');
     }
 }

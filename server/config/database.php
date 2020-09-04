@@ -147,7 +147,7 @@ return [
             'schema' => env('DB_SCHEMA_CECY', 'public'),
             'sslmode' => 'prefer',
         ],
-        
+
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
