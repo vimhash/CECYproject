@@ -20,13 +20,20 @@ class CreateCourseTable extends Migration
             $table->string('name',20); //nombre
             $table->decimal('cost', 3, 2); //costo
             $table->text('photo'); //foto
-            $table->string('summary',225); //resumen
+            $table->string('summary',1000); //resumen
             $table->integer('duration'); //duracion_horas
             $table->foreignId('modality_id')->constrained('catalogues'); //id_modalidad
             $table->boolean('free'); //gratuito
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
-            $table->string('observation',225); //observacion_curso
+            $table->string('observation',1000); //observacion_curso
             $table->string('objective',225); //objetivo
+            $table->join('needs'); //necesidades del curso es un array
+            $table->join('facilities'); //instalaciones  entorno de aprendizaje
+            $table->join('theoretical_phase'); //fase teorica entorno de aprendizaje
+            $table->join('Practical_phase  '); //fase practica entorno de aprendizaje
+            $table->join('cross_cutting_topics'); //temas trasversales
+            $table->join('bibliography'); //bibliografias
+            $table->join('teaching_strategies'); //estrategias de enseñansa - aprendizaje
             $table->foreignId('participant_type_id')->constrained('catalogues'); //id_tipo_participante
             $table->foreignId('area_id')->constrained('catalogues'); //id_area
             $table->foreignId('level_id')->constrained('catalogues'); //id_niveles
@@ -36,13 +43,15 @@ class CreateCourseTable extends Migration
             $table->string('practice_required_resources',150); //recursos_requeridos_practica
             $table->string('aimtheory_required_resources',150); //recursos_requeridos_teoricos
             $table->string('learning_teaching_strategy',150); //estrategias_enseñanza_aprendizaje
-            $table->foreignId('person_proposal_id')->constrained('instructors'); //id_persona_propuesta
+            $table->foreignId('person_proposal_id')->constrained('authorities'); //id_persona_propuesta
             $table->date('proposed_date'); //fecha_propuesta
-            $table->date('approval_date'); //fecha_aprobacion
+            $table->date('approval_date'); //fecha_aprobacion curso
+            $table->date('need_date'); //fecha_registro de necesidad
             $table->string('local_proposal',500); //local_propuesta_a_dictar
             $table->foreignId('schedules_id')->constrained('catalogues'); //id_horario_propuesta
             $table->string('project',150); //proyecto_curso
             $table->integer('capacity'); //capacidad_curso
+            $table->foreignId('classroom_id')->constrained('ingnug.classrooms');//id_aular
             $table->foreignId('course_type_id')->constrained('catalogues'); //id_tipo_curso
             $table->foreignId('specialty_id')->constrained('catalogues'); //id_especialidad
             $table->foreignId('academic_period_id')->constrained('catalogues'); //id_periodo_academico
