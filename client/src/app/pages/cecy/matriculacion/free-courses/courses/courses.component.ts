@@ -50,6 +50,7 @@ export class CoursesComponent implements OnInit {
       .get("planification?free=true")
       .subscribe((response: any) => {
         this.coursesList = response.data.attributes;
+        console.log(response.data.attributes);
       });
   }
 

@@ -522,7 +522,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        factory(User::class, 100)->create()->each(function ($user) {
+        factory(User::class, 3)->create()->each(function ($user) {
             $user->teacher()->save(factory(Teacher::class)->make());
             $user->roles()->attach(1);
         });

@@ -27,6 +27,7 @@ import { SplitButtonModule } from "primeng/splitbutton";
 import { PasswordModule } from "primeng/password";
 import { CoursesComponent } from "./courses/courses.component";
 import { DetailsCourseComponent } from "./details-course/details-course.component";
+import { RegistrationComponent } from "./registration/registration.component";
 
 @NgModule({
   imports: [
@@ -56,6 +57,10 @@ import { DetailsCourseComponent } from "./details-course/details-course.componen
     SplitButtonModule,
     PasswordModule,
   ],
-  declarations: [CoursesComponent, DetailsCourseComponent],
+  declarations: [
+    CoursesComponent,
+    DetailsCourseComponent,
+    RegistrationComponent,
+  ],
 })
 export class DashboardModule {}

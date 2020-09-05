@@ -1,0 +1,64 @@
+<div class="landing-body">
+  <div id="meet-mirage" class="section">
+    <div class="section-title">
+      <h1>Centro de Educación Continua "Yavirac"</h1>
+    </div>
+    <div class="card card-w-title">
+      <h4>¿Usted trabaja?</h4>
+      <div class="p-grid">
+        <div class="p-col-12 p-md-4">
+          <p-radioButton
+            name="rg"
+            value="1"
+            label="Si"
+            [(ngModel)]="work"
+          ></p-radioButton>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <p-radioButton
+            name="rg"
+            value="0"
+            label="No"
+            [(ngModel)]="work"
+          ></p-radioButton>
+        </div>
+      </div>
+      <div *ngIf="work == 1">Información Laboral.</div>
+
+      <h4>¿Empresa patrocina curso?</h4>
+      <div class="p-grid">
+        <div class="p-col-12 p-md-4">
+          <p-radioButton
+            name="rg"
+            value="1"
+            label="Si"
+            [(ngModel)]="sponsor"
+          ></p-radioButton>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <p-radioButton
+            name="rg"
+            value="0"
+            label="No"
+            [(ngModel)]="sponsor"
+          ></p-radioButton>
+        </div>
+      </div>
+      <div *ngIf="sponsor == 1">
+        <div class="p-col-12 p-md-4">
+          <label>Nombre del Contacto</label>
+          <input type="text" pInputText placeholder="Nombre del Contacto" />
+        </div>
+      </div>
+    </div>
+    <div>
+      <button
+        type="button"
+        label="Confirmo matricula"
+        pButton
+        icon="pi pi-sign-in"
+        (click)="saveRegistrationData()"
+      ></button>
+    </div>
+  </div>
+</div>

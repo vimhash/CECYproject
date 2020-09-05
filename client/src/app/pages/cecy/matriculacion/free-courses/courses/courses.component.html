@@ -19,10 +19,11 @@
           <i class="pi pi-align-justify" style="font-size: 5em"></i>
           logo
         </div>
-        <div class="feature-card-title">Titulo curso</div>
-        <div class="feature-card-content">Nombre docente</div>
+        <div class="feature-card-title">{{ item.course_id }}</div>
+        <div class="feature-card-content">{{ item.teacher_id }}</div>
         <div class="feature-card-content">
-          Cupos disponibles 26 (verde: disponibles, rojo: sin cupos)
+          Cupos disponibles {{ item.capacity }} (verde: disponibles, rojo: sin
+          cupos)
         </div>
         <div class="feature-card-content">
           <button
@@ -37,6 +38,7 @@
             label="Matricularme"
             pButton
             icon="pi pi-sign-in"
+            routerLink="/cecy/free-courses/registration"
           ></button>
         </div>
       </div>

@@ -39,8 +39,8 @@ export const routes: Routes = [
       {
         path: "attendance",
         loadChildren: () =>
-          import("./pages/attendance/administrativo.module").then(
-            (m) => m.AdministrativoModule
+          import("./pages/attendance/attendance.module").then(
+            (m) => m.AttendanceModule
           ),
         canActivate: [AuthGuard],
       },
@@ -50,19 +50,19 @@ export const routes: Routes = [
           import("./pages/job-board/job-board.module").then(
             (m) => m.JobBoardModule
           ),
-        // canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
       },
       {
         path: "web",
         loadChildren: () =>
           import("./pages/web/web.module").then((m) => m.WebModule),
-        // canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
       },
       {
         path: "cecy",
         loadChildren: () =>
           import("./pages/cecy/cecy.module").then((m) => m.CedyModule),
-        // canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
       },
     ],
   },
@@ -72,6 +72,14 @@ export const routes: Routes = [
     loadChildren: () =>
       import("./pages/authentication/authentication.module").then(
         (m) => m.AuthenticationModule
+      ),
+  },
+  {
+    path: "bolsa-empleo",
+    component: BlankComponent,
+    loadChildren: () =>
+      import("./pages/job-board/job-board.module").then(
+        (m) => m.JobBoardModule
       ),
   },
   { path: "**", redirectTo: "/authentication/404" },
