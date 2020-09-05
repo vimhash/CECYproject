@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgreementsTable extends Migration
+class CreateAssistancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class CreateAgreementsTable extends Migration
             $table->foreignId('state_id')->constrained('ignug.states');//estado
             $table->integer('duration'); //duracion en horas del curs
             $table->foreignId('detail_registration_id')->constrained('detail_registrations'); //id_detalle matricula
-            $table->timestamps('date_time');//fecha y hora 
+            $table->timestamps();//fecha y hora
         });
     }
 

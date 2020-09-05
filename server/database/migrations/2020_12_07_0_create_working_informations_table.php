@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWorkingInformationTable extends Migration
+class CreateWorkingInformationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateWorkingInformationTable extends Migration
     public function up()
     {
         //informacion_laboral
-        Schema::connection('pgsql-cecy')->create('working_information', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('working_informations', function (Blueprint $table) {
             $table->id();
             $table->string('name',150); //empresa_nombre
             $table->string('address',150); //empresa_direccion
@@ -39,6 +39,6 @@ class CreateWorkingInformationTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('working_information');
+        Schema::connection('pgsql-cecy')->dropIfExists('working_informations');
     }
 }

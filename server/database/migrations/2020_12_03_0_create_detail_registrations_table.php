@@ -23,7 +23,6 @@ class CreateDetailRegistrationsTable extends Migration
             $table->decimal('final_grade', 3, 2); //nota_final
             $table->date('certificate_withdrawn'); //fecha de retiro certificado
             $table->json('observation'); //observacion_curso
-            $table->foreignId('state_id')->constrained("ignug.states"); //id_estado
             $table->timestamps();
         });
     }

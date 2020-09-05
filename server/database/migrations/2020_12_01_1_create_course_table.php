@@ -27,13 +27,13 @@ class CreateCourseTable extends Migration
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->string('observation',1000); //observacion_curso
             $table->string('objective',225); //objetivo
-            $table->join('needs'); //necesidades del curso es un array
-            $table->join('facilities'); //instalaciones  entorno de aprendizaje
-            $table->join('theoretical_phase'); //fase teorica entorno de aprendizaje
-            $table->join('Practical_phase  '); //fase practica entorno de aprendizaje
-            $table->join('cross_cutting_topics'); //temas trasversales
-            $table->join('bibliography'); //bibliografias
-            $table->join('teaching_strategies'); //estrategias de enseñansa - aprendizaje
+            $table->json('needs'); //necesidades del curso es un array
+            $table->json('facilities'); //instalaciones  entorno de aprendizaje
+            $table->json('theoretical_phase'); //fase teorica entorno de aprendizaje
+            $table->json('Practical_phase  '); //fase practica entorno de aprendizaje
+            $table->json('cross_cutting_topics'); //temas trasversales
+            $table->json('bibliography'); //bibliografias
+            $table->json('teaching_strategies'); //estrategias de enseñansa - aprendizaje
             $table->foreignId('participant_type_id')->constrained('catalogues'); //id_tipo_participante
             $table->foreignId('area_id')->constrained('catalogues'); //id_area
             $table->foreignId('level_id')->constrained('catalogues'); //id_niveles
@@ -51,7 +51,7 @@ class CreateCourseTable extends Migration
             $table->foreignId('schedules_id')->constrained('catalogues'); //id_horario_propuesta
             $table->string('project',150); //proyecto_curso
             $table->integer('capacity'); //capacidad_curso
-            $table->foreignId('classroom_id')->constrained('ingnug.classrooms');//id_aular
+          //  $table->foreignId('classroom_id')->constrained('ignug.classrooms');//id_aular
             $table->foreignId('course_type_id')->constrained('catalogues'); //id_tipo_curso
             $table->foreignId('specialty_id')->constrained('catalogues'); //id_especialidad
             $table->foreignId('academic_period_id')->constrained('catalogues'); //id_periodo_academico

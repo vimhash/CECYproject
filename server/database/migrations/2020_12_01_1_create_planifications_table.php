@@ -22,7 +22,7 @@ class CreatePlanificationsTable extends Migration
             $table->foreignId('state_id')->constrained('ignug.states');//stado_id
             $table->foreignId('status_id')->constrained('catalogues');//status de la planificacion
             $table->foreignId('school_period_id')->constrained('school_periods');//periodo_id
-            $table->foreignId('classroom_id')->constrained('ingnug.classrooms');//id_aular
+          //  $table->foreignId('classroom_id')->constrained('ingnug.classrooms');//id_aular
             $table->date('planned_end_date'); //fecha fin prevista
             $table->integer('capacity'); //capacidad_curso
             $table->string('observation',1000); //observaciones
