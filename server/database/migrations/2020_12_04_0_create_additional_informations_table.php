@@ -21,13 +21,13 @@ class CreateAdditionalInformationsTable extends Migration
             $table->string('company_phone',150); //correo electronico  de empresa
             $table->string('company_activity',150); //actividad de la empresa
             $table->boolean('company_sponsor',150); //la empresa patrocina ek curso (auspiciada)
-            $table->string('name_contac',150); //nombre de contacnto q patrocina
+            $table->string('name_contact',150); //nombre de contacnto q patrocina
             $table->json('know_course'); //como se entero del curso? Array
             $table->json('course_follow'); //cursos que t gustaria seguir? Array
             $table->boolean('works'); //el participante trabaja?
             $table->foreignId('state_id')->constrained('ignug.states');//estado
             $table->foreignId('registration_id')->constrained('registrations'); //id_matricula
-            $table->foreignId('Level_Instruction')->constrained('catalogues'); //id_nivel de instruccion
+            $table->foreignId('level_instruction')->constrained('catalogues'); //id_nivel de instruccion
             $table->timestamps();
         });
     }

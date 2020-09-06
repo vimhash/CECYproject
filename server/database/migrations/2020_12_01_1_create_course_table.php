@@ -51,7 +51,7 @@ class CreateCourseTable extends Migration
             $table->foreignId('schedules_id')->constrained('catalogues'); //id_horario_propuesta
             $table->string('project',150); //proyecto_curso
             $table->integer('capacity'); //capacidad_curso
-          //  $table->foreignId('classroom_id')->constrained('ignug.classrooms');//id_aular
+            $table->foreignId('classroom_id')->constrained('ignug.classrooms');//id_aular
             $table->foreignId('course_type_id')->constrained('catalogues'); //id_tipo_curso
             $table->foreignId('specialty_id')->constrained('catalogues'); //id_especialidad
             $table->foreignId('academic_period_id')->constrained('catalogues'); //id_periodo_academico
