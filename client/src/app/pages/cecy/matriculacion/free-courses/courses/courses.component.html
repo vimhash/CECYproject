@@ -3,21 +3,19 @@
     <div class="section-title">
       <h1>Centro de Educación Continua "Yavirac"</h1>
     </div>
-    <div class="p-col-12">
-      <div class="card card-w-title">
-        <h4>Filtrar por</h4>
-        <p-dropdown
-          [options]="coursesTypes"
-          [(ngModel)]="selectedFilter"
-        ></p-dropdown>
-      </div>
+    <div class="p-grid">
+      <h4 class="p-col-1">Filtrar por</h4>
+      <p-dropdown
+        class="p-col-1 p-col-align-center"
+        [options]="coursesTypes"
+        [(ngModel)]="selectedFilter"
+      ></p-dropdown>
     </div>
     <div class="feature-cards">
-      <!-- ngFor de PLANIFICACIÓN -->
+      <!-- ngFor de PLANIFICATION COURSES -->
       <div *ngFor="let item of coursesList" class="feature-card">
         <div class="feature-card-img">
           <i class="pi pi-align-justify" style="font-size: 5em"></i>
-          logo
         </div>
         <div class="feature-card-title">{{ item.course_id }}</div>
         <div class="feature-card-content">{{ item.teacher_id }}</div>
@@ -25,7 +23,7 @@
           Cupos disponibles {{ item.capacity }} (verde: disponibles, rojo: sin
           cupos)
         </div>
-        <div class="feature-card-content">
+        <div class="p-grid" style="flex: auto; justify-content: space-between">
           <button
             type="button"
             routerLink="/cecy/free-courses/details"
