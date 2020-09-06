@@ -17,7 +17,7 @@ class CreateScheduleablesTable extends Migration
             $table->id();
             $table->foreignId('state_id')->constrained('ignug.states');//stado_id
             $table->foreignId('schedule_id')->constrained('schedules');//horario_id
-          //  $table->foreignId('classroom_id')->constrained('ingnug.classrooms');//id_aular
+            $table->foreignId('classroom_id')->constrained('ingnug.classrooms');//id_aular
             $table->morphs('scheduleable');
             $table->timestamps();
         });
