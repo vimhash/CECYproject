@@ -522,16 +522,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        factory(User::class, 3)->create()->each(function ($user) {
+      /*  factory(User::class, 3)->create()->each(function ($user) {
             $user->teacher()->save(factory(Teacher::class)->make());
             $user->roles()->attach(1);
-        });
+        });*/
         // factory(App\Models\JobBoard::class, 10)->create();
 
-        
+
         //SCHEMA CECY SEEDS -------------------------------------------------------
         // areas
-        factory(CecyCatalogue::class)->create([
+      /*  factory(CecyCatalogue::class)->create([
             'code' => 'A',
             'name' => 'ADMINISTRACIÓN Y LEGISLACIÓN',
             'type' => 'areas',
@@ -2399,9 +2399,9 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Domingo',
                 'type' => 'Dias',
                 'state_id' => 1,
-            ]);
+            ]);*/
         // roles
-        factory(Role::class)->create([
+      /*  factory(Role::class)->create([
             'code' => '3',
             'name' => 'PARTICIPANTE',
             'system_id' => 1,
@@ -2644,10 +2644,10 @@ class DatabaseSeeder extends Seeder
             "specialty_id" => 39,
             "academic_period_id" => 38,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS B1",
-        ]);
+        ]);*/
 
         // school_periods
-        factory(SchoolPeriod::class)->create([
+        /*factory(SchoolPeriod::class)->create([
             "state_id" => 1,
             'start' => "2020-08-28",
             'end' => "2020-08-28",
@@ -2680,7 +2680,6 @@ class DatabaseSeeder extends Seeder
             'date_start' => '2020-08-28',
             'date_end' => '2020-10-28',
             'course_id' => 1,
-            'free' => true,
             'teacher_id'  => 1,
             'state_id' => 1,
             'school_period_id' => 1,
@@ -2690,7 +2689,7 @@ class DatabaseSeeder extends Seeder
             'conference' => 263,
             'parallel' => 265,
         ]);
-
+*/
 
         // academic_record
       /*  factory(AcademicRecord::class)->create([

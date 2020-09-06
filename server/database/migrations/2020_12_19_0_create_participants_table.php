@@ -17,7 +17,7 @@ class CreateParticipantsTable extends Migration
         Schema::connection('pgsql-cecy')->create('participants', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('instructors'); //id_usuario
-            $table->foreignId('person_type_id')->constrained('cecy.catalogues'); //id_tipo_persona=>estudiantes,profesores,adultos,niños etc.
+            $table->foreignId('person_type_id')->constrained('catalogues'); //id_tipo_persona=>estudiantes,profesores,adultos,niños etc.
             $table->foreignId('state_id')->constrained('ignug.states');
             $table->timestamps();
         });
