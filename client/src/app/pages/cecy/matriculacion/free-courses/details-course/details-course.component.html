@@ -2,47 +2,104 @@
   <div id="meet-mirage" class="section">
     <div class="section-title">
       <h1>Centro de Educación Continua "Yavirac"</h1>
+      <h2>Nombre curso</h2>
     </div>
     <div class="section-title">
-      <h1>Detalles</h1>
-    </div>
-    <!-- <div class="feature-cards">
-      <div *ngFor="let item of coursesList" class="feature-card">
-        <div class="feature-card-img">
-          <i class="pi pi-align-justify" style="font-size: 5em"></i>
+      <div class="p-grid">
+        <div class="p-col-6">
+          <img
+            src="assets/layout/images/dashboard/photo-1.png"
+            alt="mirage-layout"
+          />
         </div>
-        <div class="feature-card-title">{{ item.course_name }}</div>
-        <div class="feature-card-content">{{ item.photo }}</div>
-        <div class="feature-card-content">
-          <button
-            type="button"
-            label="Más información"
-            pButton
-            icon="pi pi-sign-in"
-          ></button>
+        <div class="p-col-6">
+          <h3>Detalles</h3>
+          <p-accordion>
+            <p-accordionTab header="Resumen" [selected]="true">
+              The story begins as Don Vito Corleone, the head of a New York
+              Mafia family, overseeshis daughter's wedding. His beloved son
+              ichael has just come home from the war, but does not intend to
+              become part of his father's business. T hrough Michael's life the
+              nature of the family business becomes clear. The business of the
+              family is just like the head of the family, kind and benevolent to
+              those who give respect, but given to ruthless violence whenever
+              anything stands against the good of the family.
+            </p-accordionTab>
+            <p-accordionTab header="Objetivo">
+              Francis Ford Coppola's legendary continuation and sequel to his
+              landmark 1972 film, The_Godfather parallels the young Vito
+              Corleone's rise with his son Michael's spiritual fall, deepening
+              The_Godfather's depiction of the dark side of the American dream.
+              In the early 1900s, the child Vito flees his Sicilian village for
+              America after the local Mafia kills his family. Vito struggles to
+              make a living, legally or illegally, for his wife and growing
+              brood in Little Italy, killing the local Black Hand Fanucci after
+              he demands his customary cut of the tyro's business. With Fanucci
+              gone, Vito's communal stature grows.
+            </p-accordionTab>
+            <p-accordionTab header="Observaciones">
+              After a break of more than 15 years, director Francis Ford Coppola
+              and writer Mario Puzo returned to the well for this third and
+              final story of the fictional Corleone crime family. Two decades
+              have passed, and crime kingpin Michael Corleone, now divorced from
+              his wife Kay has nearly succeeded in keeping his promise that his
+              family would one day be completely legitimate.
+            </p-accordionTab>
+          </p-accordion>
         </div>
       </div>
-    </div> -->
+      <button
+        type="button"
+        label="Matricularme"
+        pButton
+        icon="pi pi-sign-in"
+        routerLink="/cecy/free-courses/registration"
+      ></button>
+
+      <!-- que opinan nuestros estudiantes :v -->
+      <h4>Que opinan nuestros estudiantes</h4>
+      <p-carousel
+        [value]="carouselCars"
+        [numVisible]="4"
+        [numScroll]="3"
+        [circular]="false"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-car pTemplate="item">
+          <div class="car-details">
+            <div class="p-grid p-nogutter">
+              <div class="p-col-12">
+                <img src="assets/demo/images/car/{{ car.brand }}.png" />
+              </div>
+              <div class="p-col-12 car-data">
+                <div class="car-title">{{ car.brand }}</div>
+                <div class="car-subtitle">{{ car.year }} | {{ car.color }}</div>
+
+                <div class="car-buttons">
+                  <button
+                    pButton
+                    type="button"
+                    class="ui-button-success"
+                    icon="pi pi-search"
+                  ></button>
+                  <button
+                    pButton
+                    type="button"
+                    class="ui-button-warning"
+                    icon="pi pi-star"
+                  ></button>
+                  <button
+                    pButton
+                    type="button"
+                    class="ui-button-info"
+                    icon="pi pi-cog"
+                  ></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
   </div>
-  <!-- <button
-         type="button"
-         label="createCRUD"
-         pButton
-         icon="pi pi-sign-in"
-         (click)="guardar()"
-       ></button>
-       <button
-         type="button"
-         label="updateCRUD"
-         pButton
-         icon="pi pi-sign-in"
-         (click)="actualizar()"
-       ></button>
-       <button
-         type="button"
-         label="eliminarCRUD"
-         pButton
-         icon="pi pi-sign-in"
-         (click)="eliminar()"
-       ></button> -->
 </div>

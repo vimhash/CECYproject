@@ -3,7 +3,18 @@
     <div class="section-title">
       <h1>Centro de Educación Continua "Yavirac"</h1>
     </div>
-    <div class="card card-w-title">
+    <div>
+      <!-- level_instruction -->
+      <div class="p-grid">
+        <h4 class="p-col-2">Nivel de instrucción</h4>
+        <p-dropdown
+          class="p-col-1 p-col-align-center"
+          [options]="levelInstruction"
+          [(ngModel)]="selectedFilter"
+        ></p-dropdown>
+      </div>
+
+      <!-- company information -->
       <h4>¿Usted trabaja?</h4>
       <div class="p-grid">
         <div class="p-col-12 p-md-4">
@@ -23,31 +34,166 @@
           ></p-radioButton>
         </div>
       </div>
-      <div *ngIf="work == 1">Información Laboral.</div>
-
-      <h4>¿Empresa patrocina curso?</h4>
-      <div class="p-grid">
-        <div class="p-col-12 p-md-4">
-          <p-radioButton
-            name="rg"
-            value="1"
-            label="Si"
-            [(ngModel)]="sponsor"
-          ></p-radioButton>
+      <div *ngIf="work == 1">
+        <h4>Datos de la Empresa</h4>
+        <div class="p-grid">
+          <label class="p-col-2">Nombre</label>
+          <input
+            class="p-col-3 p-col-align-center"
+            type="text"
+            pInputText
+            placeholder="Nombre de la empresa"
+          />
         </div>
-        <div class="p-col-12 p-md-4">
-          <p-radioButton
-            name="rg"
-            value="0"
-            label="No"
-            [(ngModel)]="sponsor"
-          ></p-radioButton>
+        <div class="p-grid">
+          <label class="p-col-2">Dirección</label>
+          <input
+            class="p-col-3 p-col-align-center"
+            type="text"
+            pInputText
+            placeholder="Dirección de la empresa"
+          />
+        </div>
+        <div class="p-grid">
+          <label class="p-col-2">Teléfono</label>
+          <input
+            class="p-col-3 p-col-align-center"
+            type="text"
+            pInputText
+            placeholder="Teléfono de la empresa"
+          />
+        </div>
+        <div class="p-grid">
+          <label class="p-col-2">Actividad</label>
+          <input
+            class="p-col-3 p-col-align-center"
+            type="text"
+            pInputText
+            placeholder="Actividad de la empresa"
+          />
+        </div>
+
+        <h4>¿La empresa patrocina este curso?</h4>
+        <div class="p-grid">
+          <div class="p-col-12 p-md-4">
+            <p-radioButton
+              name="rg"
+              value="1"
+              label="Si"
+              [(ngModel)]="sponsor"
+            ></p-radioButton>
+          </div>
+          <div class="p-col-12 p-md-4">
+            <p-radioButton
+              name="rg"
+              value="0"
+              label="No"
+              [(ngModel)]="sponsor"
+            ></p-radioButton>
+          </div>
+        </div>
+        <div *ngIf="sponsor == 1">
+          <div class="p-grid">
+            <label class="p-col-2">Nombre del contacto</label>
+            <input
+              class="p-col-3 p-col-align-center"
+              type="text"
+              pInputText
+              placeholder="Nombre del contacto"
+            />
+          </div>
         </div>
       </div>
-      <div *ngIf="sponsor == 1">
+
+      <!-- know_course -->
+      <h4>¿Como se entero del curso?</h4>
+      <div class="p-grid">
         <div class="p-col-12 p-md-4">
-          <label>Nombre del Contacto</label>
-          <input type="text" pInputText placeholder="Nombre del Contacto" />
+          <p-checkbox
+            name="cg"
+            value="1"
+            label="Redes sociales"
+            [(ngModel)]="checkboxValuesKnowCourse"
+          ></p-checkbox>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <p-checkbox
+            name="cg"
+            value="2"
+            label="Instituto"
+            [(ngModel)]="checkboxValuesKnowCourse"
+          ></p-checkbox>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <p-checkbox
+            name="cg"
+            value="3"
+            label="Radio"
+            [(ngModel)]="checkboxValuesKnowCourse"
+          ></p-checkbox>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <p-checkbox
+            name="cg"
+            value="4"
+            label="Otro"
+            [(ngModel)]="checkboxValuesKnowCourse"
+          ></p-checkbox>
+        </div>
+        <div class="p-col-12 p-md-8" *ngIf="checkboxValuesKnowCourse == 4">
+          <label class="p-col-2">Especifique</label>
+          <input
+            class="p-col-3 p-col-align-center"
+            type="text"
+            pInputText
+            placeholder="Especifique..."
+          />
+        </div>
+      </div>
+
+      <!-- course_follow -->
+      <h4>¿En qué cursos estaría interesado/a?</h4>
+      <div class="p-grid">
+        <div class="p-col-12 p-md-4">
+          <p-checkbox
+            name="cg"
+            value="1"
+            label="Baile"
+            [(ngModel)]="checkboxValuesCourseFollow"
+          ></p-checkbox>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <p-checkbox
+            name="cg"
+            value="2"
+            label="Corte y Confección"
+            [(ngModel)]="checkboxValuesCourseFollow"
+          ></p-checkbox>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <p-checkbox
+            name="cg"
+            value="3"
+            label="Guitarra"
+            [(ngModel)]="checkboxValuesCourseFollow"
+          ></p-checkbox>
+        </div>
+        <div class="p-col-12 p-md-4">
+          <p-checkbox
+            name="cg"
+            value="4"
+            label="Otro"
+            [(ngModel)]="checkboxValuesCourseFollow"
+          ></p-checkbox>
+        </div>
+        <div class="p-col-12 p-md-8" *ngIf="checkboxValuesCourseFollow == 4">
+          <label class="p-col-2">Especifique</label>
+          <input
+            class="p-col-3 p-col-align-center"
+            type="text"
+            pInputText
+            placeholder="Especifique..."
+          />
         </div>
       </div>
     </div>

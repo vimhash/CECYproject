@@ -30,7 +30,7 @@ export class CoursesComponent implements OnInit {
     this.obtenerCursosGratuitos();
 
     this.coursesTypes = [];
-    this.coursesTypes.push({ label: "Select Filter", value: 0 });
+    this.coursesTypes.push({ label: "Filtrar por...", value: 0 });
     this.coursesTypes.push({
       label: "Inglés",
       value: { id: 1, name: "English" },

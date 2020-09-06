@@ -28,6 +28,9 @@ import { PasswordModule } from "primeng/password";
 import { CoursesComponent } from "./courses/courses.component";
 import { DetailsCourseComponent } from "./details-course/details-course.component";
 import { RegistrationComponent } from "./registration/registration.component";
+import { CarouselModule } from "primeng/carousel";
+import { AccordionModule } from "primeng/accordion";
+import { OverlayPanelModule } from "primeng/overlaypanel";
 
 @NgModule({
   imports: [
@@ -38,7 +41,10 @@ import { RegistrationComponent } from "./registration/registration.component";
     MultiSelectModule,
     CalendarModule,
     ChipsModule,
+    CarouselModule,
+    OverlayPanelModule,
     CheckboxModule,
+    AccordionModule,
     RadioButtonModule,
     InputMaskModule,
     InputSwitchModule,
