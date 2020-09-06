@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLocationsTable extends Migration
+class CreateSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateLocationsTable extends Migration
      */
     public function up()
     {
-        //locations
-        Schema::connection('pgsql-cecy')->create('locations', function (Blueprint $table) {
+        Schema::connection('pgsql-web')->create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name',150); //nombre
-            $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
+            $table->text('name');
+            $table->text('description');
+            $table->text('value');
+            $table->foreignId('type_id')->constrained('catalogues');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('locations');
+        Schema::connection('pgsql-web')->dropIfExists('settings');
     }
 }

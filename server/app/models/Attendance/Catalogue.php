@@ -28,4 +28,9 @@ class Catalogue extends Model implements Auditable
     {
         return $this->hasMany(Catalogue::class, 'parent_code_id');
     }
+
+    public function children()
+    {
+        return $this->hasMany(Catalogue::class, 'parent_code_id');
+    }
 }

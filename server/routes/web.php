@@ -1,7 +1,10 @@
 <?php
 
 use App\Models\Ignug\State;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
 
+    return \Illuminate\Support\Facades\Hash::make('12345678');
 });
 Route::get('password_generate', function () {
     return \Illuminate\Support\Facades\Hash::make('123');
