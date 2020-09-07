@@ -28,6 +28,6 @@ class CreateInstructorsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-job-board')->dropIfExists('instructors');
+        Schema::connection('pgsql-cecy')->dropIfExists('instructors');
     }
 }
