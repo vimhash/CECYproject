@@ -47,15 +47,10 @@ export class AppLoginComponent {
         });
         return;
       }
-
       this.spinner.show();
-      const clientId = environment.CLIENT_ID;
-      const clientSecret = environment.CLIENT_SECRET;
-      const grantType = environment.GRANT_TYPE;
-
       this.authenticationService.login(this.user).subscribe(
         (response) => {
-          if (response["user"]["state_id"] === 1) {
+          if (response["user"]["state"]["code"] === "1") {
             localStorage.setItem("isLoggedin", "true");
             localStorage.setItem("user", JSON.stringify(response["user"]));
             localStorage.setItem(
@@ -70,7 +65,7 @@ export class AppLoginComponent {
             response["roles"].forEach((role) => {
               let route = "";
               let selectedRole = "";
-              switch (role.pivot.role_id) {
+              switch (role) {
                 case "1":
                   route = "/attendance/asistencia-laboral";
                   selectedRole = role;
@@ -100,7 +95,7 @@ export class AppLoginComponent {
                   selectedRole = role;
                   break;
                 default:
-                  route = "/cecy/dashboard/participants";
+                  route = "/attendance/asistencia-laboral";
                   selectedRole = role;
                   break;
               }
@@ -122,6 +117,13 @@ export class AppLoginComponent {
             localStorage.removeItem("roles");
             localStorage.removeItem("role");
             localStorage.removeItem("isLoggedin");
+            if (response["user"]["state"]["code"] === "3") {
+              this.msgs.push({
+                severity: "error",
+                summary: "Tú usuario se encuentra eliminado",
+                detail: "Comunícante con el Administrador!",
+              });
+            }
           }
           this.spinner.hide();
         },

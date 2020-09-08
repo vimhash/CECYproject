@@ -104,6 +104,7 @@ export class AppMenuComponent implements OnInit {
             }
         ];
         */
+
     this.model = [
       {
         label: "CEC-Y",
@@ -149,20 +150,14 @@ export class AppMenuComponent implements OnInit {
     if (this.role.code === "3") {
       this.model = [
         {
-          label: "CEC-Y",
+          label: "Asistencia",
           icon: "pi pi-fw pi-calendar",
-          items: [
-            {
-              label: "Participantes",
-              icon: "pi pi-fw pi-clone",
-              routerLink: ["/cecy/dashboard/participants"],
-            },
-            {
-              label: "Historial Académico",
-              icon: "pi pi-fw pi-sign-in",
-              routerLink: ["/cecy/dashboard/academic-records"],
-            },
-          ],
+          routerLink: ["/attendance/asistencia-laboral"],
+        },
+        {
+          label: "Administración Asistencia",
+          icon: "pi pi-fw pi-clock",
+          routerLink: ["/attendance/administracion-asistencia-laboral"],
         },
       ];
     }

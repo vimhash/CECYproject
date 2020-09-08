@@ -44,8 +44,13 @@ import {DialogModule} from 'primeng/dialog';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {MegaMenuModule} from 'primeng/megamenu';
+import {AppMenuComponent} from './administrator/app-menu/app.menu.component';
+import {AppAdministratorComponent} from './administrator/app-administrator/app.administrator.component';
 
 // Mis componentes
+
+
 @NgModule({
     imports: [
         CommonModule,
@@ -89,12 +94,11 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
         ToastModule,
         AccordionModule,
         DialogModule,
-        ConfirmDialogModule
+        ConfirmDialogModule,
+        MegaMenuModule,
     ],
-    declarations: [
-
-    ],
-    providers: [DialogService]
+    declarations: [AppMenuComponent, AppAdministratorComponent],
+    providers: [DialogService],
 })
 export class WebModule {
 }

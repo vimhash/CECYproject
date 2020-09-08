@@ -75,12 +75,18 @@ export const routes: Routes = [
       ),
   },
   {
-    path: "bolsa-empleo",
+    path: "app-job-board",
     component: BlankComponent,
     loadChildren: () =>
-      import("./pages/job-board/job-board.module").then(
-        (m) => m.JobBoardModule
+      import("./pages/job-board/landing/landing.module").then(
+        (m) => m.LandingModule
       ),
+  },
+  {
+    path: "app-web",
+    component: BlankComponent,
+    loadChildren: () =>
+      import("./pages/web/web.module").then((m) => m.WebModule),
   },
   { path: "**", redirectTo: "/authentication/404" },
 ];

@@ -4,7 +4,9 @@
       <div class="section-title">
         <h1>Centro de Educación Continua "Yavirac"</h1>
       </div>
-      <div class="p-col-12">
+    </div>
+    <div class="p-col-12">
+      <div class="card card-w-title">
         <p-table
           #dt
           [columns]="cols"
@@ -53,8 +55,8 @@
                 />
                 {{ rowData.brand }}
               </td>
-              <!-- <td>{{ rowData.color }}</td> -->
-              <td style="width: 8em; text-align: center">
+              <td>{{ rowData.color }}</td>
+              <td>
                 <button
                   pButton
                   type="button"
@@ -64,11 +66,11 @@
                   style="margin-right: 0.5em"
                 ></button>
                 <!-- <button
-                    pButton
-                    type="button"
-                    class="ui-button-warning"
-                    icon="pi pi-pencil"
-                  ></button> -->
+                  pButton
+                  type="button"
+                  class="ui-button-warning"
+                  icon="pi pi-pencil"
+                ></button> -->
               </td>
             </tr>
           </ng-template>
