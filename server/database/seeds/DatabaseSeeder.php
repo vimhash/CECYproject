@@ -30,7 +30,7 @@ use App\Models\Cecy\SchoolPeriod;
 use App\Models\Cecy\Instructor;
 use App\Models\Cecy\Participant;
 
-class DatabaseSeeder extends Seeder
+/*class DatabaseSeeder extends Seeder
 {
     public function run()
     {
@@ -2604,7 +2604,7 @@ class DatabaseSeeder extends Seeder
             'final_grade' => 80.0
         ]);*/
 
-        
+
         /*
             drop schema if exists authentication cascade;
             drop schema if exists attendance cascade;
@@ -2619,4 +2619,4 @@ class DatabaseSeeder extends Seeder
             create schema web;
         */
     }
-}
+}/*
