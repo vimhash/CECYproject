@@ -294,125 +294,126 @@ class DatabaseSeeder extends Seeder
         factory(Category::class, 100)->create();
         factory(JobBoardCatalogue::class, 100)->create();
         factory(JobBoardLocation::class, 100)->create();
+
         // roles system
-        factory(IgnugCatalogue::class)->create([
-            'code' => 'attendance',
-            'name' => 'Attendance',
-            'type' => 'roles.system',
-        ])->each(function ($system) {
-            factory(Role::class)->create([
-                'code' => '1',
-                'name' => 'DOCENTE',
-                'system_id' => $system->id,
-            ])->each(function ($role) {
-                $user = factory(User::class)->create([
-                    'user_name' => '1234567891',
-                ]);
-                $user->teacher()->save(factory(Teacher::class)->make());
-                $user->roles()->attach($role->id);
-            });
-            factory(Role::class)->create([
-                'code' => '2',
-                'name' => 'ADMINISTRATIVO',
-                'system_id' => $system->id,
-            ])->each(function ($role) {
-                $user = factory(User::class)->create([
-                    'user_name' => '1234567892',
-                ]);
-                $user->teacher()->save(factory(Teacher::class)->make());
-                $user->roles()->attach($role->id);
-            });
-        });
+        // factory(IgnugCatalogue::class)->create([
+        //     'code' => 'attendance',
+        //     'name' => 'Attendance',
+        //     'type' => 'roles.system',
+        // ])->each(function ($system) {
+        //     factory(Role::class)->create([
+        //         'code' => '1',
+        //         'name' => 'DOCENTE',
+        //         'system_id' => $system->id,
+        //     ])->each(function ($role) {
+        //         $user = factory(User::class)->create([
+        //             'user_name' => '1234567891',
+        //         ]);
+        //         $user->teacher()->save(factory(Teacher::class)->make());
+        //         $user->roles()->attach($role->id);
+        //     });
+        //     factory(Role::class)->create([
+        //         'code' => '2',
+        //         'name' => 'ADMINISTRATIVO',
+        //         'system_id' => $system->id,
+        //     ])->each(function ($role) {
+        //         $user = factory(User::class)->create([
+        //             'user_name' => '1234567892',
+        //         ]);
+        //         $user->teacher()->save(factory(Teacher::class)->make());
+        //         $user->roles()->attach($role->id);
+        //     });
+        // });
 
-        factory(IgnugCatalogue::class)->create([
-            'code' => 'attendance',
-            'name' => 'Attendance',
-            'type' => 'roles.system',
-        ])->each(function ($system) {
-            factory(Role::class)->create([
-                'code' => '1',
-                'name' => 'DOCENTE',
-                'system_id' => $system->id,
-            ])->each(function ($role) {
-                $user = factory(User::class)->create([
-                    'user_name' => '1234567891',
-                ]);
-                $user->teacher()->save(factory(Teacher::class)->make());
-                $user->roles()->attach($role->id);
-            });
-            factory(Role::class)->create([
-                'code' => '2',
-                'name' => 'ADMINISTRATIVO',
-                'system_id' => $system->id,
-            ])->each(function ($role) {
-                $user = factory(User::class)->create([
-                    'user_name' => '1234567892',
-                ]);
-                $user->teacher()->save(factory(Teacher::class)->make());
-                $user->roles()->attach($role->id);
-            });
-        });
+        // factory(IgnugCatalogue::class)->create([
+        //     'code' => 'attendance',
+        //     'name' => 'Attendance',
+        //     'type' => 'roles.system',
+        // ])->each(function ($system) {
+        //     factory(Role::class)->create([
+        //         'code' => '1',
+        //         'name' => 'DOCENTE',
+        //         'system_id' => $system->id,
+        //     ])->each(function ($role) {
+        //         $user = factory(User::class)->create([
+        //             'user_name' => '1234567891',
+        //         ]);
+        //         $user->teacher()->save(factory(Teacher::class)->make());
+        //         $user->roles()->attach($role->id);
+        //     });
+        //     factory(Role::class)->create([
+        //         'code' => '2',
+        //         'name' => 'ADMINISTRATIVO',
+        //         'system_id' => $system->id,
+        //     ])->each(function ($role) {
+        //         $user = factory(User::class)->create([
+        //             'user_name' => '1234567892',
+        //         ]);
+        //         $user->teacher()->save(factory(Teacher::class)->make());
+        //         $user->roles()->attach($role->id);
+        //     });
+        // });
 
-        factory(IgnugCatalogue::class)->create([
-            'code' => 'jobboard',
-            'name' => 'JobBoard',
-            'type' => 'roles.system',
-        ])->each(function ($system) {
-            factory(Role::class)->create([
-                'code' => '1',
-                'name' => 'PROFESSIONAL',
-                'system_id' => $system->id,
-            ])->each(function ($role) {
-                $user = factory(User::class)->create([
-                    'user_name' => '1234567892',
-                ]);
-                $professional = $user->professional()->save(factory(Professional::class)->make());
-                $professional->academicFormations()->save(factory(AcademicFormation::class)->make());
-                $professional->abilities()->save(factory(Ability::class)->make());
-                $professional->languages()->save(factory(Language::class)->make());
-                $professional->courses()->save(factory(Course::class)->make());
-                $professional->professionalExperiences()->save(factory(ProfessionalExperience::class)->make());
-                $professional->professionalReferences()->save(factory(ProfessionalReference::class)->make());
-                $user->roles()->attach($role->id);
-            });
-            factory(Role::class)->create([
-                'code' => '2',
-                'name' => 'COMPANY',
-                'system_id' => $system->id,
-            ])->each(function ($role) {
-                $user = factory(User::class)->create([
-                    'user_name' => '1234567894',
-                ]);
-                $company = $user->company()->save(factory(Company::class)->make());
-                $offer = $company->offers()->save(factory(Offer::class)->make());
-                $offer->categories()->attach(random_int(1, 100));
-                $offer->professionals()->attach(random_int(1, 100));
-                $company->professionals()->attach(random_int(1, 100));
-                $user->roles()->attach($role->id);
-            });
-        });
+        // factory(IgnugCatalogue::class)->create([
+        //     'code' => 'jobboard',
+        //     'name' => 'JobBoard',
+        //     'type' => 'roles.system',
+        // ])->each(function ($system) {
+        //     factory(Role::class)->create([
+        //         'code' => '1',
+        //         'name' => 'PROFESSIONAL',
+        //         'system_id' => $system->id,
+        //     ])->each(function ($role) {
+        //         $user = factory(User::class)->create([
+        //             'user_name' => '1234567892',
+        //         ]);
+        //         $professional = $user->professional()->save(factory(Professional::class)->make());
+        //         $professional->academicFormations()->save(factory(AcademicFormation::class)->make());
+        //         $professional->abilities()->save(factory(Ability::class)->make());
+        //         $professional->languages()->save(factory(Language::class)->make());
+        //         $professional->courses()->save(factory(Course::class)->make());
+        //         $professional->professionalExperiences()->save(factory(ProfessionalExperience::class)->make());
+        //         $professional->professionalReferences()->save(factory(ProfessionalReference::class)->make());
+        //         $user->roles()->attach($role->id);
+        //     });
+        //     factory(Role::class)->create([
+        //         'code' => '2',
+        //         'name' => 'COMPANY',
+        //         'system_id' => $system->id,
+        //     ])->each(function ($role) {
+        //         $user = factory(User::class)->create([
+        //             'user_name' => '1234567894',
+        //         ]);
+        //         $company = $user->company()->save(factory(Company::class)->make());
+        //         $offer = $company->offers()->save(factory(Offer::class)->make());
+        //         $offer->categories()->attach(random_int(1, 100));
+        //         $offer->professionals()->attach(random_int(1, 1));
+        //         $company->professionals()->attach(random_int(1, 1));
+        //         $user->roles()->attach($role->id);
+        //     });
+        // });
 
-        factory(IgnugCatalogue::class)->create([
-            'code' => 'web',
-            'name' => 'Web',
-            'type' => 'roles.system',
-        ])->each(function ($system) {
-            factory(Role::class)->create([
-                'code' => '1',
-                'name' => 'ADMINISTRATOR',
-                'system_id' => $system->id,
-            ])->each(function ($role) {
-                $user = factory(User::class)->create([
-                    'user_name' => '1234567895',
-                ]);
-                $user->roles()->attach($role->id);
-            });
-        });
+        // factory(IgnugCatalogue::class)->create([
+        //     'code' => 'web',
+        //     'name' => 'Web',
+        //     'type' => 'roles.system',
+        // ])->each(function ($system) {
+        //     factory(Role::class)->create([
+        //         'code' => '1',
+        //         'name' => 'ADMINISTRATOR',
+        //         'system_id' => $system->id,
+        //     ])->each(function ($role) {
+        //         $user = factory(User::class)->create([
+        //             'user_name' => '1234567895',
+        //         ]);
+        //         $user->roles()->attach($role->id);
+        //     });
+        // });
 
 
-                //SCHEMA CECY SEEDS -------------------------------------------------------
+        //SCHEMA CECY SEEDS -------------------------------------------------------
         // areas
-      /*  factory(CecyCatalogue::class)->create([
+        factory(CecyCatalogue::class)->create([
             'code' => 'A',
             'name' => 'ADMINISTRACIÓN Y LEGISLACIÓN',
             'type' => 'areas',
@@ -2280,22 +2281,25 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Domingo',
                 'type' => 'Dias',
                 'state_id' => 1,
-            ]);*/
+            ]);
+
         // roles
-      /*  factory(Role::class)->create([
+        factory(Role::class)->create([
+            'id' => 3,
             'code' => '3',
             'name' => 'PARTICIPANTE',
             'system_id' => 1,
             'state_id' => 1,
         ]);
+
         // Instructors
-       factory(User::class, 3)->create()->each(function ($user) {
+        factory(User::class, 3)->create()->each(function ($user) {
             $user->participant()->save(factory(Instructor::class)->make());
             $user->roles()->attach(3);
         });
-
+        
         // courses
-        factory(Course::class)->create([
+        factory(CecyCourse::class)->create([
             'code' => 'YEC-ST',
             'name' => 'STARTER',
             'cost' => 0,
@@ -2307,6 +2311,13 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1, //activo
             'observation' => '',
             'objective' => '',
+            'needs' => '["test"]',
+            'facilities' => '["test"]',
+            'theoretical_phase' => '["test"]',
+            'practical_phase' => '["test"]',
+            'cross_cutting_topics' => '["test"]',
+            'bibliography' => '["test"]',
+            'teaching_strategies' => '["test"]',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
             "level_id" => 26, //niveles curso
@@ -2316,19 +2327,21 @@ class DatabaseSeeder extends Seeder
             "practice_required_resources" => "",
             "aimtheory_required_resources" => "",
             "learning_teaching_strategy" => "",
-            "person_proposal_id" => 2,
+            // "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
+            "need_date" => "2020-08-26",
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
             "capacity"=>20,
+            // "classroom_id" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 32,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS STARTER",
         ]);
-        factory(Course::class)->create([
+        factory(CecyCourse::class)->create([
             'code' => 'YEC-A1.1',
             'name' => 'A1.1',
             'cost' => 0,
@@ -2340,6 +2353,13 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1, //activo
             'observation' => '',
             'objective' => '',
+            'needs' => '["test"]',
+            'facilities' => '["test"]',
+            'theoretical_phase' => '["test"]',
+            'practical_phase' => '["test"]',
+            'cross_cutting_topics' => '["test"]',
+            'bibliography' => '["test"]',
+            'teaching_strategies' => '["test"]',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
             "level_id" => 26, //niveles curso
@@ -2349,19 +2369,21 @@ class DatabaseSeeder extends Seeder
             "practice_required_resources" => "",
             "aimtheory_required_resources" => "",
             "learning_teaching_strategy" => "",
-            "person_proposal_id" => 2,
+            // "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
+            "need_date" => "2020-08-26",
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
             "capacity"=>20,
+            // "classroom_id" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 33,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS A1.1",
         ]);
-        factory(Course::class)->create([
+        factory(CecyCourse::class)->create([
             'code' => 'YEC-A1.2',
             'name' => 'A1.2',
             'cost' => 0,
@@ -2373,6 +2395,13 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1, //activo
             'observation' => '',
             'objective' => '',
+            'needs' => '["test"]',
+            'facilities' => '["test"]',
+            'theoretical_phase' => '["test"]',
+            'practical_phase' => '["test"]',
+            'cross_cutting_topics' => '["test"]',
+            'bibliography' => '["test"]',
+            'teaching_strategies' => '["test"]',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
             "level_id" => 26, //niveles curso
@@ -2382,19 +2411,21 @@ class DatabaseSeeder extends Seeder
             "practice_required_resources" => "",
             "aimtheory_required_resources" => "",
             "learning_teaching_strategy" => "",
-            "person_proposal_id" => 2,
+            // "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
+            "need_date" => "2020-08-26",
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
             "capacity"=>20,
+            // "classroom_id" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 34,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS A1",
         ]);
-        factory(Course::class)->create([
+        factory(CecyCourse::class)->create([
             'code' => 'YEC-A2.1',
             'name' => 'A2.1',
             'cost' => 0,
@@ -2406,6 +2437,13 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1, //activo
             'observation' => '',
             'objective' => '',
+            'needs' => '["test"]',
+            'facilities' => '["test"]',
+            'theoretical_phase' => '["test"]',
+            'practical_phase' => '["test"]',
+            'cross_cutting_topics' => '["test"]',
+            'bibliography' => '["test"]',
+            'teaching_strategies' => '["test"]',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
             "level_id" => 26, //niveles curso
@@ -2415,19 +2453,21 @@ class DatabaseSeeder extends Seeder
             "practice_required_resources" => "",
             "aimtheory_required_resources" => "",
             "learning_teaching_strategy" => "",
-            "person_proposal_id" => 2,
+            // "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
+            "need_date" => "2020-08-26",
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
             "capacity"=>20,
+            // "classroom_id" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 35,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS A2.1",
         ]);
-        factory(Course::class)->create([
+        factory(CecyCourse::class)->create([
             'code' => 'YEC-A2.2',
             'name' => 'A2.2',
             'cost' => 0,
@@ -2439,6 +2479,13 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1, //activo
             'observation' => '',
             'objective' => '',
+            'needs' => '["test"]',
+            'facilities' => '["test"]',
+            'theoretical_phase' => '["test"]',
+            'practical_phase' => '["test"]',
+            'cross_cutting_topics' => '["test"]',
+            'bibliography' => '["test"]',
+            'teaching_strategies' => '["test"]',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
             "level_id" => 26, //niveles curso
@@ -2448,19 +2495,21 @@ class DatabaseSeeder extends Seeder
             "practice_required_resources" => "",
             "aimtheory_required_resources" => "",
             "learning_teaching_strategy" => "",
-            "person_proposal_id" => 2,
+            // "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
+            "need_date" => "2020-08-26",
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
             "capacity"=>20,
+            // "classroom_id" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 36,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS A2",
         ]);
-        factory(Course::class)->create([
+        factory(CecyCourse::class)->create([
             'code' => 'YEC-B1.1',
             'name' => 'B1.1',
             'cost' => 0,
@@ -2472,6 +2521,13 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1, //activo
             'observation' => '',
             'objective' => '',
+            'needs' => '["test"]',
+            'facilities' => '["test"]',
+            'theoretical_phase' => '["test"]',
+            'practical_phase' => '["test"]',
+            'cross_cutting_topics' => '["test"]',
+            'bibliography' => '["test"]',
+            'teaching_strategies' => '["test"]',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
             "level_id" => 26, //niveles curso
@@ -2481,19 +2537,21 @@ class DatabaseSeeder extends Seeder
             "practice_required_resources" => "",
             "aimtheory_required_resources" => "",
             "learning_teaching_strategy" => "",
-            "person_proposal_id" => 2,
+            // "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
+            "need_date" => "2020-08-26",
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
             "capacity"=>20,
+            // "classroom_id" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 37,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS B1.1",
         ]);
-        factory(Course::class)->create([
+        factory(CecyCourse::class)->create([
             'code' => 'YEC-B1.2',
             'name' => 'B1.2',
             'cost' => 0,
@@ -2505,6 +2563,13 @@ class DatabaseSeeder extends Seeder
             'state_id' => 1, //activo
             'observation' => '',
             'objective' => '',
+            'needs' => '["test"]',
+            'facilities' => '["test"]',
+            'theoretical_phase' => '["test"]',
+            'practical_phase' => '["test"]',
+            'cross_cutting_topics' => '["test"]',
+            'bibliography' => '["test"]',
+            'teaching_strategies' => '["test"]',
             'participant_type_id' => 21, //estudiantes
             'area_id' => 1,
             "level_id" => 26, //niveles curso
@@ -2514,96 +2579,67 @@ class DatabaseSeeder extends Seeder
             "practice_required_resources" => "",
             "aimtheory_required_resources" => "",
             "learning_teaching_strategy" => "",
-            "person_proposal_id" => 2,
+            // "person_proposal_id" => 2,
             "proposed_date" => "2020-08-26",
             "approval_date" => "2020-08-26",
+            "need_date" => "2020-08-26",
             "local_proposal" => "",
             "schedules_id" => 28,
             "project" => "",
             "capacity"=>20,
+            // "classroom_id" => "",
             "course_type_id" => 31,
             "specialty_id" => 39,
             "academic_period_id" => 38,
             "setec_name" => "CAPACITACIÓN CONTINUA EN EL IDIOMA INGLÉS B1",
-        ]);*/
+        ]);
 
         // school_periods
-        /*factory(SchoolPeriod::class)->create([
+        factory(SchoolPeriod::class)->create([
+            'code' => "test",
+            'name' => "test",
+            'start_date' => "2020-08-28",
+            'end_date' => "2020-08-28",
+            'ordinary_start_date' => "2020-08-28",
+            'ordinary_end_date' => "2020-08-28",
+            'extraordinary_start_date' => "2020-08-28",
+            'extraordinary_end_date' => "2020-08-28",
+            'especial_start_date' => "2020-08-28",
+            'especial_end_date' => "2020-08-28",
             "state_id" => 1,
-            'start' => "2020-08-28",
-            'end' => "2020-08-28",
-            'cancel' => "2020-08-28",
-            'start_ordinary' => "2020-08-28",
-            'end_ordinary' => "2020-08-28",
-            'cancel_ordinary' => "2020-08-28",
-            'start_extraordinary' => "2020-08-28",
-            'end_extraordinary' => "2020-08-28",
-            'cancel_extraordinary' => "2020-08-28",
         ]);
-//horarios
+        
+        //horarios
         factory(Schedule::class)->create([
+            'state_id' => 1,
             'start_time' =>'14:00',
             'end_time' =>'16:00',
-            'place' =>'YEC1',
-            'state_id' => 1,
             'day_id'=>267,
         ]);
         factory(Schedule::class)->create([
+            'state_id' => 1,
             'start_time' =>'14:00',
             'end_time' =>'16:00',
-            'place' =>'YEC1',
-            'state_id' => 1,
             'day_id'=>268,
         ]);
 
-//planificacion
+        //planificacion
         factory(Planification::class)->create([
             'date_start' => '2020-08-28',
             'date_end' => '2020-10-28',
             'course_id' => 1,
-            'teacher_id'  => 1,
+            'instructor_id'  => 1,
             'state_id' => 1,
+            // 'status_id' => 1,
             'school_period_id' => 1,
-            'classroom' => "Yec1",
+            // 'classroom_id' => 1,
             'planned_end_date' =>'2020-10-28',
             'capacity' => '20',
+            'observation' => '',
             'conference' => 263,
+            // 'responsible_id' => 1,
             'parallel' => 265,
         ]);
-*/
-
-        // academic_record
-      /*  factory(AcademicRecord::class)->create([
-            "state_id" => 1,
-            "user_id" => 4,
-            "course_id" => 1,
-            "teacher_id" => 1,
-            "school_period_id" => 1,
-            'grade1' => 85,
-            'grade2' => 75.2,
-            'final_grade' => 80.1
-        ]);
-        factory(AcademicRecord::class)->create([
-            "state_id" => 1,
-            "user_id" => 4,
-            "course_id" => 2,
-            "teacher_id" => 2,
-            "school_period_id" => 1,
-            'grade1' => 100,
-            'grade2' => 75.0,
-            'final_grade' => 87.5
-        ]);
-        factory(AcademicRecord::class)->create([
-            "state_id" => 1,
-            "user_id" => 5,
-            "course_id" => 1,
-            "teacher_id" => 3,
-            "school_period_id" => 1,
-            'grade1' => 85.0,
-            'grade2' => 75.0,
-            'final_grade' => 80.0
-        ]);*/
-
         
         /*
             drop schema if exists authentication cascade;

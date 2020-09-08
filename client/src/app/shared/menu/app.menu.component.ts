@@ -104,6 +104,24 @@ export class AppMenuComponent implements OnInit {
             }
         ];
         */
+    this.model = [
+      {
+        label: "CEC-Y",
+        icon: "pi pi-fw pi-calendar",
+        items: [
+          {
+            label: "Participantes",
+            icon: "pi pi-fw pi-clone",
+            routerLink: ["/cecy/dashboard/participants"],
+          },
+          {
+            label: "Historial Académico",
+            icon: "pi pi-fw pi-sign-in",
+            routerLink: ["/cecy/dashboard/academic-records"],
+          },
+        ],
+      },
+    ];
 
     if (this.role.code === "1") {
       this.model = [
@@ -144,11 +162,6 @@ export class AppMenuComponent implements OnInit {
               icon: "pi pi-fw pi-sign-in",
               routerLink: ["/cecy/dashboard/academic-records"],
             },
-            // {
-            //   label: "Docentes",
-            //   icon: "pi pi-fw pi-sign-in",
-            //   routerLink: ["/cecy/dashboard/docentes"],
-            // },
           ],
         },
       ];

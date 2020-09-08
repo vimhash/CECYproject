@@ -19,7 +19,7 @@ export class SeeAcademicRecordsComponent implements OnInit {
     private breadcrumbService: BreadcrumbService
   ) {
     this.breadcrumbService.setItems([
-      { label: "CEC-Y", routerLink: ["/cecy/dashboard/academic-records"]  },
+      { label: "CEC-Y", routerLink: ["/cecy/dashboard/academic-records"] },
       { label: "Historial Acádemico" },
     ]);
   }
@@ -32,7 +32,7 @@ export class SeeAcademicRecordsComponent implements OnInit {
       { field: "number_registration", header: "N° de Matrícula" },
       { field: "person_participant_id", header: "Estudiante" },
       { field: "planification_id", header: "Curso" },
-      { field: "approved", header: "¿Aprobado?" },
+      // { field: "approved", header: "¿Aprobado?" },
     ];
   }
 }

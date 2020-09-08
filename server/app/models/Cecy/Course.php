@@ -15,11 +15,18 @@ class Course extends Model implements Auditable
       'name',
       'cost',
       'photo',
-      'resumen',
-      'lasting_hours',
+      'summary',
+      'duration',
       'free',
       'observation',
       'objective',
+      'needs' => 'array',
+      'facilities' => 'array',
+      'theoretical_phase' => 'array',
+      'practical_phase' => 'array',
+      'cross_cutting_topics' => 'array',
+      'bibliography' => 'array',
+      'teaching_strategies' => 'array',
       'required_installing_sources',
       'practice_hours',
       'theory_hours',
@@ -28,13 +35,19 @@ class Course extends Model implements Auditable
       'learning_teaching_strategy',
       'proposed_date',
       'approval_date',
-      'local_proposal_to_be_held',
+      'need_date',
+      'local_proposal',
       'project',
+      'capacity',
       'setec_name'
     ];
     public function modality()
     {
         return $this->hasMany(Catalogue::class, 'modality_id');
+    }
+    public function state()
+    {
+        return $this->belongsTo(State::class,'state_id');
     }
     public function type()
     {
@@ -44,18 +57,22 @@ class Course extends Model implements Auditable
     {
         return $this->belongsTo(Catalogue::class, 'area_id');
     }
-    public function levels()
+    public function level()
     {
-        return $this->belongsTo(Catalogue::class, 'levels_id');
-    }
-    public function state()
-    {
-        return $this->belongsTo(State::class,'state_id');
+        return $this->belongsTo(Catalogue::class, 'level_id');
     }
     public function user()
     {
         return $this->belongsTo(User::class,'person_proposal_id');
     }
+    public function schedules()
+    {
+        return $this->belongsTo(Schedule::class,'schedules_id');
+    }
+    // public function classroom()
+    // {
+    //     return $this->belongsTo(Classroom::class,'classroom_id');
+    // }
     public function course()
     {
         return $this->belongsTo(Catalogue::class,'course_type_id');
