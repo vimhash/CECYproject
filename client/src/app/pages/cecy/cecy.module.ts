@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AutoCompleteModule } from "primeng/autocomplete";
 import { MultiSelectModule } from "primeng/multiselect";
@@ -26,7 +27,6 @@ import { SplitButtonModule } from "primeng/splitbutton";
 import { PasswordModule } from "primeng/password";
 import { FileUploadModule } from "primeng/fileupload";
 
-import { FormsModule } from "@angular/forms";
 import { CecyRoutes } from "./cecy.routing";
 import { TooltipModule } from "primeng/tooltip";
 import { TableModule } from "primeng/table";
@@ -42,7 +42,7 @@ import { FullCalendarModule } from "primeng/fullcalendar";
 import { TabViewModule } from "primeng";
 import { InputNumberModule } from "primeng/inputnumber";
 
-import { CursosPagoComponent } from "./matriculacion/cursos-pago/cursos-pago.component";
+import { PaidCoursesComponent } from "./matriculacion/paid-courses/paid-courses.component";
 import { MisCursosComponent } from "./matriculacion/mis-cursos/mis-cursos.component";
 
 @NgModule({
@@ -50,6 +50,7 @@ import { MisCursosComponent } from "./matriculacion/mis-cursos/mis-cursos.compon
     CommonModule,
     RouterModule.forChild(CecyRoutes),
     FormsModule,
+    ReactiveFormsModule,
     AutoCompleteModule,
     MultiSelectModule,
     CalendarModule,
@@ -87,6 +88,6 @@ import { MisCursosComponent } from "./matriculacion/mis-cursos/mis-cursos.compon
     TabViewModule,
     InputNumberModule,
   ],
-  declarations: [CursosPagoComponent, MisCursosComponent],
+  declarations: [PaidCoursesComponent, MisCursosComponent],
 })
 export class CedyModule {}

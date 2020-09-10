@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { HomeRoutes } from "./free-courses.routing";
-import { FormsModule } from "@angular/forms";
 import { AutoCompleteModule } from "primeng/autocomplete";
 import { MultiSelectModule } from "primeng/multiselect";
 import { CalendarModule } from "primeng/calendar";
@@ -31,12 +30,14 @@ import { RegistrationComponent } from "./registration/registration.component";
 import { CarouselModule } from "primeng/carousel";
 import { AccordionModule } from "primeng/accordion";
 import { OverlayPanelModule } from "primeng/overlaypanel";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(HomeRoutes),
     FormsModule,
+    ReactiveFormsModule,
     AutoCompleteModule,
     MultiSelectModule,
     CalendarModule,

@@ -3,6 +3,12 @@ import { Component, OnInit } from "@angular/core";
 import { SelectItem, MenuItem } from "primeng/api";
 import { BreadcrumbService } from "../../../../../shared/breadcrumb/breadcrumb.service";
 //import { NgxSpinnerService } from "ngx-spinner";
+import {
+  Validators,
+  FormControl,
+  FormGroup,
+  FormBuilder,
+} from "@angular/forms";
 
 import { CecyServiceService } from "../../../../../services/cecy/cecy-service.service";
 
@@ -11,21 +17,32 @@ import { CecyServiceService } from "../../../../../services/cecy/cecy-service.se
   templateUrl: "./registration.component.html",
 })
 export class RegistrationComponent implements OnInit {
-  work: boolean = false;
-  sponsor: boolean = false;
-  checkboxValuesKnowCourse: string[] = [];
   checkboxValuesCourseFollow: string[] = [];
   levelInstruction: SelectItem[];
-  selectedFilter: any;
+  registrationForm: FormGroup;
 
   constructor(
     private breadcrumbService: BreadcrumbService,
-    private cecyService: CecyServiceService
+    private cecyService: CecyServiceService,
+    private fb: FormBuilder
   ) {
     this.breadcrumbService.setItems([
       { label: "CEC-Y", routerLink: ["/cecy/dashboard/participants"] },
       { label: "Cursos Gratuitos" },
     ]);
+
+    this.registrationForm = this.fb.group({
+      level_instruction: new FormControl("", Validators.required),
+      work: new FormControl("", Validators.required),
+      company_name: new FormControl("", Validators.required),
+      company_address: new FormControl("", Validators.required),
+      company_phone: new FormControl("", Validators.required),
+      company_activity: new FormControl("", Validators.required),
+      company_sponsor: new FormControl("", Validators.required),
+      name_contact: new FormControl("", Validators.required),
+      know_course: new FormControl(""),
+      course_follow: new FormControl(""),
+    });
   }
 
   ngOnInit() {
@@ -49,6 +66,6 @@ export class RegistrationComponent implements OnInit {
   }
 
   saveRegistrationData() {
-    console.log(this.checkboxValuesKnowCourse);
+    console.log(this.registrationForm.value);
   }
 }

@@ -6,10 +6,10 @@ import { BreadcrumbService } from "../../../../shared/breadcrumb/breadcrumb.serv
 import { CecyServiceService } from "../../../../services/cecy/cecy-service.service";
 
 @Component({
-  selector: "app-cursos-pago",
-  templateUrl: "./cursos-pago.component.html",
+  selector: "app-paid-courses",
+  templateUrl: "./paid-courses.component.html",
 })
-export class CursosPagoComponent implements OnInit {
+export class PaidCoursesComponent implements OnInit {
   coursesList: [];
 
   constructor(
