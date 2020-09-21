@@ -43,7 +43,7 @@ class CreateCourseTable extends Migration
             $table->string('practice_required_resources',150); //recursos_requeridos_practica
             $table->string('aimtheory_required_resources',150); //recursos_requeridos_teoricos
             $table->string('learning_teaching_strategy',150); //estrategias_enseñanza_aprendizaje
-            // $table->foreignId('person_proposal_id')->constrained('authorities'); //id_persona_propuesta
+            $table->foreignId('person_proposal_id')->constrained('authorities'); //id_persona_propuesta
             $table->date('proposed_date'); //fecha_propuesta
             $table->date('approval_date'); //fecha_aprobacion curso
             $table->date('need_date'); //fecha_registro de necesidad
@@ -51,7 +51,7 @@ class CreateCourseTable extends Migration
             $table->foreignId('schedules_id')->constrained('catalogues'); //id_horario_propuesta
             $table->string('project',150); //proyecto_curso
             $table->integer('capacity'); //capacidad_curso
-            // $table->foreignId('classroom_id')->constrained('ignug.classrooms');//id_aula
+            $table->foreignId('classroom_id')->constrained('ignug.classrooms');//id_aula
             $table->foreignId('course_type_id')->constrained('catalogues'); //id_tipo_curso
             $table->foreignId('specialty_id')->constrained('catalogues'); //id_especialidad
             $table->foreignId('academic_period_id')->constrained('catalogues'); //id_periodo_academico

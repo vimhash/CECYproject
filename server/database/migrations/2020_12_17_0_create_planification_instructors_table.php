@@ -14,12 +14,10 @@ class CreatePlanificationInstructorsTable extends Migration
     public function up()
     {
         //curso_instructores
-        Schema::connection('pgsql-cecy')->create('planification_instructors', function (Blueprint $table) {
+        Schema::connection('pgsql-cecy')->create('instructor_planifications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
-            $table->foreignId('instructor_id')->constrained('instructors'); //id_persona_instructor
             $table->foreignId('planification_id')->constrained('planifications'); //id_planificaion
-            $table->foreignId('detail_registration_id')->constrained('detail_registrations'); //id_detalle_matricula
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreatePlanificationInstructorsTable extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql-cecy')->dropIfExists('planification_instructors');
+        Schema::connection('pgsql-cecy')->dropIfExists('instructor_planifications');
     }
 }

@@ -20,14 +20,14 @@ class CreatePlanificationsTable extends Migration
             $table->foreignId('course_id')->constrained('courses');//cursos_id
             $table->foreignId('instructor_id')->constrained('instructors');
             $table->foreignId('state_id')->constrained('ignug.states');//stado_id
-            // $table->foreignId('status_id')->constrained('catalogues');//status de la planificacion
+            $table->foreignId('status_id')->constrained('catalogues');//status de la planificacion
             $table->foreignId('school_period_id')->constrained('school_periods');//periodo_id
-            // $table->foreignId('classroom_id')->constrained('ignug.classrooms');//id_aula
+            $table->foreignId('classroom_id')->constrained('ignug.classrooms');//id_aula
             $table->date('planned_end_date'); //fecha fin prevista
             $table->integer('capacity'); //capacidad_curso
             $table->string('observation',1000); //observaciones
             $table->foreignId('conference')->constrained('catalogues'); //jornada
-            // $table->foreignId('responsible_id')->constrained('authorities'); //id autoridad a cargo responsable
+            $table->foreignId('responsible_id')->constrained('authorities'); //id autoridad a cargo responsable
             $table->foreignId('parallel')->constrained('catalogues'); //jornada
             $table->timestamps();
         });
