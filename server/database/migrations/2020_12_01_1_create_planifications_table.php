@@ -18,7 +18,6 @@ class CreatePlanificationsTable extends Migration
             $table->date('date_start')->nullable();
             $table->date('date_end')->nullable();
             $table->foreignId('course_id')->constrained('courses');//cursos_id
-            $table->foreignId('instructor_id')->constrained('instructors');
             $table->foreignId('state_id')->constrained('ignug.states');//stado_id
             $table->foreignId('status_id')->constrained('catalogues');//status de la planificacion
             $table->foreignId('school_period_id')->constrained('school_periods');//periodo_id

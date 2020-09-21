@@ -32,7 +32,9 @@ class CreateCourseTable extends Migration
             $table->json('theoretical_phase'); //fase teorica entorno de aprendizaje
             $table->json('practical_phase'); //fase practica entorno de aprendizaje
             $table->json('cross_cutting_topics'); //temas trasversales
-            $table->json('bibliography'); //bibliografias
+            $table->json('bibliographys'); //bibliografias
+            $table->json('requirements'); //requerimientos
+          //  $table->json('participant_types'); //tipos de participantes intentar traer el id de catalogo
             $table->json('teaching_strategies'); //estrategias de enseñansa - aprendizaje
             $table->foreignId('participant_type_id')->constrained('catalogues'); //id_tipo_participante
             $table->foreignId('area_id')->constrained('catalogues'); //id_area
