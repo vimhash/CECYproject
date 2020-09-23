@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Cecy;
 use App\Http\Controllers\Controller;
 use App\Models\Cecy\Registration;
 use Illuminate\Http\Request;
-use App\Imports\AcademicRecordsImport;
+use App\Imports\RegistrationsImport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class RegistrationController extends Controller
@@ -72,7 +72,7 @@ class RegistrationController extends Controller
 
     public function import() 
     {
-        Excel::import(new AcademicRecordsImport, request()->file('your_file'));
+        Excel::import(new RegistrationsImport, request()->file('your_file'));
         
         return response()->json([
             'data' => [
