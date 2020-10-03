@@ -28,6 +28,7 @@ class CreateCourseTable extends Migration
             $table->string('observation',1000); //observacion_curso
             $table->string('objective',225); //objetivo
             $table->json('needs'); //necesidades del curso es un array
+            $table->json('Target_group'); //Grupo a cual va diriguido el curso
             $table->json('facilities'); //instalaciones  entorno de aprendizaje
             $table->json('theoretical_phase'); //fase teorica entorno de aprendizaje
             $table->json('practical_phase'); //fase practica entorno de aprendizaje
@@ -45,19 +46,26 @@ class CreateCourseTable extends Migration
             $table->string('practice_required_resources',150); //recursos_requeridos_practica
             $table->string('aimtheory_required_resources',150); //recursos_requeridos_teoricos
             $table->string('learning_teaching_strategy',150); //estrategias_enseñanza_aprendizaje
+            $table->string('nro_record',150); //numero de acta del OCS
             $table->foreignId('person_proposal_id')->constrained('authorities'); //id_persona_propuesta
             $table->date('proposed_date'); //fecha_propuesta
             $table->date('approval_date'); //fecha_aprobacion curso
             $table->date('need_date'); //fecha_registro de necesidad
+            $table->date('expiration_date'); //fecha_vencimineto
+            $table->date('authorisation_date'); //fecha_aprobacion OCS
             $table->string('local_proposal',500); //local_propuesta_a_dictar
             $table->foreignId('schedules_id')->constrained('catalogues'); //id_horario_propuesta
             $table->string('project',150); //proyecto_curso
             $table->integer('capacity'); //capacidad_curso
             $table->foreignId('classroom_id')->constrained('ignug.classrooms');//id_aula
-            $table->foreignId('course_type_id')->constrained('catalogues'); //id_tipo_curso
+            $table->foreignId('course_type_id')->constrained('catalogues'); //id_tipo_curso WebWinner,taller,curso
             $table->foreignId('specialty_id')->constrained('catalogues'); //id_especialidad
             $table->foreignId('academic_period_id')->constrained('catalogues'); //id_periodo_academico
             $table->string('setec_name',200); //nombre_setec
+            $table->foreignId('certified_type_id')->constrained('catalogues'); //id_tipo_certificado asistecia,participacion
+            $table->foreignId('attached')->constrained('ignug.files'); //id_tipo_certificado asistecia,participacion
+            $table->string('abbreviation',200); //abreviatura
+            $table->foreignId('career_id')->constrained('ignug.careers'); //id_tipo_carrera
             $table->timestamps();
         });
     }
