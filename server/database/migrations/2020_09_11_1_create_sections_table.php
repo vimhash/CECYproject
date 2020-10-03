@@ -18,7 +18,7 @@ class CreateSectionsTable extends Migration
             $table->text('name');
             $table->text('description');
             $table->integer('order');
-            $table->foreignId('status_id')->constrained('catalogues');
+            $table->foreignId('status_id')->constrained('catalogue.catalogues');
             $table->foreignId('state_id')->constrained('ignug.states');
             $table->timestamps();
         });

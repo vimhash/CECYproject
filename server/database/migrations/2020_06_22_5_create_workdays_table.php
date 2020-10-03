@@ -21,7 +21,7 @@ class CreateWorkdaysTable extends Migration
             $table->time('start_time')->nullable();
             $table->time('end_time')->nullable();
             $table->time('duration')->nullable();
-            $table->foreignId('type_id')->constrained('catalogues');
+            $table->foreignId('type_id')->constrained('catalogue.catalogues');
             $table->foreignId('state_id')->constrained('ignug.states');
             $table->timestamps();
         });

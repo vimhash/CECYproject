@@ -18,7 +18,7 @@ class CreateSettingsTable extends Migration
             $table->text('name');
             $table->text('description');
             $table->text('value');
-            $table->foreignId('type_id')->constrained('catalogues');
+            $table->foreignId('type_id')->constrained('catalogue.catalogues');
             $table->string('image');
             $table->timestamps();
         });

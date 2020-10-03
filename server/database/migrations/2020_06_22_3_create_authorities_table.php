@@ -16,8 +16,8 @@ class CreateAuthoritiesTable extends Migration
         Schema::connection('pgsql-ignug')->create('authorities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('authentication.users');
-            $table->foreignId('type_id')->constrained('catalogues');
-            $table->foreignId('status_id')->constrained('catalogues');
+            $table->foreignId('type_id')->constrained('catalogue.catalogues');
+            $table->foreignId('status_id')->constrained('catalogue.catalogues');
             $table->foreignId('career_id')->constrained();
             $table->string('code', 100);
             $table->string('name', 500);

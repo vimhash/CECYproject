@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('authentication.users');
             $table->foreignId('town_id')->constrained('locations');
-            $table->foreignId('school_type_id')->constrained('catalogues');
+            $table->foreignId('school_type_id')->constrained('catalogue.catalogues');
             $table->date('career_start_date')->nullable();
             $table->year('graduation_year')->nullable();
             $table->string('cohort')->nullable();

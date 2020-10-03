@@ -27,7 +27,7 @@ class CreateAdditionalInformationsTable extends Migration
             $table->boolean('works'); //el participante trabaja?
             $table->foreignId('state_id')->constrained('ignug.states');//estado
             $table->foreignId('registration_id')->constrained('registrations'); //id_matricula
-            $table->foreignId('level_instruction')->constrained('catalogues'); //id_nivel de instruccion
+            $table->foreignId('level_instruction')->constrained('catalogue.catalogues'); //id_nivel de instruccion
             $table->timestamps();
         });
     }

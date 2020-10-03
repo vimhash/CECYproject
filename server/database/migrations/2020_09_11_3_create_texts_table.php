@@ -16,7 +16,7 @@ class CreateTextsTable extends Migration
         Schema::connection('pgsql-web')->create('texts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('page_id')->constrained();
-            $table->foreignId('type_id')->constrained('catalogues');
+            $table->foreignId('type_id')->constrained('catalogue.catalogues');
             $table->text('title')->nullable();
             $table->text('subtitle')->nullable();
             $table->text('description');

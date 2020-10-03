@@ -19,7 +19,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('date_registration', 50); //fecha_matricula
             $table->foreignId('participant_id')->constrained('instructors'); //id_persona_participante
             $table->foreignId('state_id')->constrained("ignug.states"); //id_estado
-            $table->foreignId('type_id')->constrained('catalogues'); //id_tipo_matricula
+            $table->foreignId('type_id')->constrained('catalogue.catalogues'); //id_tipo_matricula
             $table->string('number',100); //numero_de_matricula
             $table->foreignId('planification_id')->constrained('planifications'); //id_planificación
             $table->timestamps();

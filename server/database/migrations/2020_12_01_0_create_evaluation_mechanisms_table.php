@@ -17,8 +17,8 @@ class CreateEvaluationMechanismsTable extends Migration
         Schema::connection('pgsql-cecy')->create('evaluation_mechanisms', function (Blueprint $table) {
             $table->id();
             $table->foreignId('state_id')->constrained("ignug.states"); //id_estados
-            $table->foreignId('status_id')->constrained("catalogues"); //id_estatus
-            $table->foreignId('type_id')->constrained("catalogues"); //evaluacion diagnostica, evaluacion proceso formativo y evaluacion final
+            $table->foreignId('status_id')->constrained("catalogue.catalogues"); //id_estatus
+            $table->foreignId('type_id')->constrained("catalogue.catalogues"); //evaluacion diagnostica, evaluacion proceso formativo y evaluacion final
             $table->string('technique',200); //tecnica
             $table->string('instrument',200); //instrumento
         });

@@ -18,7 +18,7 @@ class CreateSchedulesTable extends Migration
             $table->foreignId('state_id')->constrained('ignug.states');
             $table->string('start_time', 50);//hora inicio
             $table->string('end_time', 50);//hora fin
-            $table->foreignId('day_id')->constrained('catalogues'); //id_tipo_curso
+            $table->foreignId('day_id')->constrained('catalogue.catalogues'); //id_tipo_curso
             $table->timestamps();
         });
     }

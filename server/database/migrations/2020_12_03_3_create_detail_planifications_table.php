@@ -20,7 +20,7 @@ class CreateDetailPlanificationsTable extends Migration
             $table->foreignId('planification_id')->constrained('planifications');//id de planificacion
             $table->foreignId('teacher_id')->constrained('authentication.users');//  profesor de usuarios
             $table->foreignId('state_id')->constrained('ignug.states');//id_curso
-            $table->foreignId('status_id')->constrained('catalogues');//status de la planificacion
+            $table->foreignId('status_id')->constrained('catalogue.catalogues');//status de la planificacion
             $table->foreignId('classroom_id')->constrained('ignug.classrooms');//id_curso
             $table->date('planned_end_date'); //fecha fin prevista
             $table->integer('capacity');//capacidad
@@ -31,10 +31,10 @@ class CreateDetailPlanificationsTable extends Migration
             $table->string('state_certified',50); //estado del certificado
             $table->foreignId('detail_registration_id')->constrained('detail_registrations');//detalle de la matricula id
             $table->foreignId('instructor_id')->constrained('instructors');
-            $table->foreignId('day_id')->constrained('catalogues');// lunes martes miercoles ...
-            $table->foreignId('start_time_id')->constrained('catalogues');
-            $table->foreignId('end_time_id')->constrained('catalogues');
-            $table->foreignId('nro_Day')->constrained('catalogues');
+            $table->foreignId('day_id')->constrained('catalogue.catalogues');// lunes martes miercoles ...
+            $table->foreignId('start_time_id')->constrained('catalogue.catalogues');
+            $table->foreignId('end_time_id')->constrained('catalogue.catalogues');
+            $table->foreignId('nro_Day')->constrained('catalogue.catalogues');
             $table->timestamps();
         });
     }

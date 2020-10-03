@@ -19,11 +19,11 @@ class CreateCareersTable extends Migration
             $table->string('code', 50)->nullable();;
             $table->string('name', 200);
             $table->string('description', 500);
-            $table->foreignId('modality_id')->constrained('catalogues');
+            $table->foreignId('modality_id')->constrained('catalogue.catalogues');
             $table->string('resolution_number', 500)->nullable();
             $table->string('title', 500);
             $table->string('acronym', 100);
-            $table->foreignId('type_id')->constrained('catalogues');
+            $table->foreignId('type_id')->constrained('catalogue.catalogues');
             $table->foreignId('state_id')->constrained();
             $table->timestamps();
         });

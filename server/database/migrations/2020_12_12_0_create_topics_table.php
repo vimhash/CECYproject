@@ -21,7 +21,7 @@ class CreateTopicsTable extends Migration
             $table->foreign('parent_code_id')->references('id')->on('topics');//id de la propia tabla
             $table->foreignId('state_id')->constrained('ignug.states'); //id_estado
             $table->foreignId('course_id')->constrained('courses'); //id_codigo_curso
-            $table->foreignId('type_id')->constrained('catalogues'); //id_codigo_curso
+            $table->foreignId('type_id')->constrained('catalogue.catalogues'); //id_codigo_curso
             $table->timestamps();
         });
     }

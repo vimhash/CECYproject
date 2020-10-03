@@ -21,7 +21,7 @@ class CreateOffersTable extends Migration
             $table->string('email', 100);
             $table->string('phone', 20);
             $table->string('cell_phone', 20)->nullable();
-            $table->foreignId('contract_type_id')->constrained('catalogues');
+            $table->foreignId('contract_type_id')->constrained('catalogue.catalogues');
             $table->string('position');
             $table->string('training_hours')->nullable();
             $table->string('experience_time')->nullable();

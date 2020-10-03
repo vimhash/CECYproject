@@ -17,7 +17,7 @@ class CreateClassroomsTable extends Migration
             $table->id();
             $table->string('code', 100);
             $table->string('name', 500);
-            $table->foreignId('type_id')->constrained('catalogues');
+            $table->foreignId('type_id')->constrained('catalogue.catalogues');
             $table->string('icon', 200)->nullable();
             $table->foreignId('state_id')->constrained();
             $table->timestamps();

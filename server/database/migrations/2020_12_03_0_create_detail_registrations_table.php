@@ -18,8 +18,8 @@ class CreateDetailRegistrationsTable extends Migration
             $table->id();
             $table->foreignId('registration_id')->constrained('registrations'); //id_matricula
             $table->foreignId('state_id')->constrained('ignug.states'); //id_matricula
-            $table->foreignId('status_id')->constrained('catalogues'); //estado de la matricula
-            $table->foreignId('status_certificate_id')->constrained('catalogues'); //estado del certificado
+            $table->foreignId('status_id')->constrained('catalogue.catalogues'); //estado de la matricula
+            $table->foreignId('status_certificate_id')->constrained('catalogue.catalogues'); //estado del certificado
             $table->decimal('final_grade', 3, 2); //nota_final
             $table->date('certificate_withdrawn'); //fecha de retiro certificado
             $table->json('observation'); //observacion_curso

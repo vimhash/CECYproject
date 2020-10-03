@@ -19,7 +19,7 @@ class CreateCecyAttendancesTable extends Migration
             $table->foreignId('state_id')->constrained('ignug.states');//estado
             $table->integer('duration'); //duracion en horas del curs
             $table->date('date'); //fecha
-            $table->time('type_id')->constrained('catalogues');//tipo de calificacion por credito por hora etc
+            $table->time('type_id')->constrained('catalogue.catalogues');//tipo de calificacion por credito por hora etc
             $table->foreignId('detail_registration_id')->constrained('detail_registrations'); //id_detalle matricula
             $table->timestamps();//fecha y hora
         });

@@ -15,7 +15,7 @@ class CreateWebCataloguesTable extends Migration
     {
         Schema::connection('pgsql-web')->create('catalogues', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_code_id')->nullable()->references('id')->on('catalogues');
+            $table->foreignId('parent_code_id')->nullable()->references('id')->on('catalogue.catalogues');
             $table->text('code');
             $table->text('name');
             $table->text('type');

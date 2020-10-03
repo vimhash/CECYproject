@@ -17,7 +17,7 @@ class CreateInstructorsTable extends Migration
             $table->id();
             $table->foreignId('state_id')->constrained('ignug.states');
             $table->foreignId('user_id')->constrained('authentication.users');
-            $table->foreignId('status_id')->constrained('catalogues');//status de la planificacion
+            $table->foreignId('status_id')->constrained('catalogue.catalogues');//status de la planificacion
             $table->foreignId('responsible_id')->constrained('authorities'); //id autoridad a cargo responsable
             $table->timestamps();
         });

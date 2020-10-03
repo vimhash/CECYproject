@@ -17,8 +17,8 @@ class CreateCecyAuthoritiesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('authentication.users');//usuario
             $table->foreignId('state_id')->constrained('ignug.states');//estado
-            $table->foreignId('status_id')->constrained('catalogues');//stados=>suspendido,retirado,?
-            $table->foreignId('position_id')->constrained('catalogues');//cargo=>especialista,responsablestart_time
+            $table->foreignId('status_id')->constrained('catalogue.catalogues');//stados=>suspendido,retirado,?
+            $table->foreignId('position_id')->constrained('catalogue.catalogues');//cargo=>especialista,responsablestart_time
             $table->foreignId('institution_id')->constrained('cecy_institutions');//tabla de institucion
             $table->date('start_position'); //fecha inicio cargo
             $table->date('end_position'); //fecha fin cargo

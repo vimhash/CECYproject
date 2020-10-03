@@ -21,8 +21,8 @@ class CreateMenusTable extends Migration
             $table->text('icon');
             $table->text('description')->nullable();
             $table->integer('order');
-            $table->foreignId('type_id')->constrained('catalogues'); /*para ver si esta arriba o abajo */
-            $table->foreignId('status_id')->constrained('catalogues');
+            $table->foreignId('type_id')->constrained('catalogue.catalogues'); /*para ver si esta arriba o abajo */
+            $table->foreignId('status_id')->constrained('catalogue.catalogues');
             $table->foreignId('state_id')->constrained('ignug.states');
             $table->timestamps();
         });

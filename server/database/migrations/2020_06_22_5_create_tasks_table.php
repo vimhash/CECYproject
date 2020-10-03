@@ -19,7 +19,7 @@ class CreateTasksTable extends Migration
             $table->string('description', 300)->nullable();
             $table->integer('percentage_advance')->default(0);
             $table->string('observations', 500)->nullable();
-            $table->foreignId('type_id')->constrained('catalogues');
+            $table->foreignId('type_id')->constrained('catalogue.catalogues');
             $table->foreignId('state_id')->constrained('ignug.states');
             $table->timestamps();
         });

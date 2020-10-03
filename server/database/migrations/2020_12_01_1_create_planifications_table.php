@@ -21,7 +21,7 @@ class CreatePlanificationsTable extends Migration
             $table->foreignId('school_period_id')->constrained('school_periods');//periodo_id
             $table->foreignId('responsible_id')->constrained('authorities'); //id autoridad a cargo responsable
             $table->foreignId('state_id')->constrained('ignug.states');//stado_id
-            $table->foreignId('status_id')->constrained('catalogues');//status de la planificacion
+            $table->foreignId('status_id')->constrained('catalogue.catalogues');//status de la planificacion
             $table->timestamps();
         });
     }

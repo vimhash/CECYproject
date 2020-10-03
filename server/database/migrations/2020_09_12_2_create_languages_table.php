@@ -12,9 +12,9 @@ class CreateLanguagesTable extends Migration
         Schema::connection('pgsql-job-board')->create('languages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('professional_id')->constrained();
-            $table->foreignId('written_level_id')->constrained('catalogues');
-            $table->foreignId('spoken_level_id')->constrained('catalogues');
-            $table->foreignId('reading_level_id')->constrained('catalogues');
+            $table->foreignId('written_level_id')->constrained('catalogue.catalogues');
+            $table->foreignId('spoken_level_id')->constrained('catalogue.catalogues');
+            $table->foreignId('reading_level_id')->constrained('catalogue.catalogues');
             $table->foreignId('state_id')->constrained('ignug.states');
             $table->timestamps();
         });
